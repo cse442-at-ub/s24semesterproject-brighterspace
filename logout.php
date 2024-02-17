@@ -2,7 +2,8 @@
 session_start();
 
 //Clearing the user's cookie
-setcookie('username','testuser',-10);
+//setcookie('username','testuser',-10);
+//Commented out because currently not employing user cookies
 
 //([VARIABLE FOR USERNAME],[THE USERNAME], [TIME])
 
@@ -13,4 +14,5 @@ $_SESSION=array();
 session_destroy();
 //Redirects to the login page
 header('location:FunctionLogin.php');
+
 
