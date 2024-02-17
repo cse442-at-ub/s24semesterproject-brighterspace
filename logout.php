@@ -11,7 +11,6 @@ $_SESSION=array();
 
 #Destorys the session
 session_destroy();
-//Testing
 //Redirects to the login page
 header('location:FunctionLogin.php');
 
