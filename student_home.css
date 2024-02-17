@@ -15,7 +15,7 @@
     padding: 0;
     margin: 0;
     border: 0 outset black;
-    background-color: cyan;
+    background-color: gray;
     align-items: center;
     text-align: center;
     justify-content: space-between;
@@ -40,8 +40,7 @@
     width: 128px;
     padding: 0;
     margin: 0;
-    border: 0 outset black;
-    background-color: yellow;
+    background-color: lightgray;
     align-items: center;
     text-align: center;
     justify-content: space-between;
@@ -59,10 +58,10 @@
     height: 100%;
     width: 16px;
     transform: translate(0%, -50%);
-    z-index: 100;
+    z-index: 98;
 
     border: none;
-    background-color: yellow;
+    background-color: lightgray;
 }
 
 .core{
