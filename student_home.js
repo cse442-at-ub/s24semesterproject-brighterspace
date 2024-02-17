@@ -1,4 +1,10 @@
-function showtab() {
+document.getElementById("tabs").addEventListener("click", function(event) {
+    if (event.target.id === "tabsbutton" || event.target.id === "tabs") {
+        toggletab();
+    }
+});
+
+function toggletab() {
     console.log("hello");
     var tab = document.getElementById("tabs");
 

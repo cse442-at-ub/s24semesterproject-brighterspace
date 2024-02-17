@@ -59,8 +59,10 @@
     height: 100%;
     width: 16px;
     transform: translate(0%, -50%);
-    border: 1px outset black;
     z-index: 100;
+
+    border: none;
+    background-color: yellow;
 }
 
 .core{
@@ -72,16 +74,64 @@
     left: 20%;
     height: 100vh;
     width: 60%;
-    border: 1px outset black;
-    background-color: magenta;
 }
 
-.core div{
+.classes{
     display: flex;
     flex: 1;
     height: 100%;
-    padding: 0;
-    margin: 0;
-    border: 1px outset black;
-    background-color: red;
+    width: 40%;
+}
+
+.classes ul{
+    list-style-type: none;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    overflow: auto;
+    padding: 16px;
+}
+
+.classes ul::-webkit-scrollbar{
+    width: 0;
+}
+
+.classes li{
+    border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    text-align: center;
+    background-color: lightblue;
+}
+
+.reminders{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: 40%;
+}
+
+.reminders ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 16px;
+    overflow: auto;
+}
+
+.reminders ul::-webkit-scrollbar{
+    width: 0;
+}
+
+.reminders li{
+    border-radius: 8px;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 16px;
+
+    text-align: center;
+    background-color: lightblue;
 }

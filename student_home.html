@@ -10,21 +10,45 @@
             <nav class="navbar">
                 <a href="student_home.html"><img src="" alt="Logo" draggable="false"></a>
                 <ul>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li>
+                        <form action="logout.php" method="post">
+                            <input type="submit" value="Sign Out">
+                        </form>
+                    </li>
                 </ul>
             </nav>
             <div id="tabs" class="tabs">
-                <a>Hello2</a>
+                <h1>Tabs</h1>
+                <ul>
+                    <li>
+                        <a>Schedule</a>
+                    </li>
+                </ul>
                 <div>
-                    <button id="tabsbutton" onclick="showtab()">></button>
+                    <button id="tabsbutton">></button>
                 </div>
             </div>
             <div class="core">
-                <div class="coreleft">
-                    <a>Hello3</a>
+                <div class="classes">
+                    <ul>
+                        <li><a>MTH 241</a></li>
+                        <li><a>MTH 306</a></li>
+                        <li><a>CSE 442</a></li>
+                        <li><a>GLY 105</a></li>
+                        <li><a>MTH 411</a></li>
+                        <li><a>CSE 341</a></li>
+                        <li><a>CSE 331</a></li>
+                        <li><a>EAS 360</a></li>
+                    </ul>
                 </div>
-                <div class="coreright">
-                    <a>Hello4</a>
+                <div class="reminders">
+                    <ul>
+                        <li><a>MTH 241 - Homework #7</a></li>
+                        <li><a>MTH 241 - Homework #8</a></li>
+                        <li><a>MTH 306 - Homework #10</a></li>
+                        <li><a>CSE 442 - Sprint #1</a></li>
+                        <li><a>GLY 105 - Nothing!</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
