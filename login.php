@@ -11,6 +11,7 @@
 <a>replace with logo</a>
 
 <hr>
+<form action = "PHPBackEnd\functionLoginIn.php" method ="post">
 <table>
   <tr>
     <td><label for="username"><b>Username</b></label></td>
@@ -21,8 +22,9 @@
 	<td><input type="password" placeholder="Enter Password" name="pass" required></td>
   </tr>
 </table>
-<button type="submit">Login</button>
+<button type="submit" name= "LoginButton">Login</button>
 <br>
+</form>
 <a href="password reset page here">forgot your password?</a>
 <hr>
 
