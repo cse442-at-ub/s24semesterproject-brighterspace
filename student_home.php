@@ -8,7 +8,7 @@
     <body>
         <div class="root">
             <nav class="navbar">
-                <a href="student_home.html"><img src="" alt="Logo" draggable="false"></a>
+                <a href="student_home.php"><img src="" alt="Logo" draggable="false"></a>
                 <ul>
                     <li><a href="login.php">Signout</a></li>
                 </ul>
