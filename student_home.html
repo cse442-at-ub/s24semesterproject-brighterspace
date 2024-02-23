@@ -29,14 +29,7 @@
             <div class="core">
                 <div class="classes">
                     <ul>
-                        <li><a>MTH 241</a></li>
-                        <li><a>MTH 306</a></li>
-                        <li><a>CSE 442</a></li>
-                        <li><a>GLY 105</a></li>
-                        <li><a>MTH 411</a></li>
-                        <li><a>CSE 341</a></li>
-                        <li><a>CSE 331</a></li>
-                        <li><a>EAS 360</a></li>
+                        <!--Check .js, it should fill this out with the student specific courses-->
                     </ul>
                 </div>
                 <div class="reminders">
@@ -51,5 +44,9 @@
             </div>
         </div>
         <script src="student_home.js"></script>
+        <script>
+            var studentName = "<?php echo $student_name; ?>";
+            var classes = <?php echo json_encode($classes); ?>;
+        </script>
     </body>
 </html>

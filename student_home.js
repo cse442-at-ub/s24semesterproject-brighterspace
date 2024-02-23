@@ -4,6 +4,35 @@ document.getElementById("tabs").addEventListener("click", function(event) {
     }
 });
 
+//test inputs
+var classNames = ["MTH 241", "MTH 306", "CSE 442", "GLY 105", "MTH 411", "CSE 341", "CSE 331", "EAS 360"];
+var studentName = "Brandon Chen";
+var studentID = "90807060";
+
+//append class to list in Div Classes
+var ulElementClasses = document.querySelector(".classes ul");
+classNames.forEach(function(currClass) {
+    var liElementClasses = document.createElement("li");
+    var aElementClasses = document.createElement("a");
+    aElementClasses.href = currClass + ".html";
+    aElementClasses.textContent = currClass;
+    liElementClasses.appendChild(aElementClasses);
+    ulElementClasses.appendChild(liElementClasses);
+});
+
+//append class to list in Div Navbar
+var ulElementNavbar = document.querySelector(".nabar ul");
+var liElementName = document.createElement("li");
+var aElementName = document.createElement("a");
+liElementName.appendChild(aElementClasses);
+ulElementName.appendChild(liElementClasses);
+
+var liElementID = document.createElement("li");
+var aElementID = document.createElement("a");
+liElementID.appendChild(aElementClasses);
+ulElementID.appendChild(liElementClasses);
+
+
 function toggletab() {
     console.log("hello");
     var tab = document.getElementById("tabs");
