@@ -19,8 +19,13 @@ if (isset($_POST["LoginButton"])) {
                 'username' => $rows[0],
                 'password' => $rows[1]
             ]), time() + 3600 * 24 *30);
-            header("location: \brighterspace\student_home.php");
 
+            $content = $rows[3];
+            http_response_code(200);
+            header("Content-Type: application/json");
+            header("AdminStatus: {$content}");
+            header("X-Content-Type-Options: nosnifff");
+            header("location: \brighterspace\student_home.php");
         }
     }
 }
