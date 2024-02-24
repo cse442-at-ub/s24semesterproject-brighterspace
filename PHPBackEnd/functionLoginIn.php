@@ -1,29 +1,32 @@
 <?php
 
-if (isset($_POST["LoginButton"])){
+if (isset($_POST["LoginButton"])) {
 
-    $existingAccount = "testAcc";
-    $existingPassword = "test123";
-    
+    require "dbConnection.php";
+
+
+    $conn = database();
     $name = $_POST["username"];
     $password = $_POST["pass"];
 
+    $rows = readDataBase($name);
+    if ($rows != null){
+        echo "working";
 
-    if (($existingAccount == $name) & ($existingPassword == $password)){
-       
-        header("location: /student_home.php");
+        if (password_verify($password,$rows[3]) === true){
+            session_start();
+            setcookie('user', json_encode([
+                'username' => $rows[1],
+                'password' => $rows[3]
+            ]), time() + 3600 * 24 *30);
+
+            $content = $rows[4];
+            http_response_code(200);
+            header("Content-Type: application/json");
+            header("AdminStatus: {$content}");
+            header("X-Content-Type-Options: nosnifff");
+            header("location: \brighterspace\student_home.php");
+
+        }
     }
-
-    else{
-        echo "Account Doesn't exist";
-    }
-    
-}
-
-if (isset($_POST["signUp"])){
-
-    header("location: /signup.php");
-
-
-
 }
