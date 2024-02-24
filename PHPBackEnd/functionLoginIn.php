@@ -11,7 +11,7 @@ if (isset($_POST["LoginButton"])) {
 
     $rows = readDataBase($name);
     if ($rows != null){
-        echo "working";
+        echo "Not a Student Account, You are a Admin Go to Admin Site";
 
         if (password_verify($password,$rows[3]) === true && $rows[4] == "0"){
             session_start();
@@ -29,4 +29,21 @@ if (isset($_POST["LoginButton"])) {
 
         }
     }
+}
+
+function readDataBase($name){
+    $conn = database();
+
+    $sql = "SELECT * FROM AccountInfo";
+    $results = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($results) > 0){
+
+        while ($row = mysqli_fetch_row($results)){
+            if ($row[1] == $name){
+                return $row;
+            }
+        }
+    }
+    return null;
 }
