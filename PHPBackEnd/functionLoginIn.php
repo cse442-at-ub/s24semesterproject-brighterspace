@@ -13,7 +13,7 @@ if (isset($_POST["LoginButton"])) {
     if ($rows != null){
         echo "working";
 
-        if (password_verify($password,$rows[3]) === true){
+        if (password_verify($password,$rows[3]) === true && $rows[4] == "0"){
             session_start();
             setcookie('user', json_encode([
                 'username' => $rows[1],
