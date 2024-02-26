@@ -5,13 +5,13 @@ document.getElementById("tabs").addEventListener("click", function(event) {
 });
 
 //test inputs
-var classNames = ["MTH 241", "MTH 306", "CSE 442", "GLY 105", "MTH 411", "CSE 341", "CSE 331", "EAS 360"];
+var classes = ["MTH241", "MTH306", "CSE442", "GLY105", "MTH411", "CSE341", "CSE331", "EAS360"];
 var studentName = "Brandon Chen";
 var studentID = "90807060";
 
 //append class to list in Div Classes
 var ulElementClasses = document.querySelector(".classes ul");
-classNames.forEach(function(currClass) { //change this
+classes.forEach(function(currClass) { //change this
     var liElementClasses = document.createElement("li");
     var aElementClasses = document.createElement("a");
     aElementClasses.href = currClass + ".html";
