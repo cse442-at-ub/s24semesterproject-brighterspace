@@ -1,3 +1,4 @@
+<?php include 'studentHomeDataBase.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,6 +47,7 @@
         <script src="student_home.js"></script>
         <script>
             var studentName = "<?php echo $student_name; ?>";
+            var studentID = "<?php echo $student_id; ?>";
             var classes = <?php echo json_encode($classes); ?>;
         </script>
     </body>

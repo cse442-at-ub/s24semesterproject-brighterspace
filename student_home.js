@@ -34,7 +34,7 @@ aElementID.textContent = "Student ID: " + studentID; //change this
 liElementID.appendChild(aElementID);
 ulElementNavbar.appendChild(liElementID);
 
-
+//random animation, I will make it hover animation next time
 function toggletab() {
     console.log("hello");
     var tab = document.getElementById("tabs");
