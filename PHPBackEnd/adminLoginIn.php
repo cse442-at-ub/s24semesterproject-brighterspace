@@ -11,6 +11,7 @@ if (isset($_POST["LoginButton"])) {
     $password = $_POST["pass"];
 
     $rows = readDataBase($name);
+    
     if ($rows != null){
         echo "working";
 
@@ -32,14 +33,14 @@ if (isset($_POST["LoginButton"])) {
     }
 }
 
-function addAdminUser($name,$username, $password, $email){
+function addAdminUser($name,$username, $email, $password,  $status){
 
     # Allows the team to create a admin account on our database so the admin can Login in once we provide the info
 
     $conn = database();
     $hashed = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO AccountInfo (Name, Username, Email, Password, Admin) VALUES ('{$name}', '{$username}', '{$email}','$hashed', '1')";
+    $sql = "INSERT INTO AccountInfo (Name, Username, Email, Password, Admin) VALUES ('{$name}', '{$username}', '{$email}','$hashed', '{$status}')";
 
     if ($conn->query($sql)){
         echo "It added";
@@ -50,6 +51,9 @@ function addAdminUser($name,$username, $password, $email){
 
 
 }
+
+addAdminUser("Student", "Student", "Student@gmail.com", "Student", "0");
+
 
 function readDataBase($name){
     $conn = database();
