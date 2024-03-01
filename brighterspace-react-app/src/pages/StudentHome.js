@@ -1,5 +1,5 @@
 import "../styles/StudentHome.css"
-import Navbar from "../components/Navbar"
+import StudentNavbar from "../components/StudentNavbar"
 
 const classes = ["MTH241", "MTH306", "CSE442", "GLY105", "MTH411", "CSE341", "CSE331", "EAS360"];
 const studentName = "Brandon Chen";
@@ -16,7 +16,7 @@ function generateClassList() {
 export default function StudentHome () {
     return(
         <>
-            <Navbar />
+            <StudentNavbar />
             <div id="tabs" class="tabs">
                 <ul>
                     <li><h2>Tabs</h2></li>

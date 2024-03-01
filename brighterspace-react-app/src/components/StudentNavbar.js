@@ -14,7 +14,7 @@ function generateStudentInfo() {
     );
 }
 
-export default function Navbar() {
+export default function StudentNavbar() {
     return(
         <nav class="navbar">
             <a href="student_home.php">{/*<img src="" alt="Logo" draggable="false">*/}</a>
