@@ -2,10 +2,12 @@ import "../styles/StudentHome.css"
 import Navbar from "../components/Navbar"
 
 const classes = ["MTH241", "MTH306", "CSE442", "GLY105", "MTH411", "CSE341", "CSE331", "EAS360"];
+const studentName = "Brandon Chen";
+const studentID = "90807060";
 
 function generateClassList() {
     return classes.map(currClass => (
-        <li key={currClass}>
+        <li>
             <a href={`${currClass}.html`}>{currClass}</a>
         </li>
     ));
