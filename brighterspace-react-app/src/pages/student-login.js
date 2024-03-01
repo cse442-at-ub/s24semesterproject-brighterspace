@@ -9,7 +9,7 @@ const StudentLogin = (props) => {
         navigate('/')
     }
   const onButtonClick = () => {
-    navigate('/student-home')
+    navigate('/student-home') //I(Brandon) edited this line so I can access my page
   }
 
   return (
