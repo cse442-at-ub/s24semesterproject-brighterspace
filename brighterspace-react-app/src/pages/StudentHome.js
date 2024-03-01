@@ -1,19 +1,15 @@
 import "../styles/StudentHome.css"
 import Navbar from "../components/Navbar"
 
-/*const classes = ["MTH241", "MTH306", "CSE442", "GLY105", "MTH411", "CSE341", "CSE331", "EAS360"];
+const classes = ["MTH241", "MTH306", "CSE442", "GLY105", "MTH411", "CSE341", "CSE331", "EAS360"];
 
 function generateClassList() {
-    var ulElementClasses = document.querySelector(".classes ul");
-    classes.forEach(function(currClass) {
-        var liElementClasses = document.createElement("li");
-        var aElementClasses = document.createElement("a");
-        aElementClasses.href = currClass + ".html";
-        aElementClasses.textContent = currClass;
-        liElementClasses.appendChild(aElementClasses);
-        ulElementClasses.appendChild(liElementClasses);
-    });
-}*/
+    return classes.map(currClass => (
+        <li key={currClass}>
+            <a href={`${currClass}.html`}>{currClass}</a>
+        </li>
+    ));
+}
 
 export default function StudentHome () {
     return(
@@ -33,7 +29,7 @@ export default function StudentHome () {
             <div class="core">
                 <div class="classes">
                     <ul>
-                        {/*generateClassList()*/}
+                        {generateClassList()}
                     </ul>
                 </div>
                 <div class="reminders">
