@@ -25,25 +25,27 @@ const studentID = "90807060";
 
 export default function StudentHome () {
 
-    const [classes, setClasses] = useState([]);
+    /*const [classes, setClasses] = useState([]);*/
+    const [classes, setClasses] = useState('');
 
     useEffect(() => {
-        fetch('../../../PHPBackEnd/test.php')
-        .then(response => response.json())
-        .then(data => {
-            setClasses(data);
-        })
-        .catch(error => {
-            console.error('Error from test:', error);
-        });
+        fetch("../../../PHPBackEnd/test.php")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setClasses(data.toString());
+            })
+            .catch(error => {
+                console.error('Error from test:', error);
+            });
     }, []);
 
     const generateClassList = () => {
-        return classes.map(currClass => (
-            <li key={currClass}>
-                <a href={`${currClass}.html`}>{currClass}</a>
+        return(
+            <li>
+                <a href={`${classes}.html`}>{classes}</a>
             </li>
-        ));
+        );
     };
 
     return(
