@@ -1,19 +1,51 @@
+import React, { useState, useEffect } from "react";
 import "../styles/StudentHome.css"
 import StudentNavbar from "../components/StudentNavbar"
 
-const classes = ["MTH241", "MTH306", "CSE442", "GLY105", "MTH411", "CSE341", "CSE331", "EAS360"];
+/*var classes = ["MTH241", "MTH306", "CSE442", "GLY105", "MTH411", "CSE341", "CSE331", "EAS360"];*/
 const studentName = "Brandon Chen";
 const studentID = "90807060";
 
-function generateClassList() {
+/*function generateClassList() {
+    fetch('../../../PHPBackEnd/test.php')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        classes = data;
+    })
+    .catch(error => {
+        console.error('Error from studentdatabase:', error);
+    });
     return classes.map(currClass => (
         <li>
             <a href={`${currClass}.html`}>{currClass}</a>
         </li>
     ));
-}
+}*/
 
 export default function StudentHome () {
+
+    const [classes, setClasses] = useState([]);
+
+    useEffect(() => {
+        fetch('../../../PHPBackEnd/test.php')
+        .then(response => response.json())
+        .then(data => {
+            setClasses(data);
+        })
+        .catch(error => {
+            console.error('Error from test:', error);
+        });
+    }, []);
+
+    const generateClassList = () => {
+        return classes.map(currClass => (
+            <li key={currClass}>
+                <a href={`${currClass}.html`}>{currClass}</a>
+            </li>
+        ));
+    };
+
     return(
         <>
             <StudentNavbar />
