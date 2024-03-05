@@ -1,4 +1,4 @@
-import ClassSelection from "../components/ClassSelection";
+import ClassSelection from "../components/TeacherAddClass";
 import NotTeacher from "../components/NotTeacher";
 
 const isTeacher = true; //ig php will give this
