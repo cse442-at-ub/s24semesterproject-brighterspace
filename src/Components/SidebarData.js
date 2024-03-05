@@ -8,8 +8,16 @@ export const SidebarData = [
     {
         title: 'Overview',
         path: '/overview',
-        icon: <AiIcons.AiFillHome />
-        iconClosed: <RiIcons.RiArrowDownSFill/>
+        icon: <AiIcons.AiFillHome />,
+        iconClosed: <RiIcons.RiArrowDownSFill/>,
+        iconOpened: <RiIcons.RiArrowUpSFill/>,
+        subNav: [
+            {
+                title: 'Overview',
+                path: '/overview',
+                icon: <AiIcons.AiFillHome />,
+            }
+        ]
 
     }
 ]
