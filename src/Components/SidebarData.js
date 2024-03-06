@@ -13,11 +13,53 @@ export const SidebarData = [
         iconOpened: <RiIcons.RiArrowUpSFill/>,
         subNav: [
             {
+                title: 'Users',
+                path: '/overview/users',
+                icon: <IoIcons.IoIosPaper />,
+            },
+            {
+                title: 'Assessment',
+                path: '/overview/assessment',
+                icon: <IoIcons.IoIosPaper />,
+            },
+            {
                 title: 'Overview',
-                path: '/overview',
-                icon: <AiIcons.AiFillHome />,
-            }
+                path: '/overview/profile',
+                icon: <IoIcons.IoIosPaper />,
+            },
+
         ]
 
+    },
+    {
+        title: 'Classes',
+        path: '/classes',
+        icon: <AiIcons.AiFillHome />,
+        iconClosed: <RiIcons.RiArrowDownSFill/>,
+        iconOpened: <RiIcons.RiArrowUpSFill/>,
+        subNav: [
+            {
+                title: 'Class1',
+                path: '/overview/class1',
+                icon: <IoIcons.IoIosPaper />,
+            },
+            {
+                title: 'Class2',
+                path: '/overview/class2',
+                icon: <IoIcons.IoIosPaper />,
+            },
+            {
+                title: 'Class3',
+                path: '/overview/class3',
+                icon: <IoIcons.IoIosPaper />,
+            },
+
+        ]
+
+    },
+    {
+        title: 'Calendar',
+        path: '/calendar',
+        icon: <FaIcons.FaCartPlus />,
     }
 ]
