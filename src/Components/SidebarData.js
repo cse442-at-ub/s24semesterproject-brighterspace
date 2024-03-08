@@ -40,17 +40,17 @@ export const SidebarData = [
         subNav: [
             {
                 title: 'Class1',
-                path: '/overview/class1',
+                path: '/classes/class1',
                 icon: <IoIcons.IoIosPaper />,
             },
             {
                 title: 'Class2',
-                path: '/overview/class2',
+                path: '/classes/class2',
                 icon: <IoIcons.IoIosPaper />,
             },
             {
                 title: 'Class3',
-                path: '/overview/class3',
+                path: '/classes/class3',
                 icon: <IoIcons.IoIosPaper />,
             },
 
