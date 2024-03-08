@@ -5,7 +5,7 @@ import StudentLogin from './pages/student-login'
 import AdminLogin from './pages/admin-login'
 import StudentHome from './pages/StudentHome'
 import './App.css'
-import TeacherAddClass from './pages/TeacherAddClass'
+import TeacherHome from './pages/TeacherHome'
 import ExampleClassPage from './pages/ExampleClassPage'
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Route path="/student-login" element={<StudentLogin  />} />
             <Route path="/admin-login" element={<AdminLogin  />} />
             <Route path="/student-home" element={<StudentHome  />} />
-            <Route path="/teacher-home/add-class" element={<TeacherAddClass  />} />
+            <Route path="/teacher-home" element={<TeacherHome  />} />
             <Route path="/class/:classId" element={<ExampleClassPage  />} />
           </Routes>
         </BrowserRouter>

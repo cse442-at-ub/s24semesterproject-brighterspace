@@ -20,8 +20,17 @@ var password = "";
 var classroomName = "";
 
 //input
-fetch();
-const classIdList = ["CSE420", "CSE441", "CSE422", "CSE111", "CSE442"]; //this should be the php input
+var classIdList = []; //this should be the php input
+fetch("http://localhost:8000/test.php")
+.then(response => response.json())
+.then(data => {
+  console.log(data); //testing purpose
+  classIdList = data;
+  console.log(classIdList); //testing purpose
+})
+.catch(error => {
+  console.error('Error:', error);
+});
 
 export default function TeacherAddClass() {
   const [selectedClassId, setSelectedClassId] = useState(""); //return the id of the course
