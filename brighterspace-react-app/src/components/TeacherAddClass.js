@@ -121,7 +121,26 @@ export default function TeacherAddClass() {
     }
     //fetch post
     else{
-      fetch();
+      const dataToSend = {
+        data: classId + "-" + className + "-" + password
+      };
+      
+      fetch("http://localhost:8000/test2.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dataToSend)
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+
       console.log("valid, proceeding to store data");
     }
 
