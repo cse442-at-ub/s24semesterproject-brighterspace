@@ -15,11 +15,11 @@ export default function StudentTabClass () {
     .then(response => {
         if (response.headers.has("StudentName") && response.headers.has("ClassList")) {
 
-        const studentName = response.headers.get("StudentName");
-        const classList = response.headers.get("ClassList");
+        const returnedClassList = response.headers.get("ClassList");
+        setClassList(returnedClassList);
 
         console.log("Student Name:", studentName); //testing purposes
-        console.log("Class List:", classList); //testing purposes
+        console.log("Class List:", returnedClassList); //testing purposes
         } else {
         console.error("Missing headers in response");
         }
@@ -27,8 +27,7 @@ export default function StudentTabClass () {
         return response.json();
     })
     .then(data => {
-        console.log("data:", data); //testing purposes
-        setClassList(data);
+        console.log("data:", data); //testing purposes (this should be unused)
     })
     .catch(error => {
         console.error("Error:", error);
