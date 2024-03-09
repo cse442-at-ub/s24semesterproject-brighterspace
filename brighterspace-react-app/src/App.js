@@ -5,7 +5,7 @@ import StudentLogin from './pages/student-login'
 import AdminLogin from './pages/admin-login'
 import StudentHome from './pages/StudentHome'
 import './App.css'
-import TeacherAddClass from './pages/TeacherAddClass'
+import TeacherAddClass from './components/TeacherAddClass'
 import ExampleClassPage from './pages/ExampleClassPage'
 import Sidebar from "./components/Sidebar";
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
