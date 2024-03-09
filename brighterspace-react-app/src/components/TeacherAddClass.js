@@ -178,7 +178,7 @@ export default function TeacherAddClass() {
             </div>
           </div>
           <div class="formRight">
-            <h3>ClassroomName:</h3>
+            <h3>Section Name:</h3>
             <input
               id="name"
               type="text"
