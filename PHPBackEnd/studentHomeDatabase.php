@@ -1,17 +1,19 @@
 <?php
-require "PHPBackEnd\dbConnection.php";
-
+require "dbConnection.php";
+//session_start();
+//$_SESSION["student_id"] = "taranchana";
+//$_SESSION["name"] = "Taran";
 
 $conn = database();
 
 // get student information from the database
 $student_id = $_SESSION['student_id']; // this would be the username the student logs in with?
-$sql = "SELECT * FROM student_names WHERE id = $student_id";
+$sql = "SELECT * FROM student_names WHERE id = '$student_id'";
 $result_names = $conn->query($sql);
 
 if ($result_names->num_rows > 0) {
     // output the data from each row
-    while($row = $result->fetch_assoc()) {
+    while($row = $result_names->fetch_assoc()) {
         $student_name = $row["name"];
     }
     header("StudentName: {$student_name}");
