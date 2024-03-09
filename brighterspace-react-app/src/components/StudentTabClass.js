@@ -18,7 +18,6 @@ export default function StudentTabClass () {
         const returnedClassList = response.headers.get("ClassList");
         setClassList(returnedClassList);
 
-        console.log("Student Name:", studentName); //testing purposes
         console.log("Class List:", returnedClassList); //testing purposes
         } else {
         console.error("Missing headers in response");
