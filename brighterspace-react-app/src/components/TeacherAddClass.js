@@ -3,15 +3,13 @@ import React from "react";
 import { useState } from "react";
 
 /*
-ClassId is the thing like CSE321
-ClassName is the period5
-Classroom is ClassId + - + className
-Password is password
 
 INPUT: the list of classid
 OUTPUT: JSON{classroom: {classId: , className: , password: }}
 
-no idea
+Things to consider!!!!!!!:
+-repeating classroom names
+
 */
 //outputs
 var classId = "";
@@ -20,8 +18,19 @@ var password = "";
 var classroomName = "";
 
 //input
-fetch();
-const classIdList = ["CSE420", "CSE441", "CSE422", "CSE111", "CSE442"]; //this should be the php input
+var classIdList = []; //this should be the php input
+fetch("http://localhost:8000/teacherAddClass.php", {
+  method: "GET"
+})
+.then(response => response.json())
+.then(data => {
+  //console.log(data); //testing purpose
+  classIdList = data;
+  //console.log(classIdList); //testing purpose
+})
+.catch(error => {
+  console.error('Error:', error);
+});
 
 export default function TeacherAddClass() {
   const [selectedClassId, setSelectedClassId] = useState(""); //return the id of the course
@@ -78,7 +87,7 @@ export default function TeacherAddClass() {
     return true;
   }
 
-  function output() { //This one should fecth post to the servers
+  function output() {
     //record
     classId = selectedClassId;
     className = selectedClassName;
@@ -86,14 +95,14 @@ export default function TeacherAddClass() {
     classroomName = generatedClassroomName;
 
     //print
-    console.log("selectedClassId: " + selectedClassId);
+    /*console.log("selectedClassId: " + selectedClassId);
     console.log("selectedClassName: " + selectedClassName);
     console.log("selectedPassword: " + selectedPassword);
     console.log("generatedClassroomName: " + generatedClassroomName);
     console.log("classId: " + classId);
     console.log("className: " + className);
     console.log("password: " + password);
-    console.log("classroomName: " + classroomName);
+    console.log("classroomName: " + classroomName);*/
 
     //reset page details
     document.getElementById("name").value = "";
@@ -112,7 +121,28 @@ export default function TeacherAddClass() {
     }
     //fetch post
     else{
-      fetch();
+      const dataToSend = {
+        classId: classId,
+        section: className,
+        password: password
+      };
+      
+      fetch("http://localhost:8000/teacherAddClass.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dataToSend)
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+
       console.log("valid, proceeding to store data");
     }
 
@@ -125,7 +155,7 @@ export default function TeacherAddClass() {
 
   return (
     <>
-      <div class="core">
+      <div class="coreTeacherAddClass">
         <div class="form">
           <div class="formLeft">
             <div class="searchBar">
@@ -150,11 +180,11 @@ export default function TeacherAddClass() {
             </div>
           </div>
           <div class="formRight">
-            <h3>ClassroomName:</h3>
+            <h3>Section Name:</h3>
             <input
               id="name"
               type="text"
-              placeholder="Class Name"
+              placeholder="uppercase and numbers only"
               onInput={recordClassName}
               onFocus={highlightText}
             />
@@ -162,7 +192,7 @@ export default function TeacherAddClass() {
             <input
               id="password"
               type="password"
-              placeholder="Password"
+              placeholder="letters and numbers only"
               onInput={recordPassword}
               onFocus={highlightText}
             />
