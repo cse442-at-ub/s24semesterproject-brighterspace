@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function StudentTabClass () {
 
-    const [classList, setClassList] = useState(["If you see this, it means it didnt get the class list"]);
+    const [classList, setClassList] = useState(["If you see this, it means it didnt get the class list", "Here", "are", "some", "example", "classes", "CSE442", "CSE241", "MTH241"]);
 
     fetch("http://localhost:8000/studentHomeDatabase.php", {
         method: "GET"

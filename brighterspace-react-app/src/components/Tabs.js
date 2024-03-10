@@ -1,18 +1,6 @@
 import { useState } from "react";
 import "../styles/Tabs.css";
 
-const name = "Brandon Chen";
-
-function getName() {
-    return (
-        <>
-            <p>
-                {name}
-            </p>
-        </>
-    );
-}
-
 export default function Tabs({ activeTab, setActiveTab, page }) {
 
     const [username, setUsername] = useState("Not ME");
