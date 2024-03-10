@@ -38,7 +38,7 @@ function verify(){
         updateDataBase($hash, $nameAndPassword[0]);
         setcookie($cookieName, $cookieValue, time() + (3600), '/','', true, true);
 //        header('Location: http://localhost:3000/student-home');
-        echo "Login: True, Admin: $dataBaseRows[3]";
+        echo "Login: True, Admin: $dataBaseRows[3], name: $dataBaseRows[4]";
 
     }else{
         echo "Login: False, Admin: 0";
