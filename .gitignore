@@ -22,3 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 brighterspace-react-app/node_modules/.cache/default-development/1.pack
+
+.cache/default-development/1.pack
