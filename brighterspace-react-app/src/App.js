@@ -8,6 +8,10 @@ import StudentHome from './pages/StudentHome'
 import './App.css'
 import TeacherHome from './pages/TeacherHome'
 import StudentClassPage from './pages/StudentClassPage'
+import Sidebar from "./components/Sidebar";
+import Overview from './pages/Overview'
+import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
+import Calendar from './pages/Calendar'
 
 function App() {
 
@@ -15,6 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Router>
+          <Sidebar/>
           <Routes>
             <Route path="/" element={<Home  />} />
             <Route path="/login" element={<Login  />} />
@@ -23,6 +28,12 @@ function App() {
             <Route path="/student-home" element={<StudentHome  />} />
             <Route path="/teacher-home" element={<TeacherHome  />} />
             <Route path="/class/:classId" element={<StudentClassPage  />} />
+            <Route path="/overview" element={<Overview/>} />
+            <Route path="/classes" element={<Classes/>} />
+            <Route path="/classes/class1" element={<ClassOne/>} />
+            <Route path="/classes/class2" element={<ClassTwo/>} />
+            <Route path="/classes/class3" element={<ClassThree/>} />
+            <Route path="/calendar" element={<Calendar/>} />
           </Routes>
         </Router>
       </header>
