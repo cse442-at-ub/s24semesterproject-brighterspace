@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.coreStudentTabClass{
+    position: fixed;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    top: 9%;
+    left: 20%;
+    height: 100vh;
+    width: 60%;
+}
+
+.classes{
+    display: flex;
+    flex: 1;
+    height: auto;
+    width: 100%;
+}
+
+.classes ul{
+    list-style-type: none;
+    justify-content: center;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: min-content;
+    grid-gap: 16px;
+    overflow: auto;
+    padding: 0;
+    height: auto;
+    align-items: flex-start;
+}
+
+.classes ul::-webkit-scrollbar{
+    width: 0;
+}
+
+.classes li{
+    border-radius: 8px;
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    text-align: center;
+    background-color: #1b6646;
+}
+
+.classes li:hover{
+    background-color: #0f4632;
+}
