@@ -69,7 +69,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 )}
             </div>
             <div class="profile">
-                {getName()}
+                {username}
             </div>
         </nav>
     )
