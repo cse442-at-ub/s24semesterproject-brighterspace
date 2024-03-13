@@ -46,19 +46,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // No previous enrollments found, set to null
         $available_slot = null;
     }
-
+    $enrollment;
     if ($available_slot) {
         // Update the enrollment in the student_classes table
         $sql_update_enrollment = "UPDATE student_classes SET $available_slot = '$class_id' WHERE student_id = '$student_id'";
 
         if ($conn->query($sql_update_enrollment) === TRUE) {
             echo "Student enrolled successfully";
+            $enrollment = "Success";
         } else {
             echo "Error: " . $sql_update_enrollment . "<br>" . $conn->error;
+            $enrollment = "Failed";
         }
     } else {
         echo "Error: Student already enrolled in maximum number of classes";
+        $enrollment = "Failed";
     }
+    header("Enrollment: {$enrollment}");
 
     // Close database connection
     $conn->close();
