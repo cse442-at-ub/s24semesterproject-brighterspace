@@ -1,5 +1,5 @@
 <?php
-require "PHPBackEnd\dbConnection.php";
+require "dbConnection.php";
 
 
 $conn = database();

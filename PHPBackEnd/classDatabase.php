@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $class_id = $_POST['class_id'];
 
     // Include database connection script
-    require "PHPBackEnd\dbConnection.php";
+    require "dbConnection.php";
 
     // Connect to the database
     $conn = database();
