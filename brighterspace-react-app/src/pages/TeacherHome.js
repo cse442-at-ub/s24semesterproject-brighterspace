@@ -1,4 +1,5 @@
 import TeacherAddClass from "../components/TeacherAddClass"
+import TeacherEnrollStudent from "../components/TeacherEnrollStudent"
 import Tabs from "../components/Tabs"
 import NotTeacher from "../components/NotTeacher"
 import { useState } from "react"
@@ -14,7 +15,7 @@ function Render () {
         <>
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
             {activeTab === "addclass" && <TeacherAddClass />}
-            {activeTab === "enrollstudents" && <><h1>enrollstudents</h1></>}
+            {activeTab === "enrollstudents" && <TeacherEnrollStudent />}
         </>
     )
 }
