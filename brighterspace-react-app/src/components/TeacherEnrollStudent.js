@@ -48,13 +48,15 @@ export default function TeacherEnrollStudent() {
     function recordClassroom(event) {
         const classroomValue = event.target.innerText;
         setSelectedClassroom(classroomValue);
+        document.getElementById("searchClassroomInput").value = "";
+        updateClassroomResult({ target: { value: '' } });
     }
 
     function recordStudent(event) {
         const studentValue = event.target.innerText;
         setSelectedStudent(studentValue);
-        document.getElementById("searchStudentInput").value = "";
-        setStudentResult({ target: { value: '' } });
+        //document.getElementById("searchStudentInput").value = "";
+        //updateStudentResult({ target: { value: '' } });
     }
 
     //these should recieve the 2 list(students and classroom)
@@ -63,6 +65,7 @@ export default function TeacherEnrollStudent() {
         .then(response => response.json())
         .then(arrayOfClassrooms => {
             console.log("Array of Classrooms:" + arrayOfClassrooms);
+            setClassroomList(arrayOfClassrooms);
         })
         .catch(error => console.error('Error:', error));
 
@@ -70,14 +73,48 @@ export default function TeacherEnrollStudent() {
         .then(response => response.json())
         .then(arrayOfStudents => {
             console.log("Array of Students:" + arrayOfStudents);
+            setStudentList(arrayOfStudents);
         })
         .catch(error => console.error('Error:', error));
-        console.log("Hello");
     }
 
     useEffect(() => {
         load();
     },[]);
+
+    function handleSubmission () {
+        //verify submission
+        if(selectedClassroom === "" || selectedStudent === ""){
+            console.log("invalid");
+            return;
+        }
+        if(!classroomList.includes(selectedClassroom) || !studentList.includes(selectedStudent)){
+            console.log("invalid");
+            return;
+        }
+        //send data
+        console.log("valid");
+        const dataToSend = {
+            classroom: selectedClassroom,
+            student: selectedStudent
+        };
+        fetch("http://localhost:8000/teacherAddClass.php", {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dataToSend)
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        //prep form again
+        setSelectedStudent("");
+    }
 
     return(
         <>
@@ -100,7 +137,7 @@ export default function TeacherEnrollStudent() {
                                     <li>
                                     <button onClick={recordClassroom}>{currClassroom}</button>
                                     </li>
-                                    ))
+                                ))
                                 }
                             </ul>
                         </div>
@@ -118,18 +155,24 @@ export default function TeacherEnrollStudent() {
                         <div class="searchResult">
                             <ul>
                                 {
-                                studentResult.map((currStudent) => (
+                                studentResult.map((currClassroom) => (
                                     <li>
-                                    <button onClick={recordStudent}>{currStudent}</button>
+                                    <button onClick={recordStudent}>{currClassroom}</button>
                                     </li>
-                                    ))
+                                ))
                                 }
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="confirmation">
-
+                    <div class="preview">
+                        <p>Selected Classroom: {selectedClassroom}</p>
+                        <p>Seletced Student: {selectedStudent}</p>
+                    </div>
+                    <div class="submitButton">
+                        <button onClick={handleSubmission}>Submit</button>
+                    </div>
                 </div>
             </div>
         </>

@@ -1,13 +1,9 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
-// Allow GET requests with content types application/json and application/x-www-form-urlencoded
 header("Access-Control-Allow-Methods: GET");
-// Allow headers Content-Type (if required for your request)
 header("Access-Control-Allow-Headers: Content-Type");
-// Allow credentials (if required)
 header("Access-Control-Allow-Credentials: true");
-// Set content type of response
 header("Content-Type: application/json");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $arrayOfClassrooms = array("CSE123-A", "CSE442-A", "CSE134-A", "CSE234-A", "MTH411-A", "MTH306-A", "EAS360-A");
         echo json_encode($arrayOfClassrooms);
     } elseif ($_GET['data'] === 'students') {
-        $arrayOfStudents = array("ASD", "3wr", "Joe", "Mama", "ASD", "WEF", "QWE");
+        $arrayOfStudents = array("ASD", "3wr", "Joe", "Mama", "qwe", "WEF", "QWE");
         echo json_encode($arrayOfStudents);
     }
 
