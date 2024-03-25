@@ -1,4 +1,4 @@
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import {HashRouter as Router,Routes,Route} from 'react-router-dom'
 //import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -12,6 +12,7 @@ import Sidebar from "./components/Sidebar";
 import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
+import Support from './pages/SupportPage'
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="/classes/class2" element={<ClassTwo/>} />
             <Route path="/classes/class3" element={<ClassThree/>} />
             <Route path="/calendar" element={<Calendar/>} />
+            <Route path="/support" element={<Support/>} />
           </Routes>
         </Router>
       </header>

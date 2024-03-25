@@ -61,5 +61,10 @@ export const SidebarData = [
         title: 'Calendar',
         path: '/calendar',
         icon: <FaIcons.FaCartPlus />,
+    },
+    {
+        title: 'Support',
+        path: '/support',
+        icon: <FaIcons.FaCartPlus />,
     }
 ]

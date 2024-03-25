@@ -26,8 +26,24 @@ export const ClassTwo = () => {
 
 export const ClassThree = () => {
     return (
-        <div className="Classes">
-            <h1>Classes/ClassThree</h1>
+        <div className="SupportContainer">
+            <div>
+                <h3>Submit your support ticket</h3>
+                <h3>First Name</h3>
+                <textarea/>
+                <h3>Last Name</h3>
+                <textarea></textarea>
+                <h3>Student ID</h3>
+                <textarea></textarea>
+                <h3>Student Email</h3>
+                <textarea></textarea>
+                <h3>Problem Type</h3>
+                <textarea></textarea>
+                <h3>Message Content</h3>
+                <textarea></textarea>
+                <button>submit</button>
+            </div>
+
         </div>
     )
 };
