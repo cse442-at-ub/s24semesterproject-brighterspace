@@ -1,5 +1,21 @@
 import React from 'react'
+import styled from 'styled-components'
 
+const SupportContainer = styled.div`
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: -200px;
+    
+`
+const InputFlexBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+`
 export const Classes = () => {
     return (
         <div className="Classes">
@@ -26,8 +42,8 @@ export const ClassTwo = () => {
 
 export const ClassThree = () => {
     return (
-        <div className="SupportContainer">
-            <div>
+        <SupportContainer>
+            <InputFlexBox>
                 <h3>Submit your support ticket</h3>
                 <h3>First Name</h3>
                 <textarea/>
@@ -42,8 +58,8 @@ export const ClassThree = () => {
                 <h3>Message Content</h3>
                 <textarea></textarea>
                 <button>submit</button>
-            </div>
+            </InputFlexBox>
 
-        </div>
+        </SupportContainer>
     )
 };
