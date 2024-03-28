@@ -24,7 +24,7 @@ if (isset($_POST["LoginButton"])) {
             http_response_code(200);
             header("Content-Type: application/json");
             header("AdminStatus: {$content}");
-            header("X-Content-Type-Options: nosnifff");
+            header("X-Content-Type-Options: nosniff");
             header("location: \brighterspace\student_home.php");
 
         }
