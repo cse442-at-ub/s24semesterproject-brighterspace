@@ -55,6 +55,11 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                         <button onClick={() => handleTabClick("assignments")} className={activeTab === "assignments" ? 'active' : ''}>Assignments</button>
                     </>
                 )}
+                {page === "TeacherClassPage" && (
+                    <>
+                        <button onClick={() => handleTabClick("syllabus")} className={activeTab === "syllabus" ? 'active' : ''}>Syllabus</button>
+                    </>
+                )}
             </div>
             <div class="profile">
                 {username}
