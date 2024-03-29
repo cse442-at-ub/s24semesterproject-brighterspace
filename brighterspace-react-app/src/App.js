@@ -12,6 +12,8 @@ import Sidebar from "./components/Sidebar";
 import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
+import DiscussionBoard from "./pages/DiscussionBoard";
+import DiscussionThread from "./pages/DiscussionThread";
 
 function App() {
 
@@ -34,6 +36,8 @@ function App() {
             <Route path="/classes/class2" element={<ClassTwo/>} />
             <Route path="/classes/class3" element={<ClassThree/>} />
             <Route path="/calendar" element={<Calendar/>} />
+            <Route path="/discussions" element={<DiscussionBoard/>} />
+            <Route path="/discussionthread" element={<DiscussionThread/>} />
           </Routes>
         </Router>
       </header>
