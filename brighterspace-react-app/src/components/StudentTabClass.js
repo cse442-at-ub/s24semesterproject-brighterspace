@@ -11,7 +11,8 @@ export default function StudentTabClass () {
     const [classList, setClassList] = useState(["If you see this, it means it didnt get the class list", "Here", "are", "some", "example", "classes", "CSE442", "CSE241", "MTH241"]);
 
     useEffect(() => {
-        fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/classDatabase.php?data=class_list", {
+        console.log("entered useEffect");
+        fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=class_list", {
             method: "GET"
         })
         .then(response => response.json())
@@ -22,7 +23,6 @@ export default function StudentTabClass () {
         .catch(error => {
             console.error("Error:", error);
         });
-        
     }, []);
 
     const navigate = useNavigate();

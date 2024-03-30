@@ -5,7 +5,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
 
     const [username, setUsername] = useState("Not ME");
 
-    fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/classDatabase.php?data=student_name", {
+    fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=student_name", {
         method: "GET"
     })
     .then(response => response.text())
