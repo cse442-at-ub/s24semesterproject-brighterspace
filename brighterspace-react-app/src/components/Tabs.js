@@ -10,7 +10,8 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
     })
     .then(response => response.text())
     .then(data => {
-        console.log("student_name:", data); //testing purposes (this should be unused)
+        console.log("student_name:", data); //testing purposes
+        setUsername(data);
     })
     .catch(error => {
         console.error("Error:", error);
