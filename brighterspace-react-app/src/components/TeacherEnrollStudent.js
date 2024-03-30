@@ -95,8 +95,8 @@ export default function TeacherEnrollStudent() {
         //send data
         console.log("valid");
         const dataToSend = {
-            classroom: selectedClassroom,
-            student: selectedStudent
+            class_id: selectedClassroom,
+            student_id: selectedStudent
         };
         fetch("http://localhost:8000/teacherAddClass.php", {
             method: "POST",
@@ -147,7 +147,7 @@ export default function TeacherEnrollStudent() {
                             <input
                                 id="searchStudentInput"
                                 type="text"
-                                placeholder="Search Class"
+                                placeholder="Search Student"
                                 onInput={updateStudentResult}
                                 onFocus={highlightText}
                             />

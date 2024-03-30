@@ -9,7 +9,9 @@ header("Content-Type: application/json");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $input = json_decode(file_get_contents("php://input"));
-    echo "Received string from client: " . json_encode($input);
+    $student_id = $input['student_id'];
+    $class_id = $input['class_id'];
+    echo "Received string from client: " . json_encode($student_id);
 
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 

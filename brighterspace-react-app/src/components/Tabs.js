@@ -8,19 +8,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
     fetch("http://localhost:8000/studentHomeDatabase.php", {
         method: "GET"
     })
-    .then(response => {
-        if (response.headers.has("StudentName") && response.headers.has("ClassList")) {
-
-        const studentName = response.headers.get("StudentName");
-        setUsername(studentName);
-
-        console.log("Student Name:", studentName); //testing purposes
-        } else {
-        console.error("Missing headers in response");
-        }
-        
-        return response.json();
-    })
+    .then(response => response.text())
     .then(data => {
         console.log("data:", data); //testing purposes (this should be unused)
     })
