@@ -61,7 +61,7 @@ export default function TeacherEnrollStudent() {
 
     //these should recieve the 2 list(students and classroom)
     function load () {
-        fetch("http://localhost:8000/TeacherEnrollStudentsTest.php?data=classrooms")
+        fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/classNames.php")
         .then(response => response.json())
         .then(arrayOfClassrooms => {
             console.log("Array of Classrooms:" + arrayOfClassrooms);
@@ -69,7 +69,7 @@ export default function TeacherEnrollStudent() {
         })
         .catch(error => console.error('Error:', error));
 
-        fetch("http://localhost:8000/TeacherEnrollStudentsTest.php?data=students")
+        fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/studentNames.php")
         .then(response => response.json())
         .then(arrayOfStudents => {
             console.log("Array of Students:" + arrayOfStudents);
@@ -95,10 +95,10 @@ export default function TeacherEnrollStudent() {
         //send data
         console.log("valid");
         const dataToSend = {
-            classroom: selectedClassroom,
-            student: selectedStudent
+            class_id: selectedClassroom,
+            student_id: selectedStudent
         };
-        fetch("http://localhost:8000/teacherAddClass.php", {
+        fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/classDatabase.php", {
             method: "POST",
             headers: {
             "Content-Type": "application/json"

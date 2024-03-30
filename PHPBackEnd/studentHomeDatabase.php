@@ -1,4 +1,9 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
 require "dbConnection.php";
 //session_start();
 //$_SESSION["student_id"] = "taranchana";
@@ -16,7 +21,7 @@ if ($result_names->num_rows > 0) {
     while($row = $result_names->fetch_assoc()) {
         $student_name = $row["name"];
     }
-    header("StudentName: {$student_name}");
+    # header("StudentName: {$student_name}");
 } else {
     echo "0 results found";
 }
@@ -31,9 +36,16 @@ if ($result_classes->num_rows > 0) {
     while($row = $result_classes->fetch_assoc()) {
         $classes[] = $row["class_name"];  
     }
-    header("ClassList: {$classes}");
+    # header("ClassList: {$classes}");
     exit();
 }
+
+if ($_GET['data'] === 'student_name') {
+    echo json_encode($student_name);
+} elseif ($_GET['data'] === 'class_list') {
+    echo json_encode($classes);
+}
+
 // close connection to database
 $conn->close();
 ?>

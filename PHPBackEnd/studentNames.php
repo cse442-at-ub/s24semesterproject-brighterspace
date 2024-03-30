@@ -1,5 +1,11 @@
 <?php
-require "PHPBackEnd\dbConnection.php";
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
+
+require "dbConnection.php";
 
 
 $conn = database();
@@ -14,9 +20,11 @@ if ($result_names->num_rows > 0) {
     while($row = $result_names->fetch_assoc()) {
         $names[] = $row["name"];
     }
-} else {
-    echo "0 results found";
 }
-header("StudentNames: {$names}");
+
+header('Content-Type: application/json');
+echo json_encode($names);
+# header("StudentNames: {$names}");
 # close connection to database
 $conn->close();
+?>
