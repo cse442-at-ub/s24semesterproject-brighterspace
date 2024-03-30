@@ -9,24 +9,12 @@ export default function StudentTabClass () {
 
     const [classList, setClassList] = useState(["If you see this, it means it didnt get the class list", "Here", "are", "some", "example", "classes", "CSE442", "CSE241", "MTH241"]);
 
-    fetch("http://localhost:8000/studentHomeDatabase.php", {
+    fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/classDatabase.php?data=class_list", {
         method: "GET"
     })
-    .then(response => {
-        if (response.headers.has("StudentName") && response.headers.has("ClassList")) {
-
-        const returnedClassList = response.headers.get("ClassList");
-        setClassList(returnedClassList);
-
-        console.log("Class List:", returnedClassList); //testing purposes
-        } else {
-        console.error("Missing headers in response");
-        }
-        
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        console.log("data:", data); //testing purposes (this should be unused)
+        console.log("class_list:", data); //testing purposes (this should be unused)
     })
     .catch(error => {
         console.error("Error:", error);

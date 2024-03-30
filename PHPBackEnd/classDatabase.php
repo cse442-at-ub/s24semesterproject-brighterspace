@@ -1,20 +1,26 @@
 <?php
 session_start();
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate input
-    $student_id = $_POST['student_id'];
-    $class_id = $_POST['class_id'];
+    $input = json_decode(file_get_contents("php://input"));
+    $student_id = $input->student_id;
+    $class_id = $input->class_id;
 
     // Include database connection script
-    require "PHPBackEnd\dbConnection.php";
+    require "dbConnection.php";
 
     // Connect to the database
     $conn = database();
 
     // Check which class slot is available for the student
-    $sql_check_slot = "SELECT * FROM student_classes WHERE student_id = '$student_id'";
+    $sql_check_slot = "SELECT * FROM student_classes WHERE id = '$student_id'";
     $result_check_slot = $conn->query($sql_check_slot);
 
     $available_slot = null;
@@ -49,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($available_slot) {
         // Update the enrollment in the student_classes table
-        $sql_update_enrollment = "UPDATE student_classes SET $available_slot = '$class_id' WHERE student_id = '$student_id'";
+        $sql_update_enrollment = "UPDATE student_classes SET $available_slot = '$class_id' WHERE id = '$student_id'";
 
         if ($conn->query($sql_update_enrollment) === TRUE) {
             echo "Student enrolled successfully";
