@@ -12,6 +12,7 @@ import Sidebar from "./components/Sidebar";
 import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
+import TaskManager from "./pages/TaskManager";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="/classes/class2" element={<ClassTwo/>} />
             <Route path="/classes/class3" element={<ClassThree/>} />
             <Route path="/calendar" element={<Calendar/>} />
+            <Route path="/task-manager" element={<TaskManager/>} />
           </Routes>
         </Router>
       </header>
