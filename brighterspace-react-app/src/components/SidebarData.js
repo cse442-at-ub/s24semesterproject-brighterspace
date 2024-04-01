@@ -60,6 +60,11 @@ export const SidebarData = [
     {
         title: 'Calendar',
         path: '/calendar',
-        icon: <FaIcons.FaCartPlus />,
+        icon: <FaIcons.FaCalendarAlt />,
+    },
+    {
+        title: 'Task Manager',
+        path: '/task-manager',
+        icon: <FaIcons.FaTasks />,
     }
 ]
