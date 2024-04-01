@@ -4,6 +4,7 @@ import * as AiIcons from 'react-icons/ai'
 import * as IoIcons from 'react-icons/io'
 import * as RiIcons from 'react-icons/ri'
 import * as Fa6 from "react-icons/fa6";
+import "../styles/TaskManager.css"
 
 function TaskManager(){
     const[tasks,setTasks] = useState(["DO MTH101 HW","DO CSE442 TASK"]);

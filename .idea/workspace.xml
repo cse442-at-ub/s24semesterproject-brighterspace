@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad737c7b-548e-4ceb-89fd-8629598556d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/brighterspace-react-app/src/styles/TaskManager.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/brighterspace-react-app/src/components/SidebarData.js" beforeDir="false" afterPath="$PROJECT_DIR$/brighterspace-react-app/src/components/SidebarData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/brighterspace-react-app/src/pages/TaskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/brighterspace-react-app/src/pages/TaskManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "TaskManager-#63",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -49,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711991894591</updated>
-      <workItem from="1711991896154" duration="967000" />
+      <workItem from="1711991896154" duration="2624000" />
     </task>
     <servers />
   </component>
