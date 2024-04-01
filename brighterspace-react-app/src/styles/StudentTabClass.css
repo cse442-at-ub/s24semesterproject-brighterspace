@@ -50,4 +50,6 @@
 
 .classes li:hover{
     background-color: #0f4632;
+    font-size: 110%;
+    color: white;
 }

@@ -1,4 +1,4 @@
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import {HashRouter as Router,Routes,Route} from 'react-router-dom'
 //import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -8,6 +8,7 @@ import StudentHome from './pages/StudentHome'
 import './App.css'
 import TeacherHome from './pages/TeacherHome'
 import StudentClassPage from './pages/StudentClassPage'
+import TeacherClassPage from './pages/TeacherClassPage'
 import Sidebar from "./components/Sidebar";
 import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
@@ -28,6 +29,7 @@ function App() {
             <Route path="/student-home" element={<StudentHome  />} />
             <Route path="/teacher-home" element={<TeacherHome  />} />
             <Route path="/class/:classId" element={<StudentClassPage  />} />
+            <Route path="/classroom/:classId" element={<TeacherClassPage  />} />
             <Route path="/overview" element={<Overview/>} />
             <Route path="/classes" element={<Classes/>} />
             <Route path="/classes/class1" element={<ClassOne/>} />

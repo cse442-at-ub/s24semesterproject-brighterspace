@@ -7,13 +7,12 @@ import { useEffect } from "react";
 function Render() {
     const {classId} = useParams()
     const [activeTab, setActiveTab] = useState("classes"); // for tabs
-    const page = "StudentClassPage"
+    const page = "TeacherClassPage"
 
     return(
         <>
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
-            {activeTab === "grades" && <><h1>grades</h1></>}
-            {activeTab === "assignments" && <><h1>assignments</h1></>}
+            {activeTab === "syllabus" && <><h1>syllabus</h1></>}
             <h1>Welcome to {classId}</h1>
         </>
     )

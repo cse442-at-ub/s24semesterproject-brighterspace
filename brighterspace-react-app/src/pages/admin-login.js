@@ -29,7 +29,7 @@ const AdminLogin = (props) => {
             .then(data => {
                let split = data.split(',')
                 if (split[0].includes("True")){
-                    window.location.href = 'http://localhost:3000/student-home'
+                    window.location.href = 'http://localhost:3000/TeacherHome'
                 }
             })
 

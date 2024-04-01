@@ -14,8 +14,8 @@ function Render () {
         <>
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
             {activeTab === "classes" && <StudentTabClass />}
-            {activeTab === "allgrades" && <></>}
-            {activeTab === "allassignments" && <></>}
+            {activeTab === "allgrades" && <><h1>allgrades</h1></>}
+            {activeTab === "allassignments" && <><h1>allassignments</h1></>}
         </>
     )
 }
