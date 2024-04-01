@@ -1,52 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="26984650-11bc-4b86-a38f-176b4c747615" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/brighterspace-react-app/src/pages/TaskManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brighterspace-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/brighterspace-react-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brighterspace-react-app/src/components/SidebarData.js" beforeDir="false" afterPath="$PROJECT_DIR$/brighterspace-react-app/src/components/SidebarData.js" afterDir="false" />
-    </list>
+    <list default="true" id="ad737c7b-548e-4ceb-89fd-8629598556d0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;ajfeng4&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="f0adcd77-c7c4-4319-9bf1-82540f09cc2d" />
-        <option name="url" value="https://github.com/cse442-at-ub/s24semesterproject-brighterspace.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="2eMnv77QfCcACowg9krb9UTp8ar" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2eVZptzs0om9kRpuLWkH5tAB4jW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,28 +24,23 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "TaskManager-#63",
-    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2023.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="26984650-11bc-4b86-a38f-176b4c747615" name="Changes" comment="" />
-      <created>1711723544071</created>
+      <changelist id="ad737c7b-548e-4ceb-89fd-8629598556d0" name="Changes" comment="" />
+      <created>1711991894591</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1711723544071</updated>
-      <workItem from="1711723545424" duration="332000" />
-      <workItem from="1711725942357" duration="7902000" />
-      <workItem from="1711738768290" duration="460000" />
-      <workItem from="1711805164255" duration="4059000" />
+      <updated>1711991894591</updated>
+      <workItem from="1711991896154" duration="345000" />
     </task>
     <servers />
   </component>
