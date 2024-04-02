@@ -13,7 +13,7 @@ function Render() {
         <>
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
             {activeTab === "syllabus" && <><h1>syllabus</h1></>}
-            <h1>Welcome to {classId}</h1>
+            <h1>Teacher view for classroom: {classId}</h1>
         </>
     )
 }
