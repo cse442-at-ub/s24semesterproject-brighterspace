@@ -14,6 +14,7 @@ import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
 import TaskManager from "./pages/TaskManager";
+import Register from "./pages/register";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
             <Route path="/classes/class3" element={<ClassThree/>} />
             <Route path="/calendar" element={<Calendar/>} />
             <Route path="/task-manager" element={<TaskManager/>} />
+            <Route path="/register" element={<Register/>}/>
           </Routes>
         </Router>
       </header>
