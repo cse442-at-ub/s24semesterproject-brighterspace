@@ -15,14 +15,18 @@ import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
 import TaskManager from "./pages/TaskManager";
 import Register from "./pages/register";
+import ChangeSidebar from "./components/ChangeSidebar";
 
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
+
         <Router>
+          <ChangeSidebar>
           <Sidebar/>
+          </ChangeSidebar>
           <Routes>
             <Route path="/" element={<Home  />} />
             <Route path="/login" element={<Login  />} />
