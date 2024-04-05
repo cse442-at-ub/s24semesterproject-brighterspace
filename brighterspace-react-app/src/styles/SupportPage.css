@@ -41,3 +41,12 @@
     cursor: pointer;
 
 }
+
+.support_container{
+    height: 75px;
+    width: 465px;
+    background: lightgrey;
+    border-radius: 4px;
+    margin: 10px 0;
+    word-break: break-all;
+}
