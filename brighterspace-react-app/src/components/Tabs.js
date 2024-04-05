@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/Tabs.css";
+import { Link, Navigate } from "react-router-dom";
 
 export default function Tabs({ activeTab, setActiveTab, page }) {
 
@@ -51,7 +52,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 )}
             </div>
             <div class="profile">
-                {username}
+                <Link to="/profile">{username}</Link>
             </div>
         </nav>
     )

@@ -14,6 +14,7 @@ import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
 import TaskManager from "./pages/TaskManager";
+import FileUpload from './pages/ProfileSetting'
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/teacher-home" element={<TeacherHome  />} />
             <Route path="/class/:classId" element={<StudentClassPage  />} />
             <Route path="/classroom/:classId" element={<TeacherClassPage  />} />
+            <Route path="/profile" element={<FileUpload />} />
             <Route path="/overview" element={<Overview/>} />
             <Route path="/classes" element={<Classes/>} />
             <Route path="/classes/class1" element={<ClassOne/>} />
