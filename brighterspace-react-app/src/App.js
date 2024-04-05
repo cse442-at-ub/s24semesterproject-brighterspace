@@ -16,6 +16,7 @@ import Calendar from './pages/Calendar'
 import TaskManager from "./pages/TaskManager";
 import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
+import SupportPage from "./pages/SupportPage"
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/calendar" element={<Calendar/>} />
             <Route path="/task-manager" element={<TaskManager/>} />
             <Route path="/register" element={<Register/>}/>
+            <Route path="/support" element={<SupportPage/>}/>
           </Routes>
         </Router>
       </header>
