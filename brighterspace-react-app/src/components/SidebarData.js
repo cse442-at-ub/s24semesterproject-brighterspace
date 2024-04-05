@@ -3,6 +3,8 @@ import * as FaIcons from 'react-icons/fa'
 import * as AiIcons from 'react-icons/ai'
 import * as IoIcons from 'react-icons/io'
 import * as RiIcons from 'react-icons/ri'
+import * as BiIcons from 'react-icons/bi'
+import * as CiIcons from 'react-icons/ci'
 
 export const SidebarData = [
     {
@@ -66,5 +68,16 @@ export const SidebarData = [
         title: 'Task Manager',
         path: '/task-manager',
         icon: <FaIcons.FaTasks />,
+    },
+    {
+        title: 'Support',
+        path: '/support',
+        icon: <BiIcons.BiSupport/>
+
+    },
+    {
+        title: 'Log Out',
+        path: '/log-out',
+        icon: <CiIcons.CiLogout/>
     }
 ]

@@ -14,15 +14,20 @@ import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
 import TaskManager from "./pages/TaskManager";
-import FileUpload from './pages/ProfileSetting'
+import Register from "./pages/register";
+import ChangeSidebar from "./components/ChangeSidebar";
+import SupportPage from "./pages/SupportPage"
 
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
+
         <Router>
+          <ChangeSidebar>
           <Sidebar/>
+          </ChangeSidebar>
           <Routes>
             <Route path="/" element={<Home  />} />
             <Route path="/login" element={<Login  />} />
@@ -40,6 +45,8 @@ function App() {
             <Route path="/classes/class3" element={<ClassThree/>} />
             <Route path="/calendar" element={<Calendar/>} />
             <Route path="/task-manager" element={<TaskManager/>} />
+            <Route path="/register" element={<Register/>}/>
+            <Route path="/support" element={<SupportPage/>}/>
           </Routes>
         </Router>
       </header>
