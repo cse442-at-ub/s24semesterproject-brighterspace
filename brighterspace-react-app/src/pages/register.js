@@ -52,7 +52,7 @@ const Register = (props) => {
     return (
         <div className={'mainContainer'}>
             <div className={'titleContainer'}>
-                <div>Create Assignment</div>
+                <div>Register your Account</div>
             </div>
             <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
