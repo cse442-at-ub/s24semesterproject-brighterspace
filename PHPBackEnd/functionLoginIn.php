@@ -15,6 +15,7 @@ if (isset($_POST["LoginButton"])) {
 
         if (password_verify($password,$rows[3]) === true && $rows[4] == "0"){
             session_start();
+            $_SESSION['username'] = $rows[1]; // store the username in session variable
             setcookie('user', json_encode([
                 'username' => $rows[1],
                 'password' => $rows[3]
