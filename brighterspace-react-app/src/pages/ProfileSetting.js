@@ -38,7 +38,7 @@ export default function FileUpload() {
             setBio(data);
         })
         .catch(error => {
-            console.error('Error fetching profile picture:', error);
+            console.error('Error fetching bio:', error);
         });
     }
 
