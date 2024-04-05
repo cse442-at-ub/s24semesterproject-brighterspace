@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function FileUpload() {
+export default function Profile() {
     const [profilePicture, setProfilePicture] = useState(null);
     const [selectedFile, setSelectedFile] = useState(null);
     const [bio, setBio] = useState("Hello");

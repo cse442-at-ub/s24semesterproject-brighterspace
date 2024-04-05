@@ -17,6 +17,7 @@ import TaskManager from "./pages/TaskManager";
 import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
 import SupportPage from "./pages/SupportPage"
+import Profile from './pages/ProfileSetting'
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
             <Route path="/teacher-home" element={<TeacherHome  />} />
             <Route path="/class/:classId" element={<StudentClassPage  />} />
             <Route path="/classroom/:classId" element={<TeacherClassPage  />} />
-            <Route path="/profile" element={<FileUpload />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/overview" element={<Overview/>} />
             <Route path="/classes" element={<Classes/>} />
             <Route path="/classes/class1" element={<ClassOne/>} />
