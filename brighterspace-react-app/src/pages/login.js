@@ -26,7 +26,7 @@ const Login = (props) => {
             }
             const credentialsJSON = {"name": username, "pass": pass};
             //TODO update path for server
-            request.open("POST", "http://localhost:3000/adminLoginIn.php");
+            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php");
             request.send(JSON.stringify(credentialsJSON));
         }
     }
