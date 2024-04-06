@@ -36,9 +36,9 @@ const Login = (props) => {
             <div className={'titleContainer'}>
                 <div>Login</div>
             </div>
-            <div className={'inputContainer'}>
+            {/* <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
-            </div>
+            </div> */}
             <br/>
             <div className={'inputContainer'}>
                 <input
