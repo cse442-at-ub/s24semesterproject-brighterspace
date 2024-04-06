@@ -30,7 +30,7 @@ const Settings = (props) => {
             }
             const creatAssignJSON = {"old_password": old_pass_input.value, "new_password": pass_input.value};
             //TODO replace with settings backend
-            request.open("POST", "http://localhost:3000/functionSignUp.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/functionSignUp.php");
             request.send(JSON.stringify(creatAssignJSON));
         }
     }
@@ -51,7 +51,7 @@ const Settings = (props) => {
             const creatAssignJSON = {"pronoun": pronoun_input.value};
             //request.open("POST", "http://localhost:3000/PHPBackEnd/functionLoginIn.php");
             //replace below with settings backend
-            request.open("POST", "http://localhost:3000/functionSignUp.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/functionSignUp.php");
             request.send(JSON.stringify(creatAssignJSON));
         }
     }

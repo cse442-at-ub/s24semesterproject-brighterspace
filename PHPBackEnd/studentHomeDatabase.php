@@ -6,8 +6,8 @@ header("Access-Control-Allow-Credentials: true");
 header("Content-Type: application/json");
 require "dbConnection.php";
 session_start();
-$_SESSION["student_id"] = 'taranchana';
-$_SESSION["name"] = 'Taran';
+//$_SESSION["student_id"] = 'taranchana';
+//$_SESSION["name"] = 'Taran';
 
 $conn = database();
 $student_name = "nobody";

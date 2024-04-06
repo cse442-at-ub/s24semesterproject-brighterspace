@@ -19,7 +19,7 @@ var classroomName = "";
 
 //input
 var classIdList = []; //this should be the php input
-fetch("http://localhost:8000/teacherAddClass.php", {
+fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/teacherAddClass.php", {
   method: "GET"
 })
 .then(response => response.json())
@@ -127,7 +127,7 @@ export default function TeacherAddClass() {
         password: password
       };
       
-      fetch("http://localhost:8000/teacherAddClass.php", {
+      fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/teacherAddClass.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

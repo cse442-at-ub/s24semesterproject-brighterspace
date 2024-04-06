@@ -12,7 +12,7 @@ export default function StudentTabClass () {
 
     useEffect(() => {
         console.log("entered useEffect");
-        fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=class_list", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=class_list", {
             method: "GET"
         })
         .then(response => response.json())

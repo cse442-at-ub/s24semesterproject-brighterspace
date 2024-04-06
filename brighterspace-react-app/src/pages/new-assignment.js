@@ -23,7 +23,7 @@ const NewAssignment = (props) => {
                                         "assignment_name": assignment_input.value,
                                         "max_points": points_input.value};
         //request.open("POST", "http://localhost:3000/PHPBackEnd/functionLoginIn.php");
-        request.open("POST", "http://localhost:3000/functionLoginIn.php");
+        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/functionLoginIn.php");
         request.send(JSON.stringify(creatAssignJSON));
     }
 

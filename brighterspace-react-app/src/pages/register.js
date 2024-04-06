@@ -43,7 +43,7 @@ const Register = (props) => {
                 "email": email,
                 "password": pass};
             //request.open("POST", "http://localhost:3000/PHPBackEnd/functionLoginIn.php");
-            request.open("POST", "http://localhost:3000/functionSignUp.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/functionSignUp.php");
             request.send(JSON.stringify(creatAssignJSON));
         }
 

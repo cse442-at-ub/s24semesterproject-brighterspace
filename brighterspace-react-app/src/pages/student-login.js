@@ -24,12 +24,12 @@ const StudentLogin = (props) => {
             header: {'Content-Type': 'application/json'},
             body: JSON.stringify(inputs)
         }
-        await fetch('http://localhost/BrighterSpace/PHPBackEnd/adminLoginIn.php', requestHeader)
+        await fetch('https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php', requestHeader)
             .then(r => r.text())
             .then(data => {
                 let split = data.split(',')
                 if (split[0].includes("True")){
-                    window.location.href = 'http://localhost:3000/student-home'
+                    window.location.href = 'https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/brighterspace-react-app/build/student-home'
                 }
             })
 

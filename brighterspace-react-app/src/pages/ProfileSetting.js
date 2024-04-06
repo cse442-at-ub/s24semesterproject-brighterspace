@@ -6,7 +6,7 @@ export default function Profile() {
     const [bio, setBio] = useState("Hello");
 
     const fetchPicture = () => {
-        fetch("http://localhost:8000/profilePictureTest.php", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=profile_picture", {
             method: "GET"
         })
         .then(response => {
@@ -25,7 +25,7 @@ export default function Profile() {
     }
 
     const fetchBio = () => {
-        fetch("http://localhost:8000/profilePictureTest.php?data=bio", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/profilePage.php?data=bio", {
             method: "GET"
         })
         .then(response => {
@@ -56,12 +56,12 @@ export default function Profile() {
         const newBio = event.target.value;
         setBio(newBio);
         console.log("Your bio was changed to:", newBio);
-        fetch("http://localhost:8000/profilePictureTest.php", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php", {
             method: "POST",
             headers: {
-                "Content-Type": "text/plain"
+                "Content-Type": "application/x-www-form-urlencoded"
             },
-            body: newBio
+            body: `bio=${encodeURIComponent(newBio)}`
         })
         .then(response => {
             if (!response.ok) {
@@ -83,7 +83,7 @@ export default function Profile() {
             //Fetch POST the selectedFile
             const formData = new FormData();
             formData.append('file', selectedFile);
-            fetch("http://localhost:8000/profilePictureTest.php", {
+            fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php", {
                 method: "POST",
                 body: formData
             })
