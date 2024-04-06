@@ -19,9 +19,18 @@ const Login = (props) => {
         }
         else{
             const request = new XMLHttpRequest();
+            var backendresponse = ""
             request.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     console.log(this.response);
+                    backendresponse = this.response
+                    if(backendresponse === "False"){
+                        setPasswordError('Incorrect username or password')
+                    } else if(backendresponse === "True, Admin: 0") {
+                        navigate('/student-home')
+                    } else if(backendresponse === "True, Admin: 1"){
+                        navigate('/teacher-home')
+                    }
                 }
             }
             const credentialsJSON = {"name": username, "pass": pass};
