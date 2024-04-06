@@ -8,7 +8,7 @@ const ChangeSidebar = ({children}) => {
 
     useEffect(()=> {
         console.log("this is location",location)
-        if(location.pathname == '/login'){
+        if(location.pathname == '/student-home'){
             setshowsidebar(false)
 
         }

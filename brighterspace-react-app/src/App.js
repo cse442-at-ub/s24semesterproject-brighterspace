@@ -1,4 +1,5 @@
 import {HashRouter as Router,Routes,Route} from 'react-router-dom'
+import {Navigate} from 'react-router-dom'
 //import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
@@ -30,7 +31,7 @@ function App() {
           <Sidebar/>
           </ChangeSidebar>
           <Routes>
-            <Route path="/" element={<Home  />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login  />} />
             <Route path="/student-login" element={<StudentLogin  />} />
             <Route path="/admin-login" element={<AdminLogin  />} />
