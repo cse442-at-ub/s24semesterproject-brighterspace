@@ -19,6 +19,7 @@ import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
 import SupportPage from "./pages/SupportPage"
 import Profile from './pages/ProfileSetting'
+import Settings from './pages/settings'
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
             <Route path="/task-manager" element={<TaskManager/>} />
             <Route path="/register" element={<Register/>}/>
             <Route path="/support" element={<SupportPage/>}/>
+            <Route path="/settings" element={<Settings/>}/>
           </Routes>
         </Router>
       </header>

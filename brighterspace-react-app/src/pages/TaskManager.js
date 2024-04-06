@@ -7,7 +7,7 @@ import * as Fa6 from "react-icons/fa6";
 import "../styles/TaskManager.css"
 
 function TaskManager(){
-    const[tasks,setTasks] = useState(["DO MTH101 HW","DO CSE442 TASK"]);
+    const[tasks,setTasks] = useState([]);
     const[newTask, setNewTask] = useState("");
 
     function handleInputChange(event){
