@@ -6,7 +6,7 @@ export default function Profile() {
     const [bio, setBio] = useState("Hello");
 
     const fetchPicture = () => {
-        fetch("http://localhost:8000/profilePictureTest.php", {
+        fetch("http://localhost:8000/profilePictureTest.php?data=picture", {
             method: "GET"
         })
         .then(response => {
@@ -54,27 +54,36 @@ export default function Profile() {
 
     const handleInputChange = (event) => {
         const newBio = event.target.value;
-        setBio(newBio);
-        console.log("Your bio was changed to:", newBio);
-        fetch("http://localhost:8000/profilePictureTest.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "text/plain"
-            },
-            body: newBio
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        // .then(data => {
-        //     console.log(data);
-        // })
-        .catch(error => {
-            console.error('Error sending data:', error);
-        });
+        const dataToSend = {
+            bio: newBio
+        };
+        if(newBio.length > 200){
+            // getElementById("bio").value = bio
+            console.log("200");
+            return;
+        }else{
+            setBio(newBio);
+            console.log("Your bio was changed to:", newBio);
+            fetch("http://localhost:8000/profilePictureTest.php?data=bio", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify(dataToSend)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error sending data:', error);
+            });
+        }
     };
 
     const handleUpdate = () => {
@@ -83,7 +92,7 @@ export default function Profile() {
             //Fetch POST the selectedFile
             const formData = new FormData();
             formData.append('file', selectedFile);
-            fetch("http://localhost:8000/profilePictureTest.php", {
+            fetch("http://localhost:8000/ProfilePictureTest.php?data=picture", {
                 method: "POST",
                 body: formData
             })
@@ -117,7 +126,7 @@ export default function Profile() {
             <button onClick={handleUpdate}>Update Picture</button>
             <br></br>
             <h2>ABOUT ME</h2>
-            <input type="text" value={bio} onChange={handleInputChange}/>
+            <input id="bio" type="text" value={bio} onChange={handleInputChange}/>
         </div>
     );
 }
