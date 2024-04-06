@@ -19,7 +19,7 @@ var classroomName = "";
 
 //input
 var classIdList = []; //this should be the php input
-fetch("http://localhost:8000/teacherAddClass.php", {
+fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/teacherAddClass", {
   method: "GET"
 })
 .then(response => response.json())
@@ -38,6 +38,8 @@ export default function TeacherAddClass() {
   const [selectedClassName, setSelectedClassName] = useState(""); //return the name of the classroom
   const [generatedClassroomName, setGeneratedClassroomName] = useState("");
   const [selectedPassword, setSelectedPassword] = useState(""); //return password for the class
+
+  const [valid, setValid] = useState("");
 
   function updateSearchResult(event) {
     const searchValue = event.target.value.toUpperCase();
@@ -117,17 +119,19 @@ export default function TeacherAddClass() {
     //stop if invalid
     if(!validate()){
       console.log("invalid");
+      setValid("Invalid!");
       return;
     }
     //fetch post
     else{
+      setValid("");
       const dataToSend = {
         classId: classId,
         section: className,
         password: password
       };
       
-      fetch("http://localhost:8000/teacherAddClass.php", {
+      fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/teacherAddClass", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -201,6 +205,7 @@ export default function TeacherAddClass() {
         <div class="confirmation">
           <h2>{generatedClassroomName}</h2>
           <button onClick={output}>Submit</button>
+          <p>{valid}</p>
         </div>
       </div>
     </>

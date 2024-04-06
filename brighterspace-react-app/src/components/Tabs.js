@@ -4,9 +4,9 @@ import { Link, Navigate } from "react-router-dom";
 
 export default function Tabs({ activeTab, setActiveTab, page }) {
 
-    const [username, setUsername] = useState("Overview");
+    const [username, setUsername] = useState("InvalidUser");
 
-    fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=student_name", {
+    fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase?data=student_name", {
         method: "GET"
     })
     .then(response => response.text())

@@ -4,14 +4,16 @@ import { useEffect, useState } from "react"
 
 export default function TeacherEnrollStudent() {
 
-    const [classroomList, setClassroomList] = useState(["This", "is", "tesing", "for", "class", "list"]);
-    const [studentList, setStudentList] = useState(["This", "is", "tesing", "for", "student", "list"]);
+    const [classroomList, setClassroomList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz"]);
+    const [studentList, setStudentList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz"]);
 
     const [classroomResult, setClassroomResult] = useState([]);
     const [studentResult, setStudentResult] = useState([]);
 
     const [selectedClassroom, setSelectedClassroom] = useState("");
     const [selectedStudent, setSelectedStudent] = useState("");
+
+    const [valid, setValid] = useState("");
 
     function search(){
 
@@ -86,14 +88,17 @@ export default function TeacherEnrollStudent() {
         //verify submission
         if(selectedClassroom === "" || selectedStudent === ""){
             console.log("invalid");
+            setValid("Invalid - At least One of the input is empty");
             return;
         }
         if(!classroomList.includes(selectedClassroom) || !studentList.includes(selectedStudent)){
             console.log("invalid");
+            setValid("Invalid - Inputs aren't from the search bar");
             return;
         }
         //send data
         console.log("valid");
+        setValid("");
         const dataToSend = {
             class_id: selectedClassroom,
             student_id: selectedStudent
@@ -172,6 +177,7 @@ export default function TeacherEnrollStudent() {
                     </div>
                     <div class="submitButton">
                         <button onClick={handleSubmission}>Submit</button>
+                        <p>{valid}</p>
                     </div>
                 </div>
             </div>

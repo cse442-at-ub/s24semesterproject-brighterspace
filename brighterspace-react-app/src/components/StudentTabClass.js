@@ -8,8 +8,7 @@ import { useEffect } from "react";
 
 export default function StudentTabClass () {
 
-    const [classList, setClassList] = useState(["If you see this, it means it didnt get the class list", "Here", "are", "some", "example", "classes", "CSE442", "CSE241", "MTH241"]);
-
+    const [classList, setClassList] = useState(["If you see this, it means it didnt get the class list"]);
     useEffect(() => {
         console.log("entered useEffect");
         fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=class_list", {
