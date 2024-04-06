@@ -41,7 +41,7 @@ function verify()
             updateDataBase($hash, $nameAndPassword[0]);
             setcookie($cookieName, $cookieValue, time() + (3600), '/', '', true, true);
             setcookie('Admin', $dataBaseRows[3], time() + (3600), '/', '', true, true);
-            echo "True";
+            echo "True, Admin: $dataBaseRows[3]";
 
         }
     } else {
@@ -97,4 +97,4 @@ function addAdminUser($email, $password, $status, $name)
     }
 
 }
-//addAdminUser('HelloWorld123', 'HelloWorld123', '1', 'Mohammed');
+//addAdminUser('HelloWorld1223', 'HelloWorld123', '0', 'Mohammed');
