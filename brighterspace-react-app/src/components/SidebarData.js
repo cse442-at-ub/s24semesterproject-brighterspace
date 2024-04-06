@@ -5,6 +5,7 @@ import * as IoIcons from 'react-icons/io'
 import * as RiIcons from 'react-icons/ri'
 import * as BiIcons from 'react-icons/bi'
 import * as CiIcons from 'react-icons/ci'
+import * as CgIcons from 'react-icons/cg'
 
 export const SidebarData = [
     {
@@ -70,11 +71,18 @@ export const SidebarData = [
         icon: <FaIcons.FaTasks />,
     },
     {
+        title: 'Profile',
+        path: '/profile',
+        icon: <CgIcons.CgProfile/>
+
+    },
+    {
         title: 'Support',
         path: '/support',
         icon: <BiIcons.BiSupport/>
 
     },
+
     {
         title: 'Log Out',
         path: '/log-out',
