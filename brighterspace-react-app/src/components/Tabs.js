@@ -4,7 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 
 export default function Tabs({ activeTab, setActiveTab, page }) {
 
-    const [username, setUsername] = useState("Not ME");
+    const [username, setUsername] = useState("Overview");
 
     fetch("http://localhost/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=student_name", {
         method: "GET"
@@ -52,7 +52,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 )}
             </div>
             <div class="profile">
-                <Link to="/profile">{username}</Link>
+                <Link to="/overview">{username}</Link>
             </div>
         </nav>
     )

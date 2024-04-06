@@ -1,11 +1,11 @@
 <?php
 require "dbConnection.php";
 
-header('Access-Control-Allow-Origin: http://localhost:3000');
+header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Credentials: true');
 header('SameSite=None');
 
-if ($_SERVER['REQUEST_METHOD'] == "POST"){
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     verify();
 }
@@ -17,34 +17,39 @@ function getNameAndPassword(): array
     $body = json_decode($some);
     $name = '';
     $password = '';
-    foreach ($body as $key => $value){
-        if ($key == 'name'){
+    foreach ($body as $key => $value) {
+        if ($key == 'name') {
             $name = $value;
-        }else{
+        } else {
             $password = $value;
         }
     }
     return [$name, $password];
 }
 
-function verify(){
+function verify()
+{
     $nameAndPassword = getNameAndPassword();
     $dataBaseRows = readDataBase($nameAndPassword[0]);
-    if (password_verify($nameAndPassword[1], $dataBaseRows[1]) and $nameAndPassword[0] == $dataBaseRows[0]) {
-        session_start();
-        $cookieName = 'Token';
-        $cookieValue = bin2hex(random_bytes(12));
-        $hash = password_hash($cookieValue, PASSWORD_DEFAULT);
-        updateDataBase($hash, $nameAndPassword[0]);
-        setcookie($cookieName, $cookieValue, time() + (3600), '/','', true, true);
-//        header('Location: http://localhost:3000/student-home');
-        echo "Login: True, Admin: $dataBaseRows[3], name: $dataBaseRows[4]";
+    if ($dataBaseRows) {
+        if (password_verify($nameAndPassword[1], $dataBaseRows[1]) and $nameAndPassword[0] == $dataBaseRows[0]) {
+//
+            session_start();
+            $cookieName = 'Token';
+            $cookieValue = bin2hex(random_bytes(12));
+            $hash = password_hash($cookieValue, PASSWORD_DEFAULT);
+            updateDataBase($hash, $nameAndPassword[0]);
+            setcookie($cookieName, $cookieValue, time() + (3600), '/', '', true, true);
+            setcookie('Admin', $dataBaseRows[3], time() + (3600), '/', '', true, true);
+            echo "True, Admin: $dataBaseRows[3]";
 
-    }else{
-        echo "Login: False, Admin: 0";
+        }
+    } else {
+        echo 'False';
     }
 
 }
+
 function updateDataBase($token, $name): bool
 {
 
@@ -59,22 +64,25 @@ function updateDataBase($token, $name): bool
 
 }
 
-function readDataBase($name){
+function readDataBase($name)
+{
     $conn = database();
     $sql = "SELECT * FROM AccountInfo";
     $results = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($results) > 0){
+    if (mysqli_num_rows($results) > 0) {
 
-        while ($row = mysqli_fetch_row($results)){
-            if ($row[0] == $name){
+        while ($row = mysqli_fetch_row($results)) {
+            if ($row[0] == $name) {
                 return $row;
             }
         }
     }
     return false;
 }
-function addAdminUser($email, $password, $status, $name){
+
+function addAdminUser($email, $password, $status, $name)
+{
 
     $conn = database();
     $hashed = password_hash($password, PASSWORD_DEFAULT);
@@ -82,12 +90,11 @@ function addAdminUser($email, $password, $status, $name){
 
     $sql = "INSERT INTO AccountInfo (Email, Password, Token, AdminStatus, Name) VALUES ('{$email}','{$hashed}','{$token}','{$status}', '{$name}')";
 
-    if ($conn->query($sql)){
+    if ($conn->query($sql)) {
         return true;
-    }
-    else {
+    } else {
         return false;
     }
 
 }
-//addAdminUser('MMirhossain@gmail.com', 'HelloWorld123', '1', 'Mohammed');
+//addAdminUser('HelloWorld1223', 'HelloWorld123', '0', 'Mohammed');
