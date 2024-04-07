@@ -6,7 +6,7 @@ export default function Profile() {
     const [bio, setBio] = useState("Hello");
 
     const fetchPicture = () => {
-        fetch("http://localhost:8000/profilePictureTest.php?data=picture", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=picture", {
             method: "GET"
         })
         .then(response => {
@@ -25,7 +25,7 @@ export default function Profile() {
     }
 
     const fetchBio = () => {
-        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/profilePage.php?data=bio", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=bio", {
             method: "GET"
         })
         .then(response => {
@@ -64,7 +64,7 @@ export default function Profile() {
         }else{
             setBio(newBio);
             console.log("Your bio was changed to:", newBio);
-            fetch("http://localhost:8000/profilePictureTest.php?data=bio", {
+            fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=bio", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -92,7 +92,7 @@ export default function Profile() {
             //Fetch POST the selectedFile
             const formData = new FormData();
             formData.append('file', selectedFile);
-            fetch("http://localhost:8000/ProfilePictureTest.php?data=picture", {
+            fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=picture", {
                 method: "POST",
                 body: formData
             })
