@@ -134,6 +134,7 @@
     background-color: white;
     border: none;
     font-size: 100%;
+    color: black;
 }
 
 .confirmation button:hover{

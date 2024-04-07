@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_GET['data'] === 'bio') {
         $inputBio = json_decode(file_get_contents("php://input"));
         echo "Received string from client: " . json_encode($inputBio);
+        exit;
     }
 
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {

@@ -24,6 +24,8 @@ export default function TeacherHome () {
     const [isValid, setIsValid] = useState(true);//fetch if authorized
 
     //fetch if authorized
+    const cookies = document.cookie;
+    console.log(cookies);
 
     return(
         <>
