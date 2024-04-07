@@ -19,14 +19,23 @@ const Login = (props) => {
         }
         else{
             const request = new XMLHttpRequest();
+            var backendresponse = ""
             request.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     console.log(this.response);
+                    backendresponse = this.response
+                    if(backendresponse === "False"){
+                        setPasswordError('Incorrect username or password')
+                    } else if(backendresponse === "True, Admin: 0") {
+                        navigate('/student-home')
+                    } else if(backendresponse === "True, Admin: 1"){
+                        navigate('/teacher-home')
+                    }
                 }
             }
             const credentialsJSON = {"name": username, "pass": pass};
             //TODO update path for server
-            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php");
+            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php");
             request.send(JSON.stringify(credentialsJSON));
         }
     }
@@ -36,9 +45,9 @@ const Login = (props) => {
             <div className={'titleContainer'}>
                 <div>Login</div>
             </div>
-            <div className={'inputContainer'}>
+            {/* <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
-            </div>
+            </div> */}
             <br/>
             <div className={'inputContainer'}>
                 <input

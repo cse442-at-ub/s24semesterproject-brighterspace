@@ -4,9 +4,9 @@ import { Link, Navigate } from "react-router-dom";
 
 export default function Tabs({ activeTab, setActiveTab, page }) {
 
-    const [username, setUsername] = useState("Not ME");
+    const [username, setUsername] = useState("InvalidUser");
 
-    fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase.php?data=student_name", {
+    fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/studentHomeDatabase?data=student_name", {
         method: "GET"
     })
     .then(response => response.text())
@@ -52,7 +52,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 )}
             </div>
             <div class="profile">
-                <Link to="/profile">{username}</Link>
+                <Link to="/overview">{username}</Link>
             </div>
         </nav>
     )

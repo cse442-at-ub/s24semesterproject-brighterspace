@@ -6,12 +6,13 @@ import * as RiIcons from 'react-icons/ri'
 import * as BiIcons from 'react-icons/bi'
 import * as CiIcons from 'react-icons/ci'
 import * as CgIcons from 'react-icons/cg'
+import * as GrIcons from 'react-icons/gr'
 
 export const SidebarData = [
     {
         title: 'Overview',
         path: '/overview',
-        icon: <AiIcons.AiFillHome />,
+        icon: <GrIcons.GrOverview />,
         iconClosed: <RiIcons.RiArrowDownSFill/>,
         iconOpened: <RiIcons.RiArrowUpSFill/>,
         subNav: [
@@ -35,27 +36,13 @@ export const SidebarData = [
 
     },
     {
-        title: 'Classes',
-        path: '/classes',
+        title: 'Home',
+        path: '/student-home',
         icon: <AiIcons.AiFillHome />,
         iconClosed: <RiIcons.RiArrowDownSFill/>,
         iconOpened: <RiIcons.RiArrowUpSFill/>,
         subNav: [
-            {
-                title: 'Class1',
-                path: '/classes/class1',
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: 'Class2',
-                path: '/classes/class2',
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: 'Class3',
-                path: '/classes/class3',
-                icon: <IoIcons.IoIosPaper />,
-            },
+
 
         ]
 
@@ -74,6 +61,12 @@ export const SidebarData = [
         title: 'Profile',
         path: '/profile',
         icon: <CgIcons.CgProfile/>
+
+    },
+    {
+        title: 'Settings',
+        path: '/settings',
+        icon: <CiIcons.CiSettings/>
 
     },
     {
