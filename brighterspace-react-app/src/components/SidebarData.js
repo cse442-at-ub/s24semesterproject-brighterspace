@@ -59,7 +59,7 @@ export const SidebarData = [
     },
     {
         title: 'Discussion Board',
-        path: '/discussion',
+        path: '/discussions',
         icon: <IoIcons.IoMdChatbubbles/>
 
     },
