@@ -58,6 +58,12 @@ export const SidebarData = [
         icon: <FaIcons.FaTasks />,
     },
     {
+        title: 'Discussion Board',
+        path: '/discussion',
+        icon: <IoIcons.IoMdChatbubbles/>
+
+    },
+    {
         title: 'Profile',
         path: '/profile',
         icon: <CgIcons.CgProfile/>
