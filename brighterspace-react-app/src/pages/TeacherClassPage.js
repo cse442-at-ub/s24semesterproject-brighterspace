@@ -3,16 +3,18 @@ import NotStudent from "../components/NotStudent";
 import { useState } from "react";
 import Tabs from "../components/Tabs";
 import { useEffect } from "react";
+import TeacherUploadRec from "../components/TeacherUploadRec";
 
 function Render() {
     const {classId} = useParams()
-    const [activeTab, setActiveTab] = useState("classes"); // for tabs
+    const [activeTab, setActiveTab] = useState("syllabus"); // for tabs
     const page = "TeacherClassPage"
 
     return(
         <>
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
             {activeTab === "syllabus" && <><h1>syllabus</h1></>}
+            {activeTab === "recording" && <TeacherUploadRec />}
             <h1>Teacher view for classroom: {classId}</h1>
         </>
     )

@@ -3,17 +3,19 @@ import TeacherEnrollStudent from "../components/TeacherEnrollStudent"
 import Tabs from "../components/Tabs"
 import NotTeacher from "../components/NotTeacher"
 import { useState } from "react"
+import TeacherTabClass from "../components/TeacherTabClass"
 
 
 function Render () {
 
-    const [activeTab, setActiveTab] = useState("addclass"); // for tabs
+    const [activeTab, setActiveTab] = useState("classrooms"); // for tabs
     const page = "TeacherHome"
 
 
     return(
         <>
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
+            {activeTab === "classrooms" && <TeacherTabClass />}
             {activeTab === "addclass" && <TeacherAddClass />}
             {activeTab === "enrollstudents" && <TeacherEnrollStudent />}
         </>
