@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function TeacherUploadRec() {
 
@@ -12,11 +12,12 @@ export default function TeacherUploadRec() {
     const [classroomList, setClassroomList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz"]);
     const [selectedClassroom, setSelectedClassroom] = useState("");
 
+    const inputRef = useRef(null);
+
     const load = () => {
         fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/classNames.php")
         .then(response => response.json())
         .then(arrayOfClassrooms => {
-            console.log("Array of Classrooms:" + arrayOfClassrooms);
             setClassroomList(arrayOfClassrooms);
         })
         .catch(error => console.error('Error:', error));
@@ -62,27 +63,6 @@ export default function TeacherUploadRec() {
         .catch(error => {
             console.error("problem sending video", error);
         });
-    }
-
-    const handleSubmission = () => {
-        console.log("trying to submit:", selectedTitle, selectedFile);
-
-        //validate
-        const isVideoValid = validateVideo();
-        const isTitleValid = validateTitle();
-        const isClassroomValid = validateClassroom();
-        if(!isVideoValid || !isTitleValid || !isClassroomValid){
-            return;
-        }
-
-        //fetching
-        fetchPostVideo(selectedFile);
-        fetchPostClass(selectedClassroom);
-        console.log(selectedFile);
-        console.log(selectedTitle);
-
-        setTitleError("");
-        setVideoError("");
     }
 
     const handleVideoFile = (event) => {
@@ -144,6 +124,35 @@ export default function TeacherUploadRec() {
         }
     }
 
+    const handleSubmission = () => {
+        console.log("trying to submit:", selectedTitle, "AND", selectedFile, "AND", selectedClassroom);
+
+        //validate
+        const isVideoValid = validateVideo();
+        const isTitleValid = validateTitle();
+        const isClassroomValid = validateClassroom();
+        if(!isVideoValid || !isTitleValid || !isClassroomValid){
+            return;
+        }
+        console.log("Valid inputs, proceeding...");
+
+        //fetching
+        // fetchPostVideo(selectedFile);
+        // fetchPostClass(selectedClassroom);
+
+        //clearing error messages
+        setTitleError("");
+        setVideoError("");
+        setClassroomError("");
+
+        //clearing selected video
+        setSelectedFile(null);
+        const input = inputRef.current;
+        if (input) {
+            input.value = null;
+        }
+    }
+
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
             <h2>Title:</h2>
@@ -151,7 +160,7 @@ export default function TeacherUploadRec() {
             <p>{titleError}</p>
             <br></br>
             <h2>Classroom:</h2>
-            <select value={selectedClassroom} onChange={handleClassSelect} isSearchable={true}>
+            <select value={selectedClassroom} onChange={handleClassSelect} issearchable={true}>
                 <option value="">Select a classroom</option>
                 {classroomList.map(classroom => (
                     <option key={classroom} value={classroom}>{classroom}</option>
@@ -160,7 +169,7 @@ export default function TeacherUploadRec() {
             <p>{classroomError}</p>
             <br></br>
             <h2>Video:</h2>
-            <input type="file" accept="video/mp4" onChange={handleVideoFile}/>
+            <input ref={inputRef} type="file" accept="video/mp4" onChange={handleVideoFile}/>
             <p>{videoError}</p>
             <button onClick={handleSubmission}>Upload Video</button>
         </div>
