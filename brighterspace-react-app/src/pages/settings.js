@@ -68,7 +68,7 @@ const Settings = (props) => {
             <br/>
             <div className={'inputContainer'}>
                 <input
-                    type="text"
+                    type="password"
                     placeholder="Old password"
                     id="old_password"
                 />

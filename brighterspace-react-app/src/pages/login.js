@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import '../styles/Login.css'
 
 const Login = (props) => {
     const [passwordError, setPasswordError] = useState('')
@@ -35,7 +36,7 @@ const Login = (props) => {
             }
             const credentialsJSON = {"name": username, "pass": pass};
             //TODO update path for server
-            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php");
+            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php");
             request.send(JSON.stringify(credentialsJSON));
         }
     }
@@ -43,33 +44,29 @@ const Login = (props) => {
     return (
         <div className={'mainContainer'}>
             <div className={'titleContainer'}>
-                <div>Login</div>
+                <div>Welcome to Brighterspace</div>
             </div>
             {/* <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
             </div> */}
-            <br/>
             <div className={'inputContainer'}>
                 <input
                     type="text"
-                    placeholder="Enter your username here"
+                    placeholder="username"
                     id="username"
                 />
             </div>
-            <br/>
             <div className={'inputContainer'}>
                 <input
                     type="password"
-                    placeholder="Enter your password here"
+                    placeholder="password"
                     id="password"
                 />
 
             </div>
-            <br/>
             <label className="errorLabel">{passwordError}</label>
-            <br/>
             <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={Loginf} value={'Log in'}/>
+                <input className={'inputButton'} type="button" onClick={Loginf} value={'LOGIN'}/>
             </div>
 
         </div>
