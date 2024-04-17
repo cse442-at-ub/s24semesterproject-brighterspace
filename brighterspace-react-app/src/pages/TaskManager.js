@@ -63,7 +63,6 @@ function TaskManager(){
 
             const credentialsJSON = {"Ticket": newTask.valueOf()};
 
-            //TODO update path for server
             request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
             update_messages(request, credentialsJSON)
         }
@@ -74,6 +73,7 @@ function TaskManager(){
     function deleteTask(index){
         const request = new XMLHttpRequest();
         const credentialsJSON = {"delete": index};
+
         request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
         update_messages(request, credentialsJSON)
 
