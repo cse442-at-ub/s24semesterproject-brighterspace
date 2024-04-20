@@ -1,4 +1,4 @@
-import "../styles/StudentTabClass.css"
+import "TeacherTabClass.css"
 import React from "react";
 import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 
 
-export default function StudentTabClass () {
+export default function TeacherTabClass () {
 
     const [classList, setClassList] = useState(["If you see this, it means it didnt get the class list"]);
     useEffect(() => {
@@ -28,7 +28,7 @@ export default function StudentTabClass () {
 
     function generateClassList() {
         return classList.map(currClass => (
-            <li key={currClass} onClick={() => navigate(`/class/${currClass}`)}>
+            <li key={currClass} onClick={() => navigate(`/classroom/${currClass}`)}>
                 {currClass}
             </li>
         ));

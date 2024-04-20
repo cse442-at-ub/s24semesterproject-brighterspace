@@ -1,9 +1,10 @@
-import TeacherAddClass from "../components/TeacherAddClass"
-import TeacherEnrollStudent from "../components/TeacherEnrollStudent"
-import Tabs from "../components/Tabs"
-import NotTeacher from "../components/NotTeacher"
+import "TeacherHome.css"
+import TeacherAddClass from "../../components/TeacherAddClass/TeacherAddClass"
+import TeacherEnrollStudent from "../../components/TeacherEnrollStudents/TeacherEnrollStudent"
+import Tabs from "../../components/Tabs/Tabs"
+import NotTeacher from "../../components/NotTeacher"
 import { useState } from "react"
-import TeacherTabClass from "../components/TeacherTabClass"
+import TeacherTabClass from "../../components/TeacherTabClass/TeacherTabClass"
 
 
 function Render () {

@@ -1,7 +1,7 @@
-import "../styles/StudentHome.css"
-import StudentTabClass from "../components/StudentTabClass"
-import Tabs from "../components/Tabs"
-import NotStudent from "../components/NotStudent"
+import "StudentHome.css"
+import StudentTabClass from "../../components/StudentTabClass"
+import Tabs from "../../components/Tabs"
+import NotStudent from "../../components/NotStudent"
 import { useState } from "react"
 
 function Render () {
