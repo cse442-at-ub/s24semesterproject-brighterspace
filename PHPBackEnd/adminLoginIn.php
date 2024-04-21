@@ -24,6 +24,7 @@ function getNameAndPassword(): array
             $password = $value;
         }
     }
+    echo $name, $password;
     return [$name, $password];
 }
 
