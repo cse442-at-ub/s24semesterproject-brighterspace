@@ -159,7 +159,7 @@ export default function TeacherAddClass() {
 
   return (
     <>
-      <div class="coreTeacherAddClass">
+      <div class="core-TeacherAddClass">
         <div class="form">
           <div class="formLeft">
             <div class="searchBar">

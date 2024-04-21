@@ -36,7 +36,7 @@ export default function TeacherTabClass () {
 
     return(
         <>
-            <div class="coreStudentTabClass">
+            <div class="core-TeacherTabClass">
                 <div class="classes">
                     <ul>
                         {generateClassList()}

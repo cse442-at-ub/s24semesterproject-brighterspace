@@ -1,0 +1,11 @@
+.core-TeacherUploadRec{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    top: 9%;
+    left: 20%;
+    height: 100vh;
+    width: 60%;
+}

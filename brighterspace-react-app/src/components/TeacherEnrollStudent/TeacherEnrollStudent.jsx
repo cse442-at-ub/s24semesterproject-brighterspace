@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 export default function TeacherEnrollStudent() {
 
     const [classroomList, setClassroomList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz"]);
-    const [studentList, setStudentList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz"]);
+    const [studentList, setStudentList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd"]);
 
     const [selectedClassroom, setSelectedClassroom] = useState("");
     const [selectedStudent, setSelectedStudent] = useState("");
@@ -68,7 +68,7 @@ export default function TeacherEnrollStudent() {
     }
 
     useEffect(() => {
-        load();
+        // load();
     },[]);
 
     function handleSubmission () {
@@ -80,6 +80,8 @@ export default function TeacherEnrollStudent() {
         }else if(!classroomList.includes(selectedClassroom)){
             setClassroomError("Select an existing classroom from the dropdown");
             valid = false;
+        }else{
+            setClassroomError("");
         }
         if(selectedStudent === ""){
             setStudentError("Select a student");
@@ -87,6 +89,8 @@ export default function TeacherEnrollStudent() {
         }else if(!studentList.includes(selectedStudent)){
             setClassroomError("Select an existing student from the dropdown");
             valid = false;
+        }else{
+            setStudentError("");
         }
         if(!valid){
             console.log("invalid");
@@ -122,7 +126,7 @@ export default function TeacherEnrollStudent() {
 
     return(
         <>
-            <div class="core">
+            <div class="core-TeacherEnrollStudent">
                 <h2>Classroom:</h2>
                 <div class="classroomDropdown">
                     <input
@@ -184,7 +188,6 @@ export default function TeacherEnrollStudent() {
                 <br></br>
                 <div class="submitButton">
                     <button onClick={handleSubmission}>Submit</button>
-                    <p>{valid}</p>
                 </div>
             </div>
         </>

@@ -1,9 +1,4 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-.coreStudentTabClass{
+.core{
     position: fixed;
     display: flex;
     padding: 0;

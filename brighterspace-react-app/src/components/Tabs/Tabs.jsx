@@ -1,5 +1,5 @@
+import "./Tabs.css"
 import { useState } from "react";
-import "./Tabs.css";
 import { Link, Navigate } from "react-router-dom";
 
 export default function Tabs({ activeTab, setActiveTab, page }) {

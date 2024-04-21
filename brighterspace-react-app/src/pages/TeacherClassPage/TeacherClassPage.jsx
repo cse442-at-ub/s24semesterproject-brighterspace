@@ -15,7 +15,6 @@ function Render() {
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
             {activeTab === "syllabus" && <><h1>syllabus</h1></>}
             {activeTab === "recording" && <TeacherUploadRec />}
-            <h1>Teacher view for classroom: {classId}</h1>
         </>
     )
 }
