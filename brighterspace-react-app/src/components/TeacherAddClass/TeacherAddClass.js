@@ -1,4 +1,4 @@
-import "../styles/TeacherAddClass.css"
+import "./TeacherAddClass.css"
 import React from "react";
 import { useState } from "react";
 

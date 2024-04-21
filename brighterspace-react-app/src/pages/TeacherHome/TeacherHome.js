@@ -1,6 +1,6 @@
-import "TeacherHome.css"
+import "./TeacherHome.css"
 import TeacherAddClass from "../../components/TeacherAddClass/TeacherAddClass"
-import TeacherEnrollStudent from "../../components/TeacherEnrollStudents/TeacherEnrollStudent"
+import TeacherEnrollStudent from "../../components/TeacherEnrollStudent/TeacherEnrollStudent"
 import Tabs from "../../components/Tabs/Tabs"
 import NotTeacher from "../../components/NotTeacher"
 import { useState } from "react"

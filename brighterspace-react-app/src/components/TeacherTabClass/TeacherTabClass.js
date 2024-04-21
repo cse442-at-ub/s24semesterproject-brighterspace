@@ -1,4 +1,4 @@
-import "TeacherTabClass.css"
+import "./TeacherTabClass.css"
 import React from "react";
 import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
