@@ -3,11 +3,8 @@ import {useNavigate} from 'react-router-dom'
 import '../styles/Login.css'
 
 const Login = (props) => {
-    const [passwordError, setPasswordError] = useState('')
-    const navigate = useNavigate()
-    const goHome = () => {
-        navigate('/')
-    }
+    const [passwordError, setPasswordError] = useState('');
+    const navigate = useNavigate();
 
     const Loginf = () => {
         setPasswordError('')
@@ -42,21 +39,18 @@ const Login = (props) => {
     }
 
     return (
-        <div className={'mainContainer'}>
-            <div className={'titleContainer'}>
+        <div className={'LmainContainer'}>
+            <div className={'LtitleContainer'}>
                 <div>Welcome to Brighterspace</div>
             </div>
-            {/* <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
-            </div> */}
-            <div className={'inputContainer'}>
+            <div className={'LinputContainer'}>
                 <input
                     type="text"
                     placeholder="username"
                     id="username"
                 />
             </div>
-            <div className={'inputContainer'}>
+            <div className={'LinputContainer'}>
                 <input
                     type="password"
                     placeholder="password"
@@ -64,10 +58,11 @@ const Login = (props) => {
                 />
 
             </div>
-            <label className="errorLabel">{passwordError}</label>
-            <div className={'inputContainer'}>
+            <label className="LerrorLabel">{passwordError}</label>
+            <div className={'LinputContainer'}>
                 <input className={'inputButton'} type="button" onClick={Loginf} value={'LOGIN'}/>
             </div>
+            <a>forgot password?</a>
 
         </div>
     )
