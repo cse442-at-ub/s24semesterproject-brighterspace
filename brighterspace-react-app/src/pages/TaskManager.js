@@ -15,11 +15,13 @@ function TaskManager(){
 
     const update_task = () => {
         const request = new XMLHttpRequest();
-
+        // todo when change link on server
         request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
         const credentialsJSON = {"Update": 'Update'};
         update_messages(request, credentialsJSON)
     }
+
+
     useEffect(() => {
         // Call the function when the component mounts
         update_task();
