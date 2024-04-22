@@ -12,7 +12,7 @@ const SupportPage = () => {
         // todo when change link on server
         request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/supportPage.php");
         const credentialsJSON = {"Update": "Update"};
-        request.send(JSON.stringify(credentialsJSON));
+        request.send(JSON.stringify(credentialsJSON)) ;
 
         request.onload = () => {
             if (request.readyState === XMLHttpRequest.DONE) {

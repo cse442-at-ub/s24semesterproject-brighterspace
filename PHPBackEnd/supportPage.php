@@ -12,7 +12,7 @@ $conn = database();
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $username = $_SESSION['username'];
-    $some = file_get_contents('php://input');
+    $some = file_get_contents('php://input') ;
     $body = json_decode($some);
     $name = '';
     $task = '';
