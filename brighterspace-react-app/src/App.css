@@ -7,3 +7,8 @@
   font-family: sans-serif;
 }
 
+body {
+  background-color: lightgreen;
+  margin: 0;
+  padding: 0;
+}

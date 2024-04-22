@@ -1,5 +1,5 @@
+import "./Tabs.css"
 import { useState } from "react";
-import "../styles/Tabs.css";
 import { Link, Navigate } from "react-router-dom";
 
 export default function Tabs({ activeTab, setActiveTab, page }) {
@@ -35,6 +35,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 )}
                 {page === "TeacherHome" && (
                     <>
+                        <button onClick={() => handleTabClick("classrooms")} className={activeTab === "classrooms" ? 'active' : ''}>Classes</button>
                         <button onClick={() => handleTabClick("addclass")} className={activeTab === "addclass" ? 'active' : ''}>Create Classroom</button>
                         <button onClick={() => handleTabClick("enrollstudents")} className={activeTab === "enrollstudents" ? 'active' : ''}>Enroll Students</button>
                     </>
@@ -48,6 +49,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 {page === "TeacherClassPage" && (
                     <>
                         <button onClick={() => handleTabClick("syllabus")} className={activeTab === "syllabus" ? 'active' : ''}>Syllabus</button>
+                        <button onClick={() => handleTabClick("recording")} className={activeTab === "recording" ? 'active' : ''}>Upload Recordings</button>
                     </>
                 )}
             </div>

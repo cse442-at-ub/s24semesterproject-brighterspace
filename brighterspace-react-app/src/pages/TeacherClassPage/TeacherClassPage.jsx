@@ -1,20 +1,20 @@
 import { useParams } from "react-router-dom";
-import NotStudent from "../components/NotStudent";
+import NotStudent from "../../components/NotStudent";
 import { useState } from "react";
-import Tabs from "../components/Tabs";
+import Tabs from "../../components/Tabs/Tabs";
 import { useEffect } from "react";
+import TeacherUploadRec from "../../components/TeacherUploadRec/TeacherUploadRec";
 
 function Render() {
     const {classId} = useParams()
-    const [activeTab, setActiveTab] = useState("classes"); // for tabs
-    const page = "StudentClassPage"
+    const [activeTab, setActiveTab] = useState("syllabus"); // for tabs
+    const page = "TeacherClassPage"
 
     return(
         <>
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
-            {activeTab === "grades" && <><h1>grades</h1></>}
-            {activeTab === "assignments" && <><h1>assignments</h1></>}
-            <h1>Welcome to {classId}</h1>
+            {activeTab === "syllabus" && <><h1>syllabus</h1></>}
+            {activeTab === "recording" && <TeacherUploadRec />}
         </>
     )
 }
