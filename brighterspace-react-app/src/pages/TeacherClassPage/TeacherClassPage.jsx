@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import NotStudent from "../components/NotStudent";
+import NotStudent from "../../components/NotStudent";
 import { useState } from "react";
-import Tabs from "../components/Tabs";
+import Tabs from "../../components/Tabs/Tabs";
 import { useEffect } from "react";
-import TeacherUploadRec from "../components/TeacherUploadRec";
+import TeacherUploadRec from "../../components/TeacherUploadRec/TeacherUploadRec";
 
 function Render() {
     const {classId} = useParams()
@@ -15,7 +15,6 @@ function Render() {
             <Tabs setActiveTab={setActiveTab} activeTab={activeTab} page={page}/>
             {activeTab === "syllabus" && <><h1>syllabus</h1></>}
             {activeTab === "recording" && <TeacherUploadRec />}
-            <h1>Teacher view for classroom: {classId}</h1>
         </>
     )
 }

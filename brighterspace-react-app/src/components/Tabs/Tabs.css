@@ -1,8 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 .tabs{
     position: fixed;
     display: flex;
@@ -25,14 +20,14 @@
     aspect-ratio: 1/1;
 }
 
-.tabButtons{
+.tabs .tabButtons{
     display: flex;
     flex: auto;
     height: 100%;
     overflow: auto;
 }
 
-.tabButtons button{
+.tabs .tabButtons button{
     border: none;
     width: 12.5%;
     min-width: 48px;
@@ -40,17 +35,17 @@
     font-size: 100%;
 }
 
-.tabButtons button:hover{
+.tabs .tabButtons button:hover{
     background-color: #8fffb6;
     font-size: 110%;
 }
 
-.profile{
+.tabs .profile{
     height: 100%;
     aspect-ratio: 2/1;
 }
 
-.profile p{
+.tabs .profile p{
     font-size: 100%;
     color: #000;
 }

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import NotStudent from "../components/NotStudent";
+import NotStudent from "../../components/NotStudent";
 import { useState } from "react";
-import Tabs from "../components/Tabs";
+import Tabs from "../../components/Tabs/Tabs";
 import { useEffect } from "react";
 
 function Render() {

@@ -1,3 +1,4 @@
+import "./TeacherUploadRec.css"
 import React, { useEffect, useRef, useState } from 'react';
 
 export default function TeacherUploadRec() {
@@ -154,25 +155,28 @@ export default function TeacherUploadRec() {
     }
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-            <h2>Title:</h2>
-            <input id="title" type="text" value={selectedTitle} onChange={handleTitleChange}/>
-            <p>{titleError}</p>
-            <br></br>
-            <h2>Classroom:</h2>
-            <select value={selectedClassroom} onChange={handleClassSelect} issearchable={true}>
-                <option value="">Select a classroom</option>
-                {classroomList.map(classroom => (
-                    <option key={classroom} value={classroom}>{classroom}</option>
-                ))}
-            </select>
-            <p>{classroomError}</p>
-            <br></br>
-            <h2>Video:</h2>
-            <input ref={inputRef} type="file" accept="video/mp4" onChange={handleVideoFile}/>
-            <p>{videoError}</p>
-            <button onClick={handleSubmission}>Upload Video</button>
-        </div>
+        <>
+            <div class="core-TeacherUploadRec">
+                <h2>Title:</h2>
+                <input id="title" type="text" value={selectedTitle} onChange={handleTitleChange}/>
+                <p>{titleError}</p>
+                <br></br>
+                <h2>Classroom:</h2>
+                <select value={selectedClassroom} onChange={handleClassSelect} issearchable={true}>
+                    <option class="option" value="">Select a classroom</option>
+                    {classroomList.map(classroom => (
+                        <option key={classroom} value={classroom}>{classroom}</option>
+                    ))}
+                </select>
+                <p>{classroomError}</p>
+                <br></br>
+                <h2>Video:</h2>
+                <input ref={inputRef} type="file" accept="video/mp4" onChange={handleVideoFile}/>
+                <p>{videoError}</p>
+                <br></br>
+                <button onClick={handleSubmission}>Upload Video</button>
+            </div>
+        </>
     )
 
 }

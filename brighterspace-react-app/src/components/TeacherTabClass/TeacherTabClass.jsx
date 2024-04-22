@@ -1,4 +1,4 @@
-import "../styles/StudentTabClass.css"
+import "./TeacherTabClass.css"
 import React from "react";
 import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
@@ -36,7 +36,7 @@ export default function TeacherTabClass () {
 
     return(
         <>
-            <div class="coreStudentTabClass">
+            <div class="core-TeacherTabClass">
                 <div class="classes">
                     <ul>
                         {generateClassList()}
