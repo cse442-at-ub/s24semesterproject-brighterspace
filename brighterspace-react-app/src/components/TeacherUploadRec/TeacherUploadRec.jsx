@@ -163,7 +163,7 @@ export default function TeacherUploadRec() {
                 <br></br>
                 <h2>Classroom:</h2>
                 <select value={selectedClassroom} onChange={handleClassSelect} issearchable={true}>
-                    <option value="">Select a classroom</option>
+                    <option class="option" value="">Select a classroom</option>
                     {classroomList.map(classroom => (
                         <option key={classroom} value={classroom}>{classroom}</option>
                     ))}
@@ -173,6 +173,7 @@ export default function TeacherUploadRec() {
                 <h2>Video:</h2>
                 <input ref={inputRef} type="file" accept="video/mp4" onChange={handleVideoFile}/>
                 <p>{videoError}</p>
+                <br></br>
                 <button onClick={handleSubmission}>Upload Video</button>
             </div>
         </>

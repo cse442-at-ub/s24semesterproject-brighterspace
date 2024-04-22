@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 
 export default function TeacherEnrollStudent() {
 
-    const [classroomList, setClassroomList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz"]);
-    const [studentList, setStudentList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd"]);
+    const [classroomList, setClassroomList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd", "IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd"]);
+    const [studentList, setStudentList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd", "IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd", "IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd", "IvalidUser abcdefghijklmnopqrstuvwxyz", "asd", "asds", "asad", "asdds", "asadsd", "asadsd", "asadsd", "asadsd", "asadsd"]);
 
     const [selectedClassroom, setSelectedClassroom] = useState("");
     const [selectedStudent, setSelectedStudent] = useState("");
@@ -30,6 +30,19 @@ export default function TeacherEnrollStudent() {
         setSelectedClassroom("");
     }
 
+    function handleClassroomInputClick(event){
+        if (!classroomIsOpen) {
+            setTimeout(() => {
+                setClassroomIsOpen(true);
+            }, 10);
+        } else {
+            if (document.activeElement === event.target) {
+                event.target.blur();
+                setClassroomIsOpen(false);
+            }
+        }
+    }
+
     function handleClassroomClick(input) {
         const classroomValue = input;
         setSelectedClassroom(classroomValue);
@@ -41,6 +54,19 @@ export default function TeacherEnrollStudent() {
         const searchValue = event.target.value;
         setStudentSearch(searchValue);
         setSelectedStudent("");
+    }
+
+    function handleStudentInputClick(event){
+        if (!studentIsOpen) {
+            setTimeout(() => {
+                setStudentIsOpen(true);
+            }, 10);
+        } else {
+            if (document.activeElement === event.target) {
+                event.target.blur();
+                setStudentIsOpen(false);
+            }
+        }
     }
 
     function handleStudentClick(input) {
@@ -68,7 +94,7 @@ export default function TeacherEnrollStudent() {
     }
 
     useEffect(() => {
-        // load();
+        load();
     },[]);
 
     function handleSubmission () {
@@ -134,10 +160,7 @@ export default function TeacherEnrollStudent() {
                         id="searchClassroomInput"
                         autocomplete="off"
                         onChange={handleClassroomChange}
-                        onFocus={(event) => {
-                            setClassroomIsOpen(true);
-                            event.target.select();
-                        }}
+                        onClick={handleClassroomInputClick}
                         onBlur={() => setTimeout(() => setClassroomIsOpen(false), 200)}
                         placeholder="Search classrooms"
                     />
@@ -156,6 +179,7 @@ export default function TeacherEnrollStudent() {
                     )}
                 </div>
                 <p>{classroomError}</p>
+                <br></br>
                 <h2>Student:</h2>
                 <div class="studentDropdown">
                     <input
@@ -163,10 +187,7 @@ export default function TeacherEnrollStudent() {
                         id="searchStudentInput"
                         autocomplete="off"
                         onChange={handleStudentChange}
-                        onFocus={(event) => {
-                            setStudentIsOpen(true);
-                            event.target.select();
-                        }}
+                        onClick={handleStudentInputClick}
                         onBlur={() => setTimeout(() => setStudentIsOpen(false), 200)}
                         placeholder="Search students"
                     />
@@ -186,9 +207,7 @@ export default function TeacherEnrollStudent() {
                 </div>
                 <p>{studentError}</p>
                 <br></br>
-                <div class="submitButton">
-                    <button onClick={handleSubmission}>Submit</button>
-                </div>
+                <button onClick={handleSubmission}>Submit</button>
             </div>
         </>
     )
