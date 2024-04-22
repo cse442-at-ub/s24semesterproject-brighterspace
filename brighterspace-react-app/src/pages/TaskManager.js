@@ -54,6 +54,7 @@ function TaskManager(){
                     placeholder="Enter a task.."
                     value={newTask}
                     onChange={handleInputChange}
+                    className="enter_a_task"
                 />
                 <button
                     className="addbutton"
