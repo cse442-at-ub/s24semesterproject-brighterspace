@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../App.css'
+import '../styles/assignments.css'
 
 const NewAssignment = (props) => {
     const [assignmentError, setAssignmentError] = useState('')
@@ -43,39 +44,32 @@ const NewAssignment = (props) => {
     }
 
     return (
-        <div className={'mainContainer'}>
+        <div className={'NAmainContainer'}>
             <div className={'titleContainer'}>
                 <div>Create Assignment</div>
             </div>
-            <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
-            </div>
-            <br/>
             <div>
                 <label htmlFor="classes">Choose Class: </label>
                 <select name="classes" id="classes">
-                    <option value="cse312">CSE 312</option>
-                    <option value="cse442">CSE 442</option>
-                    <option value="eas360">EAS 360</option>
+                    <option value="cse_312">CSE 312</option>
+                    <option value="cse_442">CSE 442</option>
+                    <option value="eas_360">EAS 360</option>
                 </select>
             </div>
-            <br/>
-            <div className={'inputContainer'}>
+            <div className={'AinputContainer'}>
                 <input
                     placeholder="Name of Assignment"
                     type="text"
                     id="assignmentName"
                 />
             </div>
-            <br/>
-            <div className={'inputContainer'}>
+            <div className={'NAinputContainer'}>
                 <input
                     placeholder="Max Points"
-                    className={'inputBox'}
+                    type="number"
                     id="points"
                 />
             </div>
-            <br/>
             <label className="NAerrorLabel">{assignmentError}</label>
             <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create'}/>

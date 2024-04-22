@@ -20,6 +20,8 @@ import ChangeSidebar from "./components/ChangeSidebar";
 import SupportPage from "./pages/SupportPage"
 import Profile from './pages/ProfileSetting'
 import Settings from './pages/settings'
+import AddGrade from "./pages/add-grade";
+import NewAssignment from "./pages/new-assignment";
 
 function App() {
 
@@ -51,6 +53,8 @@ function App() {
             <Route path="/register" element={<Register/>}/>
             <Route path="/support" element={<SupportPage/>}/>
             <Route path="/settings" element={<Settings/>}/>
+            <Route path="/add-grade" element={<AddGrade/>}/>
+            <Route path="/new-assignment" element={<NewAssignment/>}/>
           </Routes>
         </Router>
       </header>

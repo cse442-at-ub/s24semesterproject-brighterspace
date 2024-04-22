@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../App.css'
+import '../styles/assignments.css'
 
 const AddGrade = (props) => {
     const [gradeError, setGradeError] = useState('')
@@ -45,23 +46,18 @@ const AddGrade = (props) => {
     }
 
     return (
-        <div className={'mainContainer'}>
+        <div className={'AGmainContainer'}>
             <div className={'titleContainer'}>
                 <div>Add Grade</div>
             </div>
-            <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
-            </div>
-            <br/>
             <div>
                 <label htmlFor="classes">Choose Class: </label>
                 <select name="classes" id="classes">
-                    <option value="cse312">CSE 312</option>
-                    <option value="cse442">CSE 442</option>
-                    <option value="eas360">EAS 360</option>
+                    <option value="cse_312">CSE 312</option>
+                    <option value="cse_442">CSE 442</option>
+                    <option value="eas_360">EAS 360</option>
                 </select>
             </div>
-            <br/>
             <div>
                 <label htmlFor="assignments">Choose Assignment: </label>
                 <select name="assign" id="assign">
@@ -70,7 +66,6 @@ const AddGrade = (props) => {
                     <option value="hw3">HW 3</option>
                 </select>
             </div>
-            <br/>
             <div>
                 <label htmlFor="student">Choose Student: </label>
                 <select name="student" id="student">
@@ -79,15 +74,13 @@ const AddGrade = (props) => {
                     <option value="Jack">Jack</option>
                 </select>
             </div>
-            <br/>
-            <div className={'inputContainer'}>
+            <div className={'AinputContainer'}>
                 <input
                     placeholder="Students's Score"
                     type="number"
                     id="score"
                 />
             </div>
-            <br/>
             <label className="AGerrorLabel">{gradeError}</label>
             <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create'}/>
