@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import '../App.css'
 
 const AddGrade = (props) => {
+    const [gradeError, setGradeError] = useState('')
 
     const navigate = useNavigate()
     const goHome = () => {
@@ -11,22 +12,36 @@ const AddGrade = (props) => {
     const onButtonClick = () => {
         const class_input = document.getElementById("classes");
         const assignment_input = document.getElementById("assign");
-        const student_input = document.getElementById("student")
-        const score_input = document.getElementById("score")
+        const student_input = document.getElementById("student");
+        const score_input = document.getElementById("score");
+        var backendresponse = "";
 
-        const request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                console.log(this.response);
-            }
+        if(score_input.value ===''){
+            setGradeError("Enter a score")
         }
-        const gradeJSON = {"class": class_input.value,
-            "assignment_name": assignment_input.value,
-            "student": student_input.value,
-            "score": score_input.value};
-        //request.open("POST", "http://localhost:3000/PHPBackEnd/functionLoginIn.php");
-        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/functionLoginIn.php");
-        request.send(JSON.stringify(gradeJSON));
+        else {
+            const request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    console.log(this.response);
+                    backendresponse = this.response;
+                    if(backendresponse === "exists"){
+                        setGradeError("Score Updated!");
+                    }
+                    else {
+                        setGradeError("Score Added!");
+                    }
+                }
+            }
+            const gradeJSON = {"class": class_input.value,
+                "assignment_name": assignment_input.value,
+                "student": student_input.value,
+                "score": score_input.value};
+            //TODO update path for server
+            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/addGrade.php");
+            request.send(JSON.stringify(gradeJSON));
+        }
+
     }
 
     return (
@@ -35,9 +50,9 @@ const AddGrade = (props) => {
                 <div>Add Grade</div>
             </div>
             <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={goHome} value={'Home'} />
+                <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
             </div>
-            <br />
+            <br/>
             <div>
                 <label htmlFor="classes">Choose Class: </label>
                 <select name="classes" id="classes">
@@ -48,7 +63,7 @@ const AddGrade = (props) => {
             </div>
             <br/>
             <div>
-                <label htmlFor="assignments">Choose Assignment:  </label>
+                <label htmlFor="assignments">Choose Assignment: </label>
                 <select name="assign" id="assign">
                     <option value="hw1">HW 1</option>
                     <option value="hw2">HW 2</option>
@@ -68,13 +83,14 @@ const AddGrade = (props) => {
             <div className={'inputContainer'}>
                 <input
                     placeholder="Students's Score"
-                    type="text"
+                    type="number"
                     id="score"
                 />
             </div>
-            <br />
+            <br/>
+            <label className="AGerrorLabel">{gradeError}</label>
             <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create'} />
+                <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create'}/>
             </div>
         </div>
     )

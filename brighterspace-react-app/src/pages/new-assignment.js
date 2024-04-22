@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import '../App.css'
 
 const NewAssignment = (props) => {
+    const [assignmentError, setAssignmentError] = useState('')
 
     const navigate = useNavigate()
     const goHome = () => {
@@ -12,19 +13,33 @@ const NewAssignment = (props) => {
         const class_input = document.getElementById("classes");
         const assignment_input = document.getElementById("assignmentName");
         const points_input = document.getElementById("points")
+        var backendresponse = ""
 
-        const request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                console.log(this.response);
-            }
+        if(assignment_input.value === '' || points_input.value === ''){
+            setAssignmentError("Complete all fields!")
         }
-        const creatAssignJSON = {"class": class_input.value,
-                                        "assignment_name": assignment_input.value,
-                                        "max_points": points_input.value};
-        //request.open("POST", "http://localhost:3000/PHPBackEnd/functionLoginIn.php");
-        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/functionLoginIn.php");
-        request.send(JSON.stringify(creatAssignJSON));
+        else{
+            const request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    console.log(this.response);
+                    backendresponse = this.response;
+                    if(backendresponse === "False, exists"){
+                        setAssignmentError("Assignment already added!")
+                    }
+                    else {
+                        setAssignmentError("Added!")
+                    }
+                }
+            }
+            const creatAssignJSON = {"class": class_input.value,
+                "assignment_name": assignment_input.value,
+                "max_points": points_input.value};
+            //TODO update path for server
+            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/createAssignment.php");
+            request.send(JSON.stringify(creatAssignJSON));
+        }
+
     }
 
     return (
@@ -61,6 +76,7 @@ const NewAssignment = (props) => {
                 />
             </div>
             <br/>
+            <label className="NAerrorLabel">{assignmentError}</label>
             <div className={'inputContainer'}>
                 <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create'}/>
             </div>
