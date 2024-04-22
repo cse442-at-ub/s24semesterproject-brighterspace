@@ -1,5 +1,7 @@
 <?php
 require "dbConnection.php";
+session_start();
+
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Credentials: true');
@@ -24,6 +26,7 @@ function getNameAndPassword(): array
             $password = $value;
         }
     }
+//    echo $name, $password;
     return [$name, $password];
 }
 
@@ -34,7 +37,7 @@ function verify()
     if ($dataBaseRows) {
         if (password_verify($nameAndPassword[1], $dataBaseRows[1]) and $nameAndPassword[0] == $dataBaseRows[0]) {
 //
-            session_start();
+            $_SESSION['username'] = $nameAndPassword[0];
             $cookieName = 'Token';
             $cookieValue = bin2hex(random_bytes(12));
             $hash = password_hash($cookieValue, PASSWORD_DEFAULT);
@@ -70,6 +73,13 @@ function readDataBase($name)
     $sql = "SELECT * FROM AccountInfo";
     $results = mysqli_query($conn, $sql);
 
+
+    if ($results === false){
+
+        return false;
+    }
+
+
     if (mysqli_num_rows($results) > 0) {
 
         while ($row = mysqli_fetch_row($results)) {
@@ -97,4 +107,4 @@ function addAdminUser($email, $password, $status, $name)
     }
 
 }
-//addAdminUser('HelloWorld1223', 'HelloWorld123', '0', 'Mohammed');
+//addAdminUser('HelloWorld123', 'HelloWorld123', '0', 'Mohammed');
