@@ -1,4 +1,4 @@
-.core{
+.core-StudentTabClass{
     position: fixed;
     display: flex;
     padding: 0;
@@ -9,14 +9,14 @@
     width: 60%;
 }
 
-.classes{
+.core-StudentTabClass .classes{
     display: flex;
     flex: 1;
     height: auto;
     width: 100%;
 }
 
-.classes ul{
+.core-StudentTabClass .classes ul{
     list-style-type: none;
     justify-content: center;
     display: grid;
@@ -30,21 +30,24 @@
     align-items: flex-start;
 }
 
-.classes ul::-webkit-scrollbar{
+.core-StudentTabClass .classes ul::-webkit-scrollbar{
     width: 0;
 }
 
-.classes li{
+.core-StudentTabClass .classes li{
     border-radius: 8px;
     width: 100%;
     aspect-ratio: 1/1;
-
-    text-align: center;
+    align-content: center;
     background-color: #1b6646;
+    font-size: 200%;
+    color: yellow;
+    text-align: center;
+    cursor: default;
 }
 
-.classes li:hover{
+.core-StudentTabClass .classes li:hover{
     background-color: #0f4632;
-    font-size: 110%;
-    color: white;
+    font-size: 220%;
+    color: #1b6646;
 }
