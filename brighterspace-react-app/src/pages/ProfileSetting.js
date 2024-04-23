@@ -73,9 +73,9 @@ export default function Profile() {
             console.log("Your bio was changed to:", newBio);
             fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=bio", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                  },
+                // headers: {
+                //     "Content-Type": "application/json"
+                //   },
                   body: JSON.stringify(dataToSend)
             })
             .then(response => {

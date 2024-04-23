@@ -11,7 +11,7 @@ $conn = database();
 session_start();
 $username = $_SESSION['username'];
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if ($_GET['data'] === 'picture') {
         if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
             $uploadDir = 'uploads/'; // store the images here
