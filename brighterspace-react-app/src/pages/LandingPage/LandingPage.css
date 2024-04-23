@@ -1,0 +1,49 @@
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pexels-life-of-pix-7919.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.content-container {
+    width: 50%; /* Adjust width as needed */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Near opaque white for better readability */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border-radius: 10px;
+    margin-left: 20px; /* Alignment to the left */
+}
+
+.welcome-message {
+    margin-bottom: 20px; /* Space between text and buttons */
+}
+
+.summary {
+    font-size: 16px; /* Smaller text for the summary */
+    color: #333; /* Dark grey for readability */
+    margin-top: 10px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the left */
+}
+
+.click_button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.click_button:hover {
+    background-color: #0056b3;
+}

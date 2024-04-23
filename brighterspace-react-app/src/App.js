@@ -19,6 +19,7 @@ import SupportPage from "./pages/SupportPage"
 import Profile from './pages/ProfileSetting'
 import Settings from './pages/settings'
 import DiscussionBoard from "./pages/DiscussionBoard";
+import LandingPage from "./pages/LandingPage/LandingPage.js"
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
             <Route path="/support" element={<SupportPage/>}/>
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/discussions" element={<DiscussionBoard/>}/>
+            <Route path="/landing" element={<LandingPage/>}/>
           </Routes>
         </Router>
       </header>

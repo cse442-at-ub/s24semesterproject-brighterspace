@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad737c7b-548e-4ceb-89fd-8629598556d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/brighterspace-react-app/src/pages/LandingPage/LandingPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brighterspace-react-app/src/pages/LandingPage/LandingPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/brighterspace-react-app/src/pages/LandingPage/pexels-life-of-pix-7919.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/brighterspace-react-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/brighterspace-react-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brighterspace-react-app/src/components/SidebarData.js" beforeDir="false" afterPath="$PROJECT_DIR$/brighterspace-react-app/src/components/SidebarData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/brighterspace-react-app/src/pages/TaskManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/brighterspace-react-app/src/pages/TaskManager.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,9 @@
         <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/dev" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,7 +46,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;FixNavBar-#68&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FixDiscussionBoard-#61&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -51,6 +56,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Documents\GitHub\s24semesterproject-brighterspace\brighterspace-react-app\src\pages\LandingPage" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,6 +74,7 @@
       <workItem from="1712421661683" duration="693000" />
       <workItem from="1712438447088" duration="1631000" />
       <workItem from="1712445690899" duration="341000" />
+      <workItem from="1713815308906" duration="3675000" />
     </task>
     <servers />
   </component>
