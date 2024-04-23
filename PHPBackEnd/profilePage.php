@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $inputBio = json_decode(file_get_contents("php://input"));
         $returnBio = $inputBio->bio;
         // Update user's bio in the database
-        $sql = "UPDATE profile SET bio = ? WHERE username = ?";
+        $sql = "UPDATE profile SET bio = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $returnBio, $username);
         $stmt->execute();
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_GET['data']) && $_GET['data'] === 'picture') {
         //$image = base64_decode($imageInfo);
-        $sql = "SELECT picture FROM profile WHERE username = ?";
+        $sql = "SELECT picture FROM profile WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     if (isset($_GET['data']) && $_GET['data'] === 'bio') {
         //$bio = "I am not happy";
-        $sql = "SELECT bio FROM profile WHERE username = ?";
+        $sql = "SELECT bio FROM profile WHERE id = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $username);
         $stmt->execute();
