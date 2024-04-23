@@ -15,7 +15,7 @@ export default function DiscussionBoard(){
 
     }
     const handleDeleteComments = (commentId) => {
-        const updatedTree = deleteCommment(comments, commentId)
+        const updatedTree = deleteComment(comments, commentId)
         setComments(updatedTree)
     }
     return(
