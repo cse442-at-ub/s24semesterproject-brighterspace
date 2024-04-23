@@ -14,13 +14,13 @@ $username = $_SESSION['username'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_GET['data'] === 'picture') {
         if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
-            $uploadDir = 'uploads/'; // store the images here
+            $uploadDir = '../../PHPBackEnd/uploads/'; // store the images here
             $uploadFile = $uploadDir . basename($_FILES['file']['name']);
             // move the file to the upload directory
             if (move_uploaded_file($_FILES['file']['tmp_name'],$uploadFile)) {
                 // Update the database with the file path
                 // store html img tag instead
-                $imgTag = "<img src='" . $uploadFile . "'>";
+                $imgTag = "$uploadFile";
                 $sql = "UPDATE profile SET picture = ? WHERE id = ?";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("ss", $imgTag, $username);
