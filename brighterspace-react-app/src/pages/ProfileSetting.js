@@ -21,7 +21,9 @@ export default function Profile() {
         //     setProfilePicture(imageUrl);
         // })
         .then(htmlString => {
-            setProfilePicture(htmlString);
+            const doc = new DOMParser().parseFromString(htmlString, "text/html");
+            const imgSrc = doc.querySelector('img').getAttribute('src');
+            setProfilePicture(imgSrc); // Set profile picture to the image URL
         })
         .catch(error => {
             console.error('Error fetching profile picture:', error);
@@ -125,7 +127,7 @@ export default function Profile() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
             <h2>PROFILE PICTURE</h2>
-            {profilePicture && <div dangerouslySetInnerHTML={{ __html: profilePicture }} />} {/* Render the HTML string */}
+            {profilePicture && <img src={profilePicture} alt="ProfilePicture" style={{ width: '200px', height: '200px', objectFit: 'cover' }} />} {/* Render the image */}
             {/* <img src={profilePicture} alt="ProfilePicture" style={{ width: '200px', height: '200px', objectFit: 'cover' }} /> */}
             <input type="file" accept="image/jpeg" onChange={handleFileChange}/>
             <button onClick={handleUpdate}>Update Picture</button>
