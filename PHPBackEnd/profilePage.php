@@ -10,7 +10,7 @@ require "dbConnection.php";
 $conn = database();
 session_start();
 $username = $_SESSION['username'];
-
+echo $username;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_GET['data'] === 'picture') {
