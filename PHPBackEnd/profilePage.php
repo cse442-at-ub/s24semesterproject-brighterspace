@@ -14,7 +14,7 @@ $username = $_SESSION['username'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_GET['data'] === 'picture') {
         if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
-            $uploadDir = '../../PHPBackEnd/uploads/'; // store the images here
+            $uploadDir = 'uploads/'; // store the images here
             $uploadFile = $uploadDir . basename($_FILES['file']['name']);
             // move the file to the upload directory
             if (move_uploaded_file($_FILES['file']['tmp_name'],$uploadFile)) {

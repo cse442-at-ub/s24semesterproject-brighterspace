@@ -126,7 +126,7 @@ export default function Profile() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
             <h2>PROFILE PICTURE</h2>
-            {profilePicture && <img src={profilePicture} alt="ProfilePicture" style={{ width: '200px', height: '200px', objectFit: 'cover' }} />} {/* Render the image */}
+            {profilePicture && <img src={"../../PHPBackEnd/"+profilePicture} alt="ProfilePicture" style={{ width: '200px', height: '200px', objectFit: 'cover' }} />} {/* Render the image */}
             {/* <img src={profilePicture} alt="ProfilePicture" style={{ width: '200px', height: '200px', objectFit: 'cover' }} /> */}
             <input type="file" accept="image/jpeg" onChange={handleFileChange}/>
             <button onClick={handleUpdate}>Update Picture</button>
