@@ -13,11 +13,15 @@ export default function Profile() {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            return response.blob();
+            // return response.blob();
+            return response.text();
         })
-        .then(blob => {
-            const imageUrl = URL.createObjectURL(blob);
-            setProfilePicture(imageUrl);
+        // .then(blob => {
+        //     const imageUrl = URL.createObjectURL(blob);
+        //     setProfilePicture(imageUrl);
+        // })
+        .then(htmlString => {
+            setProfilePicture(htmlString);
         })
         .catch(error => {
             console.error('Error fetching profile picture:', error);
@@ -121,7 +125,8 @@ export default function Profile() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
             <h2>PROFILE PICTURE</h2>
-            <img src={profilePicture} alt="ProfilePicture" style={{ width: '200px', height: '200px', objectFit: 'cover' }} />
+            {profilePicture && <div dangerouslySetInnerHTML={{ __html: profilePicture }} />} {/* Render the HTML string */}
+            {/* <img src={profilePicture} alt="ProfilePicture" style={{ width: '200px', height: '200px', objectFit: 'cover' }} /> */}
             <input type="file" accept="image/jpeg" onChange={handleFileChange}/>
             <button onClick={handleUpdate}>Update Picture</button>
             <br></br>
