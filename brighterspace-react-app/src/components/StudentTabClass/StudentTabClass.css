@@ -1,12 +1,16 @@
 .core-StudentTabClass{
-    position: fixed;
+    overflow: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
     display: flex;
-    padding: 0;
+    padding: 16px;
+    padding-top: 5%;
     margin: 0;
-    top: 9%;
-    left: 20%;
     height: 100vh;
     width: 60%;
+    background-color: rgb(168, 227, 199);
 }
 
 .core-StudentTabClass .classes{
@@ -18,14 +22,15 @@
 
 .core-StudentTabClass .classes ul{
     list-style-type: none;
+    padding: 0;
+    margin: 0;
     justify-content: center;
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
     grid-auto-rows: min-content;
-    grid-gap: 16px;
+    grid-gap: 4px;
     overflow: auto;
-    padding: 0;
     height: auto;
     align-items: flex-start;
 }
@@ -35,19 +40,21 @@
 }
 
 .core-StudentTabClass .classes li{
-    border-radius: 8px;
+    border-radius: 2px;
     width: 100%;
     aspect-ratio: 1/1;
     align-content: center;
-    background-color: #1b6646;
-    font-size: 200%;
-    color: yellow;
+    background-color: rgb(56, 113, 60);
+    color: rgb(220, 220, 220);
+    font-size: 1.5rem;
     text-align: center;
     cursor: default;
+    padding: 4px;
+    word-wrap: break-word;
 }
 
 .core-StudentTabClass .classes li:hover{
-    background-color: #0f4632;
-    font-size: 220%;
-    color: #1b6646;
+    background-color: rgb(84, 163, 87);
+    color: rgb(60, 60, 60);
+    font-size: 1.7rem;
 }

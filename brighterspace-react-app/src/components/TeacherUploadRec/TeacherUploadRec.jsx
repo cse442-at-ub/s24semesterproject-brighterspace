@@ -10,6 +10,8 @@ export default function TeacherUploadRec() {
     const [videoError, setVideoError] = useState("");
     const [classroomError, setClassroomError] = useState("");
 
+    const [classroomSearch, setClassroomSearch] = useState("");
+    const [classroomIsOpen, setClassroomIsOpen] = useState(false);
     const [classroomList, setClassroomList] = useState(["IvalidUser abcdefghijklmnopqrstuvwxyz"]);
     const [selectedClassroom, setSelectedClassroom] = useState("");
 
@@ -82,12 +84,26 @@ export default function TeacherUploadRec() {
         }
     }
 
-    const handleClassSelect = (event) => {
-        const classroom = event.target.value;
-        setSelectedClassroom(classroom);
-        if(classroomList.includes(classroom)){
-            setClassroomError("");
+    const handleClassroomChange = (event) => {
+        const searchValue = event.target.value;
+        setClassroomSearch(searchValue);
+        setSelectedClassroom("");
+    }
+
+    const handleClassroomInputClick = (event) => {
+        if(!classroomIsOpen){
+            setTimeout(() => {
+                setClassroomIsOpen(true);
+                event.target.select();
+            }, 10);
         }
+    }
+
+    const handleClassroomClick = (input) => {
+        const classroomValue = input;
+        setSelectedClassroom(classroomValue);
+        document.getElementById("searchClassroomInput").value = classroomValue;
+        setClassroomIsOpen(false);
     }
 
     const validateTitle = () => {
@@ -162,12 +178,28 @@ export default function TeacherUploadRec() {
                 <p>{titleError}</p>
                 <br></br>
                 <h2>Classroom:</h2>
-                <select value={selectedClassroom} onChange={handleClassSelect} issearchable={true}>
-                    <option class="option" value="">Select a classroom</option>
-                    {classroomList.map(classroom => (
-                        <option key={classroom} value={classroom}>{classroom}</option>
-                    ))}
-                </select>
+                <input
+                    type="text"
+                    id="searchClassroomInput"
+                    autocomplete="off"
+                    onChange={handleClassroomChange}
+                    onClick={handleClassroomInputClick}
+                    onBlur={() => setTimeout(() => setClassroomIsOpen(false), 200)}
+                    placeholder="Search classrooms"
+                />
+                {classroomIsOpen && classroomList.filter((option) => option.toLowerCase().includes(classroomSearch.toLowerCase())).length > 0 && (
+                    <ul class="classroomOptions">
+                    {classroomList
+                        .filter((option) =>
+                        option.toLowerCase().includes(classroomSearch.toLowerCase())
+                        )
+                        .map((option) => (
+                        <li key={option} onClick={() => handleClassroomClick(option)}>
+                            {option}
+                        </li>
+                        ))}
+                    </ul>
+                )}
                 <p>{classroomError}</p>
                 <br></br>
                 <h2>Video:</h2>
