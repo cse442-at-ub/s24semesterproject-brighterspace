@@ -26,18 +26,19 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $stmt->bind_param("ss", $imgTag, $username);
                 $stmt->execute();
                 $stmt->close();
-            $response = [
-                'success' => true,
-                'message' => 'File uploaded successfully'
-            ];
-        } else {
-            $response = [
-                'success' => false,
-                'error' => 'Failed to upload file: '
-            ];
-        }
+                $response = [
+                    'success' => true,
+                    'message' => 'File uploaded successfully'
+                ];
+            } else {
+                $response = [
+                    'success' => false,
+                    'error' => 'Failed to upload file: '
+                ];
+            }
         header('Content-Type: application/json');
         echo json_encode($response);
+        }
     }
     if ($_GET['data'] === 'bio') {
         $inputBio = json_decode(file_get_contents("php://input"));
@@ -51,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         echo "Received string from client: " . json_encode($inputBio);
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    if (isset($_GET['data']) && $_GET['data'] === 'picture') {
+    if ($_GET['data'] === 'picture') {
         //$image = base64_decode($imageInfo);
         $sql = "SELECT picture FROM profile WHERE id = ?";
         $stmt = $conn->prepare($sql);
@@ -64,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         //echo $image;
         echo $profile_picture;
     }
-    if (isset($_GET['data']) && $_GET['data'] === 'bio') {
+    if ($_GET['data'] === 'bio') {
         //$bio = "I am not happy";
         $sql = "SELECT bio FROM profile WHERE id = ?";
         $stmt = $conn->prepare($sql);
@@ -82,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     http_response_code(405);
     echo "Method not allowed";  
 }
-}
+
 $conn->close();
 
 ?>
