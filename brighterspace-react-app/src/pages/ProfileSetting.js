@@ -32,6 +32,7 @@ export default function Profile() {
     }
 
     const fetchBio = () => {
+        console.log("in fetchBio function");
         fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=bio", {
             method: "GET"
         })

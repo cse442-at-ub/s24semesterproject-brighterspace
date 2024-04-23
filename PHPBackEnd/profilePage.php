@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
         header('Content-Type: application/json');
         echo json_encode($response);
-        exit;
     }
     if ($_GET['data'] === 'bio') {
         $inputBio = json_decode(file_get_contents("php://input"));
@@ -64,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         // header('Content-Type: image/jpeg');
         //echo $image;
         echo $profile_picture;
-        exit;
     }
     if (isset($_GET['data']) && $_GET['data'] === 'bio') {
         //$bio = "I am not happy";
@@ -77,11 +75,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $stmt->close();
         header('Content-Type: text/plain');
         echo $bio;
-        exit;
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
-    exit;
 } else {
     http_response_code(405);
     echo "Method not allowed";  
