@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 export default function Profile() {
-    const [profilePicture, setProfilePicture] = useState(null);
+    const [profilePicture, setProfilePicture] = useState("Hello");
     const [selectedFile, setSelectedFile] = useState(null);
     const [bio, setBio] = useState("Hello");
 
     const fetchPicture = () => {
+        console.log("inside fetchPicture function");
         fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/profilePage.php?data=picture", {
             method: "GET"
         })
