@@ -10,7 +10,6 @@ require "dbConnection.php";
 $conn = database();
 session_start();
 $username = $_SESSION['username'];
-echo $username;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_GET['data'] === 'picture') {
@@ -22,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Update the database with the file path
                 // store html img tag instead
                 $imgTag = "<img src='" . $uploadFile . "'>";
-                $sql = "UPDATE profile SET picture = ? WHERE username = ?";
+                $sql = "UPDATE profile SET picture = ? WHERE id = ?";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("ss", $imgTag, $username);
                 $stmt->execute();
