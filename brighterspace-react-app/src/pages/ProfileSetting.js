@@ -21,9 +21,15 @@ export default function Profile() {
         //     setProfilePicture(imageUrl);
         // })
         .then(htmlString => {
+            // Parse the HTML string to extract the image URL
             const doc = new DOMParser().parseFromString(htmlString, "text/html");
-            const imgSrc = doc.querySelector('img').getAttribute('src');
-            setProfilePicture(imgSrc); // Set profile picture to the image URL
+            const imgElement = doc.querySelector('img');
+            if (imgElement) {
+                const imgSrc = imgElement.getAttribute('src');
+                setProfilePicture(imgSrc); // Set profile picture to the image URL
+            } else {
+                throw new Error('Image element not found in HTML string');
+            }
         })
         .catch(error => {
             console.error('Error fetching profile picture:', error);
