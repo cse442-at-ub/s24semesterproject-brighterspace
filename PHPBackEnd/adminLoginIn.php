@@ -40,9 +40,9 @@ function verify()
             $_SESSION['username'] = $nameAndPassword[0];
             $cookieName = 'Token';
             $cookieValue = bin2hex(random_bytes(12));
-            $hash = password_hash($cookieValue, PASSWORD_DEFAULT);
-            updateDataBase($hash, $nameAndPassword[0]);
-            setcookie($cookieName, $cookieValue, time() + (3600), '/', '', true, true);
+            $cookieHash = hash('sha256', $cookieValue);
+            updateDataBase($cookieHash, $nameAndPassword[0]);
+            setcookie($cookieName, $cookieHash, time() + (3600), '/', '', true, true);
             setcookie('Admin', $dataBaseRows[3], time() + (3600), '/', '', true, true);
             echo "True, Admin: $dataBaseRows[3]";
 
