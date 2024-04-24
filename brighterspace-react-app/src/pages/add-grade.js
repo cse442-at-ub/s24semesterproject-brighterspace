@@ -5,20 +5,17 @@ import '../styles/assignments.css'
 
 const AddGrade = (props) => {
     const [gradeError, setGradeError] = useState('')
-
-    const navigate = useNavigate()
-    const goHome = () => {
-        navigate('/')
-    }
+    
     const onButtonClick = () => {
         const class_input = document.getElementById("classes");
         const assignment_input = document.getElementById("assign");
         const student_input = document.getElementById("student");
         const score_input = document.getElementById("score");
+        const max_score_input = document.getElementById("max_score")
         var backendresponse = "";
 
-        if(score_input.value ===''){
-            setGradeError("Enter a score")
+        if(score_input.value ==='' || assignment_input.value === "" || max_score_input.value ===""){
+            setGradeError("complete all fields")
         }
         else {
             const request = new XMLHttpRequest();
@@ -37,9 +34,10 @@ const AddGrade = (props) => {
             const gradeJSON = {"class": class_input.value,
                 "assignment_name": assignment_input.value,
                 "student": student_input.value,
-                "score": score_input.value};
+                "score": score_input.value,
+                "max" : max_score_input.value};
             //TODO update path for server
-            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/addGrade.php");
+            request.open("POST", "http://localhost/PHPBackEnd/addGrade.php");
             request.send(JSON.stringify(gradeJSON));
         }
 
@@ -58,13 +56,12 @@ const AddGrade = (props) => {
                     <option value="eas_360">EAS 360</option>
                 </select>
             </div>
-            <div>
-                <label htmlFor="assignments">Choose Assignment: </label>
-                <select name="assign" id="assign">
-                    <option value="hw1">HW 1</option>
-                    <option value="hw2">HW 2</option>
-                    <option value="hw3">HW 3</option>
-                </select>
+            <div className={'AinputContainer'}>
+                <input
+                    placeholder="Name of Assignment"
+                    type="text"
+                    id="assign"
+                />
             </div>
             <div>
                 <label htmlFor="student">Choose Student: </label>
@@ -79,6 +76,13 @@ const AddGrade = (props) => {
                     placeholder="Students's Score"
                     type="number"
                     id="score"
+                />
+            </div>
+            <div className={'NAinputContainer'}>
+                <input
+                    placeholder="Max Points"
+                    type="number"
+                    id="max_score"
                 />
             </div>
             <label className="AGerrorLabel">{gradeError}</label>
