@@ -19,9 +19,6 @@ import SupportPage from "./pages/SupportPage/SupportPage"
 import Profile from './pages/ProfileSetting'
 import Settings from './pages/settings'
 
-import AddGrade from "./pages/add-grade";
-import NewAssignment from "./pages/new-assignment";
-
 import DiscussionBoard from "./pages/DiscussionBoard";
 import LandingPage from "./pages/LandingPage/LandingPage.js"
 import AddGrade from "./pages/add-grade";
