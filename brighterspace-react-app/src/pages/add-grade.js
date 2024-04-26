@@ -1,61 +1,68 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../App.css'
+import '../styles/assignments.css'
 
 const AddGrade = (props) => {
+    const [gradeError, setGradeError] = useState('')
 
-    const navigate = useNavigate()
-    const goHome = () => {
-        navigate('/')
-    }
     const onButtonClick = () => {
         const class_input = document.getElementById("classes");
         const assignment_input = document.getElementById("assign");
-        const student_input = document.getElementById("student")
-        const score_input = document.getElementById("score")
+        const student_input = document.getElementById("student");
+        const score_input = document.getElementById("score");
+        const max_score_input = document.getElementById("max_score")
+        var backendresponse = "";
 
-        const request = new XMLHttpRequest();
-        request.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                console.log(this.response);
-            }
+        if(score_input.value ==='' || assignment_input.value === "" || max_score_input.value ===""){
+            setGradeError("complete all fields")
         }
-        const gradeJSON = {"class": class_input.value,
-            "assignment_name": assignment_input.value,
-            "student": student_input.value,
-            "score": score_input.value};
-        //request.open("POST", "http://localhost:3000/PHPBackEnd/functionLoginIn.php");
-        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/functionLoginIn.php");
-        request.send(JSON.stringify(gradeJSON));
+        else {
+            const request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    console.log(this.response);
+                    backendresponse = this.response;
+                    if(backendresponse === "exists"){
+                        setGradeError("Score Updated!");
+                    }
+                    else {
+                        setGradeError("Score Added!");
+                    }
+                }
+            }
+            const gradeJSON = {"class": class_input.value,
+                "assignment_name": assignment_input.value,
+                "student": student_input.value,
+                "score": score_input.value,
+                "max" : max_score_input.value};
+            //TODO update path for server
+            request.open("POST", "http://localhost/PHPBackEnd/addGrade.php");
+            request.send(JSON.stringify(gradeJSON));
+        }
+
     }
 
     return (
-        <div className={'mainContainer'}>
+        <div className={'AGmainContainer'}>
             <div className={'titleContainer'}>
                 <div>Add Grade</div>
             </div>
-            <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={goHome} value={'Home'} />
-            </div>
-            <br />
             <div>
                 <label htmlFor="classes">Choose Class: </label>
                 <select name="classes" id="classes">
-                    <option value="cse312">CSE 312</option>
-                    <option value="cse442">CSE 442</option>
-                    <option value="eas360">EAS 360</option>
+                    <option value="cse_312">CSE 312</option>
+                    <option value="cse_442">CSE 442</option>
+                    <option value="eas_360">EAS 360</option>
                 </select>
             </div>
-            <br/>
-            <div>
-                <label htmlFor="assignments">Choose Assignment:  </label>
-                <select name="assign" id="assign">
-                    <option value="hw1">HW 1</option>
-                    <option value="hw2">HW 2</option>
-                    <option value="hw3">HW 3</option>
-                </select>
+            <div className={'AinputContainer'}>
+                <input
+                    placeholder="Name of Assignment"
+                    type="text"
+                    id="assign"
+                />
             </div>
-            <br/>
             <div>
                 <label htmlFor="student">Choose Student: </label>
                 <select name="student" id="student">
@@ -64,17 +71,23 @@ const AddGrade = (props) => {
                     <option value="Jack">Jack</option>
                 </select>
             </div>
-            <br/>
-            <div className={'inputContainer'}>
+            <div className={'AinputContainer'}>
                 <input
                     placeholder="Students's Score"
-                    type="text"
+                    type="number"
                     id="score"
                 />
             </div>
-            <br />
+            <div className={'NAinputContainer'}>
+                <input
+                    placeholder="Max Points"
+                    type="number"
+                    id="max_score"
+                />
+            </div>
+            <label className="AGerrorLabel">{gradeError}</label>
             <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create'} />
+                <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create'}/>
             </div>
         </div>
     )
