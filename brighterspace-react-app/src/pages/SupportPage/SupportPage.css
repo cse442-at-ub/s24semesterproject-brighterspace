@@ -12,13 +12,12 @@
     flex-direction: column;
     align-items: flex-start;
     border-radius: 4px;
-
-
 }
 .support_text{
     margin: 12px 0;
     font-size: 1.5rem;
     font-weight: 600;
+    color: white;
 }
 
 .input_box{
@@ -46,4 +45,13 @@
     border-radius: 4px;
     margin: 10px 0;
     word-break: break-all;
+}
+.background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(beautiful-scenery-river-surrounded-by-greenery-forest.jpg) no-repeat center center;
+    /*Attribution: https://www.freepik.com/free-photo/beautiful-scenery-river-surrounded-by-greenery-forest_16026988*/
+    background-size: cover;
 }

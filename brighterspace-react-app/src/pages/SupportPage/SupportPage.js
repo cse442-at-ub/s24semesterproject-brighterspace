@@ -67,6 +67,7 @@ const SupportPage = () => {
 
     };
     return (
+        <div className="background-container">
         <div className="main_container">
             {tickets.map((text)=> (
                 <div className="support_container">Your Current Ticket: {text}</div>
@@ -79,6 +80,7 @@ const SupportPage = () => {
                 className="input_box"/>
             <button onClick={onClickHandler} className="ticket_button">Submit Ticket</button>
             </div>
+        </div>
         </div>
     )
 }
