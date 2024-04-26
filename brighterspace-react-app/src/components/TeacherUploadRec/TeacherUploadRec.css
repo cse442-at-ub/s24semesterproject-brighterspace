@@ -1,0 +1,135 @@
+.core-TeacherUploadRec{
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    padding: 16px;
+    padding-top: 5%;
+    margin: 0;
+    margin-left: 20%;
+    width: 60%;
+    background-color: rgb(168, 227, 199);
+    height: 100vh;
+}
+
+.core-TeacherUploadRec::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
+
+.core-TeacherUploadRec p{
+    position: relative;
+    font-size: 1rem;
+    height: 2.5%;
+    min-height: 20px;
+    color: red;
+}
+
+.core-TeacherUploadRec h2{
+    font-size: 1.5rem;
+    color: darkgreen;
+}
+
+.core-TeacherUploadRec ul{
+    position: absolute;
+    z-index: 100;
+    overflow: auto;
+    list-style-type: none;
+    width: calc(100% - 32px);
+    border-radius: 2px;
+    border-style: solid;
+    border-width: .5px;
+    border-color: darkgreen;
+    max-height: 60%;
+}
+
+.core-TeacherUploadRec ul::-webkit-scrollbar{
+    width: 5px;
+}
+
+.core-TeacherUploadRec ul::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 5px;
+}
+
+.core-TeacherUploadRec ul::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.core-TeacherUploadRec li{
+    width: 100%;
+    color: yellow;
+    background-color: green;
+    height: auto;
+    align-content: center;
+    cursor: default;
+    font-size: 1.2rem;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.core-TeacherUploadRec input{
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    border-radius: 2px;
+    border-width: .5px;
+    border-color: darkgreen;
+    border-style: solid;
+    font-size: 1.5rem;
+    align-content: center;
+    background-color: rgba(0, 0, 0, .1);
+    padding: 4px;
+}
+
+.core-TeacherUploadRec input:focus{
+    outline: none;
+    border-width: .5px;
+}
+
+.core-TeacherUploadRec input[type="file"]{
+    width: 100%;
+    height: 5%;
+    min-height: 25px;
+    border-radius: 2px;
+    border-width: .5px;
+    border-color: darkgreen;
+    border-style: solid;
+    font-size: 1.5rem;
+    align-content: center;
+    background-color: rgba(0, 0, 0, .1);
+    padding-left: 4px;
+    padding-right: 4px;
+    display: flex;
+}
+
+.core-TeacherUploadRec input[type="file"]::-webkit-file-upload-button {
+    padding: none;
+    margin: none;
+    height: 100%;
+    width: auto;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    border-width: 0;
+}
+
+.core-TeacherUploadRec button{
+    width: 50%;
+    height: 5%;
+    border-radius: 2px;
+    border-width: .5px;
+    border-color: darkgreen;
+    background-color: rgb(56, 113, 60);
+    color: rgb(220, 220, 220);
+    font-size: 1.5rem;
+    min-height: 25px;
+    margin-left: 25%;
+    word-wrap: break-word;
+}
+
+.core-TeacherUploadRec button:hover{
+    background-color: rgb(84, 163, 87);
+    color: rgb(60, 60, 60);
+}

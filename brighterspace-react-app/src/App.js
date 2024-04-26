@@ -1,15 +1,13 @@
 import {HashRouter as Router,Routes,Route} from 'react-router-dom'
-import {Navigate} from 'react-router-dom'
-//import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import StudentLogin from './pages/student-login'
 import AdminLogin from './pages/admin-login'
-import StudentHome from './pages/StudentHome'
+import StudentHome from './pages/StudentHome/StudentHome'
 import './App.css'
-import TeacherHome from './pages/TeacherHome'
-import StudentClassPage from './pages/StudentClassPage'
-import TeacherClassPage from './pages/TeacherClassPage'
+import TeacherHome from './pages/TeacherHome/TeacherHome'
+import StudentClassPage from './pages/StudentClassPage/StudentClassPage'
+import TeacherClassPage from './pages/TeacherClassPage/TeacherClassPage'
 import Sidebar from "./components/Sidebar";
 import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
@@ -20,8 +18,13 @@ import ChangeSidebar from "./components/ChangeSidebar";
 import SupportPage from "./pages/SupportPage"
 import Profile from './pages/ProfileSetting'
 import Settings from './pages/settings'
+
 import AddGrade from "./pages/add-grade";
 import NewAssignment from "./pages/new-assignment";
+
+import DiscussionBoard from "./pages/DiscussionBoard";
+import LandingPage from "./pages/LandingPage/LandingPage.js"
+
 
 function App() {
 
@@ -55,6 +58,9 @@ function App() {
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/add-grade" element={<AddGrade/>}/>
             <Route path="/new-assignment" element={<NewAssignment/>}/>
+
+            <Route path="/discussions" element={<DiscussionBoard/>}/>
+            <Route path="/landing" element={<LandingPage/>}/>
           </Routes>
         </Router>
       </header>
