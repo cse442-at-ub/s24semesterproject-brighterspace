@@ -15,7 +15,7 @@ import Calendar from './pages/Calendar'
 import TaskManager from "./pages/TaskManager";
 import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
-import SupportPage from "./pages/SupportPage"
+import SupportPage from "./pages/SupportPage/SupportPage"
 import Profile from './pages/ProfileSetting'
 import Settings from './pages/settings'
 import DiscussionBoard from "./pages/DiscussionBoard";

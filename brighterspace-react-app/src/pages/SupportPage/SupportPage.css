@@ -1,8 +1,4 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 .main_container{
     height: 100vh;
     display: flex;
@@ -49,4 +45,4 @@
     border-radius: 4px;
     margin: 10px 0;
     word-break: break-all;
-} */
+}

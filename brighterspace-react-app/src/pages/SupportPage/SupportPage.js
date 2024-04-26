@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import '../styles/SupportPage.css'
+import './SupportPage.css'
 
 const SupportPage = () => {
     const [support,setSupport] = useState("");
