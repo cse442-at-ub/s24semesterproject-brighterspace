@@ -12,6 +12,12 @@
     flex-direction: column;
     align-items: flex-start;
     border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .support_text{
     margin: 12px 0;
@@ -24,18 +30,23 @@
     height: 75px;
     width: 465px;
     background: #ffff;
+    border-radius: 10px;
 }
 .ticket_button{
     height: 40px;
-    width: 80px;
-    background-color: #978dcc;
+    width: 110px;
+    background-color: #228b22;
     color: white;
     font-size: medium;
-    border-radius: 4px;
+    border-radius: 10px;
     border-style: none;
     margin-top: 10px;
     cursor: pointer;
+    align-self: center;
 
+}
+.ticket_button:hover{
+    background-color: #90ee90;
 }
 
 .support_container{
