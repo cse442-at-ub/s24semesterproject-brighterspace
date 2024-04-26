@@ -12,7 +12,7 @@ import Sidebar from "./components/Sidebar";
 import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
-import TaskManager from "./pages/TaskManager";
+import TaskManager from "./pages/TaskManager/TaskManager";
 import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
 import SupportPage from "./pages/SupportPage/SupportPage"

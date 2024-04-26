@@ -1,7 +1,7 @@
 .manager{
     font-family: Arial, sans-serif;
     text-align: center;
-    width: 100%;
+    width: 70%;
 }
 h1{
     font-size: 4rem;
@@ -67,7 +67,7 @@ input[type="text"]{
     padding: 10px;
     border: 2px solid black;
     color: black;
-    border-radius: 4px;
+    border-radius: 10px;
     margin-top: 10px;
 }
 ol{
@@ -78,11 +78,13 @@ li{
     font-size: 2rem;
     font-weight: bold;
     padding: 15px;
-    background-color: lightgray;
-    border: 3px solid grey;
-    border-radius: 5px;
+    background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%);
+    border: 1px solid grey;
+    border-radius: 10px;
     display: flex;
     align-items: center;
+    color: white;
+    margin-top: 5px;
 }
 .text{
     flex: 1;
@@ -96,4 +98,22 @@ body{
     background-color: forestgreen;
 }
 .enter_a_task{
+}
+.background-taskmanager_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pexels-eberhardgross-443446.jpg) no-repeat center center;
+    /*Attribution: https://www.freepik.com/free-photo/beautiful-scenery-river-surrounded-by-greenery-forest_16026988*/
+    background-size: cover;
+}
+.manager_header{
+    color: white;
+}
+.tasks_container{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
 }

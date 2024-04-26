@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai'
 import * as IoIcons from 'react-icons/io'
 import * as RiIcons from 'react-icons/ri'
 import * as Fa6 from "react-icons/fa6";
-import "../styles/TaskManager.css"
+import "./TaskManager.css"
 
 
 function TaskManager(){
@@ -114,8 +114,11 @@ function TaskManager(){
     }
 
     return(
+        <div className="background-taskmanager_container">
         <div className="manager">
+            <div className="manager_header">
             <h1>Current Tasks</h1>
+            </div>
             <div>
                 <input
                     type="text"
@@ -132,6 +135,7 @@ function TaskManager(){
                     Add
                 </button>
             </div>
+            <div className="tasks_container">
             <ol>
                 {tasks.map((task, index) =>
                     <li key={index}>
@@ -161,7 +165,9 @@ function TaskManager(){
                     </li>
                 )}
             </ol>
+            </div>
 
+        </div>
         </div>
     )
 
