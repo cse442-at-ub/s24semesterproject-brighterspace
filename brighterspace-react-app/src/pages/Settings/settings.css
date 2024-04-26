@@ -1,0 +1,8 @@
+.setting_background_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pexels-stywo-1261728.jpg) no-repeat center center;
+    background-size: cover;
+}
