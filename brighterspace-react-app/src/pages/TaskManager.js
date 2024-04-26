@@ -59,6 +59,7 @@ function TaskManager(){
 
 
     }
+
     function addTask(){
         const request = new XMLHttpRequest();
         if(newTask.trim() !== "") {
@@ -67,6 +68,8 @@ function TaskManager(){
 
             request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
             update_messages(request, credentialsJSON)
+            setTasks(t => [...t, newTask])
+            setNewTask("")
         }
 
 
@@ -75,6 +78,8 @@ function TaskManager(){
     function deleteTask(index){
         const request = new XMLHttpRequest();
         const credentialsJSON = {"delete": index};
+        const updatedTasks = tasks.filter((_,i)=> i !== index)
+        setTasks(updatedTasks);
 
         request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
         update_messages(request, credentialsJSON)
@@ -87,11 +92,11 @@ function TaskManager(){
             const credentialsJSON = {"addPriority": index};
             request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
 
-            // const updatedTasks = [...tasks];
+            const updatedTasks = [...tasks];
 
             update_messages(request, credentialsJSON);
-            //     [updatedTasks[index],updatedTasks[index-1]] = [updatedTasks[index-1],updatedTasks[index]]
-            // setTasks(updatedTasks)
+            [updatedTasks[index],updatedTasks[index-1]] = [updatedTasks[index-1],updatedTasks[index]]
+            setTasks(updatedTasks)
         }
 
     }
@@ -102,6 +107,8 @@ function TaskManager(){
             request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
             const updatedTasks = [...tasks];
             update_messages(request,credentialsJSON);
+            [updatedTasks[index],updatedTasks[index+1]] = [updatedTasks[index+1],updatedTasks[index]]
+            setTasks(updatedTasks)
 
         }
     }
