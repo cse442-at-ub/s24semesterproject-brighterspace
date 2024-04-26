@@ -5,7 +5,7 @@ import '../styles/assignments.css'
 
 const AddGrade = (props) => {
     const [gradeError, setGradeError] = useState('')
-    
+
     const onButtonClick = () => {
         const class_input = document.getElementById("classes");
         const assignment_input = document.getElementById("assign");

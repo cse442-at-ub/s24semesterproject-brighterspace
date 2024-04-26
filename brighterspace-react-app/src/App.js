@@ -24,6 +24,10 @@ import NewAssignment from "./pages/new-assignment";
 
 import DiscussionBoard from "./pages/DiscussionBoard";
 import LandingPage from "./pages/LandingPage/LandingPage.js"
+import AddGrade from "./pages/add-grade";
+import NewAssignment from "./pages/new-assignment";
+import Grades from "./pages/grades";
+
 
 
 function App() {
@@ -61,6 +65,9 @@ function App() {
 
             <Route path="/discussions" element={<DiscussionBoard/>}/>
             <Route path="/landing" element={<LandingPage/>}/>
+            <Route path="/add-grade" element={<AddGrade/>}/>
+            <Route path="/new-assignment" element={<NewAssignment/>}/>
+            <Route path="/grades" element={<Grades/>}/>
           </Routes>
         </Router>
       </header>
