@@ -1,0 +1,90 @@
+select{
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+.AinputContainer input[type='number'] {
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+.AGmainContainer {
+    text-align: center;
+    width: 50%;
+    height: 70%;
+    background-color: #4ced78;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    border-radius: 8px;
+
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+.AGerrorLabel {
+    color: darkred;
+    font-size: 1vw;
+    font-weight: bold;
+}
+.NAerrorLabel {
+    color: darkred;
+    font-size: 1vw;
+    font-weight: bold;
+}
+.NAinputContainer input[type='number'] {
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+.AinputContainer input[type='text'] {
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+.NAmainContainer {
+    text-align: center;
+    width: 50%;
+    height: 60%;
+    background-color: #4ced78;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    border-radius: 8px;
+
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
