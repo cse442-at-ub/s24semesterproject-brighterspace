@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../App.css'
+import '../styles/register.css'
 
 const Register = (props) => {
 
@@ -50,65 +50,48 @@ const Register = (props) => {
     }
 
     return (
-        <div className={'mainContainer'}>
-            <div className={'titleContainer'}>
+        <div className={'RmainContainer'}>
+            <div className={'RtitleContainer'}>
                 <div>Register your Account</div>
             </div>
-            <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={goHome} value={'Home'}/>
-            </div>
-
-            <br/>
-            <div className={'inputContainer'}>
-                <label>Name: </label>
+            <div className={'RinputContainer'}>
                 <input
-                    placeholder="Enter your name"
+                    placeholder="full name"
                     type="text"
                     id="fullName"
                 />
             </div>
-            <br/>
-            <div className={'inputContainer'}>
-                <label>Username: </label>
+            <div className={'RinputContainer'}>
                 <input
-                    placeholder="Enter your desired username"
+                    placeholder="username"
                     type="text"
                     id="username"
                 />
             </div>
 
-            <br/>
-            <div className={'inputContainer'}>
-                <label>Email: </label>
+            <div className={'RinputContainer'}>
                 <input
-                    placeholder="Enter your email"
+                    placeholder="email"
                     type="text"
                     id="email"
                 />
             </div>
-
-            <br/>
-            <div className={'inputContainer'}>
-                <label>Password: </label>
+            <div className={'RinputContainer'}>
                 <input
-                    placeholder="Enter your password"
+                    placeholder="password"
                     type="password"
                     id="password"
                 />
             </div>
-            <br/>
-            <div className={'inputContainer'}>
-                <label>Confirm Password: </label>
+            <div className={'RinputContainer'}>
                 <input
-                    placeholder="Confirm password"
+                    placeholder="confirm password"
                     type="password"
                     id="cpassword"
                 />
             </div>
-            <br/>
-            <label className="errorLabel">{passwordError}</label>
-            <br/>
-            <div className={'inputContainer'}>
+            <label className="RerrorLabel">{passwordError}</label>
+            <div className={'RinputContainer'}>
                 <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Create account'}/>
             </div>
         </div>
@@ -116,9 +99,3 @@ const Register = (props) => {
 }
 
 export default Register
-
-/*
-
-
-
- */
