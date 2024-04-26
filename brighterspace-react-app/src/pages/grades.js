@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../App.css'
+import '../styles/grade.css'
 
 const Grades = (props) => {
     const navigate = useNavigate()
@@ -10,15 +11,27 @@ const Grades = (props) => {
 
 
     function generateTable(){
-        /*
-        const gradeObj = JSON.parse(fetchGrades());
-        let text = "<table>"
+        //const gradeObj = JSON.parse(fetchGrades());
+        const gradeObj = JSON.parse(testInfoFetch());
+        const keys = Object.keys(gradeObj);
+
+        let text = ""
+        let i = 0;
         for (let x in gradeObj) {
-            text += "<tr><td>" + gradeObj[x] + "</td></tr>";
+            const class_name = keys[i].split("_");
+            text += "<h2>" + class_name[0].toUpperCase() + class_name[1] + "</h2>";
+            text += "<table> <tr><th>Assignment</th><th>Score</th></tr>"
+            const gradeArray = gradeObj[x].split("&");
+            for (let y in gradeArray){
+                const assignmentArray = gradeArray[y].split(":")
+                text += "<tr><td>"+ assignmentArray[0] +"</td><td>" + assignmentArray[1] + "</td></tr>";
+            }
+            text += "</table>"
+            //text += "<tr><td>"+ keys[i] +"</td><td>" + gradeObj[x] + "</td></tr>";
+            i++;
         }
-        text += "</table>"
         document.getElementById("gradesTable").innerHTML = text;
-         */
+
     }
     function fetchGrades(){
         const request = new XMLHttpRequest();
@@ -37,6 +50,11 @@ const Grades = (props) => {
         request.send(JSON.stringify(gradeJSON));
 
         return backend_response;
+    }
+
+    function testInfoFetch(){
+        const myJSON = '{"cse_312":"hw1:10/10&hw2:10/15&essay:50/60", "cse_442":"hw1:10/10&hw2:10/15&essay:50/60", "eas_360":"hw1:10/10&hw2:10/15&essay:50/60"}';
+        return myJSON;
     }
 
     function getUserFromCookie (){
@@ -59,7 +77,7 @@ const Grades = (props) => {
             <div className={'titleContainer'}>
                 <div>Grades</div>
             </div>
-            <div id="gradesTable">
+            <div id="gradesTable" className={'gradesTable'}>
 
             </div>
 
