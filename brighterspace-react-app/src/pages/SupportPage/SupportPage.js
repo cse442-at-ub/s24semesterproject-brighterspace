@@ -42,6 +42,7 @@ const SupportPage = () => {
         request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/supportPage.php");
         const credentialsJSON = {"Ticket": support};
         request.send(JSON.stringify(credentialsJSON));
+        setTickets((tickets) => [[...tickets,support]])
 
         request.onload = () => {
             if (request.readyState === XMLHttpRequest.DONE) {
