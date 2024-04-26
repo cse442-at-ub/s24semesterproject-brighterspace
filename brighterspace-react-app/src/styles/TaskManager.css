@@ -1,33 +1,63 @@
-/* .manager{
+.manager{
     font-family: Arial, sans-serif;
     text-align: center;
+    width: 100%;
 }
 h1{
     font-size: 4rem;
 }
-button{
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: white;
-    border: none;
+
+.addbutton{
+    background-color: #F1F3FD;
+    color: #111;
+    border: 1px solid #111;
+    font-weight: 600;
+    padding: 5px 10px;
+    margin: 0 5px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.5s ease;
-}
-.addbutton{
-    background-color: green;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 90px;
+    font-size: large;
+    height: 40px;
+
 }
 .addbutton:hover{
     background-color: lightgreen;
 }
 .deletebutton{
     background-color: darkred;
+    color: #111;
+    border: 1px solid #111;
+    font-weight: 600;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 150px;
+    font-size: medium;
+    height: 50px;
 }
 .deletebutton:hover{
     background-color: red;
 }
 .movebutton{
     background-color: lightskyblue;
+    color: #111;
+    border: 1px solid #111;
+    font-weight: 600;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 150px;
+    font-size: medium;
+    height: 50px;
 }
 .movebutton:hover{
     background-color: lightblue;
@@ -37,6 +67,8 @@ input[type="text"]{
     padding: 10px;
     border: 2px solid black;
     color: black;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 ol{
     padding: 0;
@@ -62,4 +94,6 @@ li{
 }
 body{
     background-color: forestgreen;
-} */
+}
+.enter_a_task{
+}
