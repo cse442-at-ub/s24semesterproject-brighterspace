@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if ($_GET['data'] === 'video') {
         $classroom = $_POST['classroom'];
         $title = $_POST['title'];
-        // if ($_FILES['video']['error'] === UPLOAD_ERR_OK) {
+        if ($_FILES['video']['error'] === UPLOAD_ERR_OK) {
             $uploadDir = 'uploads/';
             $uploadFile = $uploadDir . basename($_FILES['file']['name']);
             // move the file to the upload directory
@@ -37,10 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     'success' => false,
                     'error' => 'Failed to upload file: '
                 ];
+                echo("failed to move file");
             }
         header('Content-Type: application/json');
         // echo json_encode($response);
-        // }
+        echo("failed to upload video");
+        }
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($_GET['data'] === 'video') {
