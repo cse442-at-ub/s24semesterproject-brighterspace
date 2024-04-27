@@ -38,6 +38,7 @@ function verify()
         if (password_verify($nameAndPassword[1], $dataBaseRows[1]) and $nameAndPassword[0] == $dataBaseRows[0]) {
 //
             $_SESSION['username'] = $nameAndPassword[0];
+            $_SESSION['name'] = $dataBaseRows[4];
             $cookieName = 'Token';
             $cookieValue = bin2hex(random_bytes(12));
             $cookieHash = hash('sha256', $cookieValue);
