@@ -1,0 +1,15 @@
+.gradesTable td{
+    border: 1px solid;
+}
+.gradesTable table {
+    border: 1px solid;
+    width: 50%;
+}
+.grades_background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pexels-jahoo-1260324.jpg) no-repeat center center;
+    background-size: cover;
+}

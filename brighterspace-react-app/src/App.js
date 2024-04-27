@@ -23,7 +23,7 @@ import DiscussionBoard from "./pages/DiscussionBoard/DiscussionBoard";
 import LandingPage from "./pages/LandingPage/LandingPage.js"
 import AddGrade from "./pages/add-grade";
 import NewAssignment from "./pages/new-assignment";
-import Grades from "./pages/grades";
+import Grades from "./pages/Grades/grades";
 import Recordings from "./components/StudentRecording/StudentRecording"
 
 
@@ -65,7 +65,9 @@ function App() {
             <Route path="/add-grade" element={<AddGrade/>}/>
             <Route path="/new-assignment" element={<NewAssignment/>}/>
             <Route path="/grades" element={<Grades/>}/>
-            <Route path="/recordings" element={<Recordings/>}/>
+            <Route path="/classes/recordings" element={<Recordings/>}/>
+            <Route path="/classes/grades" element={<Grades/>}/>
+            <Route path="/addgrade" element={<AddGrade/>}/>
           </Routes>
         </Router>
       </header>

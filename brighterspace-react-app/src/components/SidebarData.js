@@ -36,12 +36,22 @@ export const SidebarData = [
 
     },
     {
-        title: 'Home',
-        path: '/student-home',
+        title: 'Classes',
+        path: '/classes',
         icon: <AiIcons.AiFillHome />,
         iconClosed: <RiIcons.RiArrowDownSFill/>,
         iconOpened: <RiIcons.RiArrowUpSFill/>,
         subNav: [
+            {
+                title: 'Recordings',
+                path: '/classes/recordings',
+                icon: <IoIcons.IoIosPaper />,
+            },
+            {
+                title: 'Grades',
+                path: '/classes/grades',
+                icon: <IoIcons.IoIosPaper />,
+            },
 
 
         ]
