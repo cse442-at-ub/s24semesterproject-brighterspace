@@ -52,14 +52,26 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($_GET['data'] === 'video') {
-        $sql = "SELECT picture FROM profile WHERE id = ?";
+        $sql = "SELECT classroom, title, video FROM video"; // Select all videos with their classroom and title
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
         $stmt->execute();
-        $stmt->bind_result($profile_picture);
-        $stmt->fetch();
+        $stmt->bind_result($classroom, $title, $video); // Bind the results to variables
+        $videos = []; // Array to store all videos
+        while ($stmt->fetch()) {
+            $videoInfo = [
+                'classroom' => $classroom,
+                'title' => $title,
+                'video' => $video
+            ];
+            $videos[] = $videoInfo; // Add each video to the array
+        }
         $stmt->close();
-        echo $profile_picture;
+        $response = [
+            'success' => true,
+            'message' => 'Returned list of videos'
+        ];
+        echo json_encode($response);
+        echo json_encode($videos); // Return all videos as JSON
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
