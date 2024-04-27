@@ -6,55 +6,47 @@ import '../styles/grade.css'
 const Grades = (props) => {
     const navigate = useNavigate()
     useEffect(() => {
-        generateTable();
+        fetchGrades();
     }, []);
 
 
-    function generateTable(){
-        //const gradeObj = JSON.parse(fetchGrades());
-        const gradeObj = JSON.parse(testInfoFetch());
+    function generateTable(intput){
+        const gradeObj = JSON.parse(intput);
         const keys = Object.keys(gradeObj);
 
-        let text = ""
+        let text = "";
         let i = 0;
         for (let x in gradeObj) {
             const class_name = keys[i].split("_");
             text += "<h2>" + class_name[0].toUpperCase() + class_name[1] + "</h2>";
-            text += "<table> <tr><th>Assignment</th><th>Score</th></tr>"
+            text += "<table> <tr><th>Assignment</th><th>Score</th></tr>";
             const gradeArray = gradeObj[x].split("&");
             for (let y in gradeArray){
-                const assignmentArray = gradeArray[y].split(":")
+                const assignmentArray = gradeArray[y].split(":");
                 text += "<tr><td>"+ assignmentArray[0] +"</td><td>" + assignmentArray[1] + "</td></tr>";
             }
-            text += "</table>"
-            //text += "<tr><td>"+ keys[i] +"</td><td>" + gradeObj[x] + "</td></tr>";
+            text += "</table>";
             i++;
         }
         document.getElementById("gradesTable").innerHTML = text;
-
     }
+
     function fetchGrades(){
         const request = new XMLHttpRequest();
         let username = getUserFromCookie();
-        let backend_response = "";
+        //let backend_response = "";
 
         request.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
                 console.log(this.response);
-                backend_response = this.response;
+                generateTable(this.response);
             }
         }
         const gradeJSON = {"name": username};
         //TODO update path for php
-        request.open("POST", "student grades php");
+        request.open("POST", "http://localhost/PHPBackEnd/grades.php");
         request.send(JSON.stringify(gradeJSON));
 
-        return backend_response;
-    }
-
-    function testInfoFetch(){
-        const myJSON = '{"cse_312":"hw1:10/10&hw2:10/15&essay:50/60", "cse_442":"hw1:10/10&hw2:10/15&essay:50/60", "eas_360":"hw1:10/10&hw2:10/15&essay:50/60"}';
-        return myJSON;
     }
 
     function getUserFromCookie (){
