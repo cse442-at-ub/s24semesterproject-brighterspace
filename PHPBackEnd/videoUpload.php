@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     'success' => true,
                     'message' => 'File uploaded successfully'
                 ];
+                echo("upload successful");
             } else {
                 $response = [
                     'success' => false,
@@ -45,6 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         } else {
             echo("failed to upload video");
         }
+    } else {
+        echo("video not found in the post request");
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($_GET['data'] === 'video') {
