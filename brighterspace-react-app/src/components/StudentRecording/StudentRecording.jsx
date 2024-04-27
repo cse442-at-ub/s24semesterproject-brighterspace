@@ -14,16 +14,16 @@ export default function StudentRecording () {
         "classroom": "CSE442"
     }
 
-    const [listOfRecording, setListOfRecording] = useState([placeHolder]);
+    const [listOfRecording, setListOfRecording] = useState([]);
     useEffect(() => {
         console.log("Loading fetch"); //testing purposes
         fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/videoUpload.php?data=video", {
             method: "GET"
         })
         .then(response => response.json())
-        .then(data => {
-            console.log("recordings:", data); //testing purposes
-            setListOfRecording(data);
+        .then(videos => {
+            console.log("recordings:", videos); //testing purposes
+            setListOfRecording(videos);
         })
         .catch(error => {
             console.error("Error:", error);
@@ -31,6 +31,10 @@ export default function StudentRecording () {
     }, []);
 
     function generateVideoList() {
+        if (listOfRecording.length === 0) {
+            return <li>Loading...</li>;
+        }
+
         return listOfRecording.map(e => (
             <li key={e.title}>
                 <h2>{e.title}</h2>
