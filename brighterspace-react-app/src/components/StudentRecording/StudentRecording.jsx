@@ -39,7 +39,7 @@ export default function StudentRecording () {
             <li key={e.title}>
                 <h2>{e.title}</h2>
                 <p>{e.classroom}</p>
-                <video width="400" controls="" autoplay="" muted="">
+                <video width="400" controls="true" autoplay="false" muted="false">
                     <source src={"../../PHPBackEnd/"+e.video} type="video/mp4"/>
                 </video>
             </li>
