@@ -1,0 +1,80 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
+    padding: 20px;
+    border-radius: 10px;
+}
+.titleContainer{
+    align-self: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: white;
+}
+.setting-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pexels-lum3n-44775-167699.jpg) no-repeat center center;
+    background-size: cover;
+    align-self: center;
+    align-content: center;
+}
+.subtext{
+    font-size: xx-small;
+    margin-bottom: 10px;
+}
+.inputContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
+    margin-top: 5px;
+    border-radius: 10px;
+    width: 50%;
+    align-self: center;
+
+}
+.inputButton{
+    border-radius: 2px;
+    width: 50px;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
+}
+.changecolor{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+.passwordcontainer{
+    background: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+}
+.fix_distance{
+}
+.password_inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
+    border-radius: 10px;
+    width: 50%;
+    align-self: center;
+    margin-left: 5px;
+
+}
