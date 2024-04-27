@@ -38,6 +38,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                         <button onClick={() => handleTabClick("classrooms")} className={activeTab === "classrooms" ? 'active' : ''}>Classes</button>
                         <button onClick={() => handleTabClick("addclass")} className={activeTab === "addclass" ? 'active' : ''}>Create Classroom</button>
                         <button onClick={() => handleTabClick("enrollstudents")} className={activeTab === "enrollstudents" ? 'active' : ''}>Enroll Students</button>
+                        <button onClick={() => handleTabClick("recording")} className={activeTab === "recording" ? 'active' : ''}>Upload Recordings</button>
                     </>
                 )}
                 {page === "StudentClassPage" && (
@@ -49,7 +50,6 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 {page === "TeacherClassPage" && (
                     <>
                         <button onClick={() => handleTabClick("syllabus")} className={activeTab === "syllabus" ? 'active' : ''}>Syllabus</button>
-                        <button onClick={() => handleTabClick("recording")} className={activeTab === "recording" ? 'active' : ''}>Upload Recordings</button>
                     </>
                 )}
             </div>
