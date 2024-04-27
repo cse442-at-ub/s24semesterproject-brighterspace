@@ -74,11 +74,11 @@ ol{
     padding: 0;
 
 }
-li{
+.listed_elements{
     font-size: 2rem;
     font-weight: bold;
     padding: 15px;
-    background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%);
+    background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
     border: 1px solid grey;
     border-radius: 10px;
     display: flex;
@@ -112,7 +112,7 @@ body{
     color: white;
 }
 .tasks_container{
-    background-color: white;
+    background: white;
     padding: 10px;
     border-radius: 10px;
     margin-top: 5px;

@@ -138,7 +138,7 @@ function TaskManager(){
             <div className="tasks_container">
             <ol>
                 {tasks.map((task, index) =>
-                    <li key={index}>
+                    <li key={index} className="listed_elements">
                         <span className="text">{task}</span>
                         <button
                             className="deletebutton"

@@ -48,12 +48,14 @@ export default function StudentRecording () {
 
     return (
         <>
+            <div className="recordings_background">
             <div class="core-StudentRecording">
                 <div class="recordings">
                     <ul>
                         {generateVideoList()}
                     </ul>
                 </div>
+            </div>
             </div>
         </>
     );
