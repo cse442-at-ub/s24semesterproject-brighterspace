@@ -39,9 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 ];
                 echo("failed to move file");
             }
-        header('Content-Type: application/json');
-        // echo json_encode($response);
-        echo("failed to upload video");
+            header('Content-Type: application/json');
+            // echo json_encode($response);
+            // echo("failed to upload video");
+        } else {
+            echo("failed to upload video");
         }
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
