@@ -1,6 +1,6 @@
 import {HashRouter as Router,Routes,Route} from 'react-router-dom'
 import Home from './pages/home'
-import Login from './pages/login'
+import Login from './pages/LoginPage/login'
 import StudentLogin from './pages/student-login'
 import AdminLogin from './pages/admin-login'
 import StudentHome from './pages/StudentHome/StudentHome'
@@ -17,9 +17,9 @@ import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
 import SupportPage from "./pages/SupportPage/SupportPage"
 import Profile from './pages/ProfileSetting/ProfileSetting'
-import Settings from './pages/settings'
+import Settings from './pages/UserSetting/settings'
 
-import DiscussionBoard from "./pages/DiscussionBoard";
+import DiscussionBoard from "./pages/DiscussionBoard/DiscussionBoard";
 import LandingPage from "./pages/LandingPage/LandingPage.js"
 import AddGrade from "./pages/add-grade";
 import NewAssignment from "./pages/new-assignment";
@@ -38,7 +38,7 @@ function App() {
           <Sidebar/>
           </ChangeSidebar>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<LandingPage/>} />
             <Route path="/login" element={<Login  />} />
             <Route path="/student-login" element={<StudentLogin  />} />
             <Route path="/admin-login" element={<AdminLogin  />} />
@@ -59,7 +59,6 @@ function App() {
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/add-grade" element={<AddGrade/>}/>
             <Route path="/new-assignment" element={<NewAssignment/>}/>
-
             <Route path="/discussions" element={<DiscussionBoard/>}/>
             <Route path="/landing" element={<LandingPage/>}/>
             <Route path="/add-grade" element={<AddGrade/>}/>

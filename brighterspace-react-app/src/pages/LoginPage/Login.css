@@ -1,0 +1,87 @@
+.login-background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(sergei-a--heLWtuAN3c-unsplash.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.LmainContainer {
+    text-align: center;
+    width: 30%;
+    height: 50%;
+    background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
+    color: white;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    border-radius: 10px;
+
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.LtitleContainer {
+    font-weight: bold;
+    font-size: 1.5vw;
+    margin: 1vw;
+    cursor: default;
+}
+
+.LinputContainer input[type='text'] {
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+
+.LinputContainer input[type='password'] {
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+
+.LinputContainer input[type='button'] {
+    border: none;
+    background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
+    color: linear-gradient(to right, #868f96 0%, #596164 100%);
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.LerrorLabel {
+    color: darkred;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+input[type='button']:hover{
+    background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
+}
+
+a {
+    color: #6f6896;
+    text-decoration: underline;
+    cursor: pointer;
+}
