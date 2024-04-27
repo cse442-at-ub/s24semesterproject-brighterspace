@@ -11,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $name = '';
     $task = '';
     $username = $_SESSION['username'];
+
     foreach ($body as $key => $value) {
         $name = $key;
         $task = $value;
     }
     $info = read_data_base();
-
     if ($name == 'Ticket'){
         if ($info[0]){
 
@@ -38,11 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 
     else if ($name == 'delete'){
+        $newStuff = [];
         $all_task =  json_decode($info[1]['Task']);
-
-        $current_task = $all_task[$task];
-        unset($all_task[$task]);
-        insert_into_database($username,$all_task,1);
+        foreach ($all_task as $value){
+            if ($value != $all_task[$task]){
+                $newStuff[] = $value;
+            }
+        }
+        insert_into_database($username,$newStuff,1);
     }
 
     else if ($name == 'addPriority'){
@@ -81,18 +84,36 @@ function insert_into_database($name, $starter_task, $option): bool
     $json_array = json_encode($starter_task);
 
     if ($option == 0){
-        $state = $conn ->prepare("INSERT INTO taskmanger (Name, Task) VALUES (?, ?)");
-        $state ->bind_param('ss', $name, $json_array);
+
+
+        $conn = database();
+        // $state = $conn ->prepare("INSERT INTO taskManger (Name, Task) VALUES (?, ?)");
+        // $state->bind_param('ss', $name, $json_array);
+
+        $sql = "INSERT INTO taskManger (Name, Task) VALUES ('{$name}','{$json_array}')";
+        if ($conn->query($sql)) {
+            format_response($json_array);
+            return true;
+        } else {
+            return false;
+        }
+
     }
     else {
+        $conn = database();
+        // $state = $conn -> prepare("UPDATE taskmanger SET Task=? WHERE Name=?");
+        // $state ->bind_param('ss', $name, $json_array);
 
-        $state = $conn -> prepare("UPDATE taskmanger SET Task=? WHERE Name=?");
-        $state ->bind_param('ss', $json_array, $name);
+        $sql = "UPDATE taskManger SET Task='$json_array' WHERE Name='$name'";
+        if ($conn->query($sql)) {
+            format_response($json_array);
 
-
+            return true;
+        } else {
+            return false;
+        }
 
     }
-
 
     if ($state ->execute()){
         $return_value = true;
@@ -111,14 +132,12 @@ function read_data_base(): array
 {
     global $conn;
     $name = $_SESSION['username'];
-    $state  = $conn -> prepare("SELECT * FROM taskmanger WHERE Name=?");
+    $state  = $conn -> prepare("SELECT * FROM taskManger WHERE Name=?");
     $state ->bind_param('s', $name);
-
     $state ->execute();
     $results = $state ->get_result();
     while ($row = $results -> fetch_assoc()){
         return [true, $row];
-
     }
     return [false];
 
