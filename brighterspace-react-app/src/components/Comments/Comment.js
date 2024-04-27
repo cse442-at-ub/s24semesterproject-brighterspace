@@ -17,6 +17,7 @@ const Comment = ({ comments, handleAddComments, handleDeleteComments }) => {
     }
     return(
         <div>
+        <div className="entire-container">
             <div className="comment-container">
                 <h3>{comments.text}</h3>
                 {showInput && <input
@@ -49,6 +50,7 @@ const Comment = ({ comments, handleAddComments, handleDeleteComments }) => {
                     />
                 ))}
             </div>
+        </div>
         </div>
     );
 }

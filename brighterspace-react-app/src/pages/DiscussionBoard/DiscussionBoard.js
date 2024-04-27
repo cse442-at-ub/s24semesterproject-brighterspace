@@ -19,6 +19,7 @@ export default function DiscussionBoard(){
         setComments(updatedTree)
     }
     return(
+        <div className="discussion-background">
         <div className="comment-app">
             <Comment
                 key={comments.id}
@@ -26,6 +27,7 @@ export default function DiscussionBoard(){
                 handleAddComments={handleAddComments}
                 handleDeleteComments={handleDeleteComments}
             />
+        </div>
         </div>
     );
 }

@@ -61,7 +61,7 @@ const Login = (props) => {
             </div>
             <label className="LerrorLabel">{passwordError}</label>
             <div className={'LinputContainer'}>
-                <input className={'inputButton'} type="button" onClick={Loginf} value={'LOGIN'}/>
+                <input type="button" onClick={Loginf} value={'LOGIN'}/>
             </div>
 
         </div>
