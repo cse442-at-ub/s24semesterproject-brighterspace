@@ -1,4 +1,4 @@
-import "../styles/Comment.css"
+import "./Comment.css"
 import { useState } from "react"
 
 const Comment = ({ comments, handleAddComments, handleDeleteComments }) => {

@@ -19,7 +19,7 @@ import SupportPage from "./pages/SupportPage/SupportPage"
 import Profile from './pages/ProfileSetting/ProfileSetting'
 import Settings from './pages/UserSetting/settings'
 
-import DiscussionBoard from "./pages/DiscussionBoard";
+import DiscussionBoard from "./pages/DiscussionBoard/DiscussionBoard";
 import LandingPage from "./pages/LandingPage/LandingPage.js"
 import AddGrade from "./pages/add-grade";
 import NewAssignment from "./pages/new-assignment";

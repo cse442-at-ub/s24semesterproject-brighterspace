@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import Comment from "../components/Comment"
-import {CommentData} from "../components/CommentData"
-import "../styles/DiscussionBoard.css"
-import useFunctions from "../components/UseFunctions"
+import Comment from "../../components/Comments/Comment"
+import {CommentData} from "../../components/Comments/CommentData"
+import "./DiscussionBoard.css"
+import useFunctions from "../../components/UseFunctions"
 
 
 
