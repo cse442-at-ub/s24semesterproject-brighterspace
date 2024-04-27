@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $body = json_decode($some);
     $name = '';
     $task = '';
+
     foreach ($body as $key => $value) {
         $name = $key;
         $task = $value;
@@ -29,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($info[0]) {
             insert_into_database($username, $task, 1);
         } else {
+
             insert_into_database($username, $task, 0);
         }
-
         response();
 
 
@@ -66,8 +67,10 @@ function insert_into_database($name, $starter_task, $option): bool
     if ($option == 0) {
         $state = $conn->prepare("INSERT INTO supportTicket (Name, Ticket) VALUES (?, ?)");
         $state->bind_param('ss', $name, $starter_task);
-    } else {
 
+
+
+    } else {
         $state = $conn->prepare("UPDATE supportTicket SET Ticket=? WHERE Name=?");
         $state->bind_param('ss', $starter_task, $name);
     }
