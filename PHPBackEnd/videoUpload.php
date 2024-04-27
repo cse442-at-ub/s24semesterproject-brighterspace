@@ -68,10 +68,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $stmt->close();
         $response = [
             'success' => true,
-            'message' => 'Returned list of videos'
+            'message' => 'Returned list of videos',
+            'videos' => $videos
         ];
         echo json_encode($response);
-        echo json_encode($videos); // Return all videos as JSON
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);

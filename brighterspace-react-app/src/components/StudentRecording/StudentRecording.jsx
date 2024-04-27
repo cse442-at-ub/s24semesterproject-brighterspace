@@ -21,9 +21,9 @@ export default function StudentRecording () {
             method: "GET"
         })
         .then(response => response.json())
-        .then(videos => {
-            console.log("recordings:", videos); //testing purposes
-            setListOfRecording(videos);
+        .then(data => {
+            console.log("recordings:", data.videos); //testing purposes
+            setListOfRecording(data.videos);
         })
         .catch(error => {
             console.error("Error:", error);
