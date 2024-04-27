@@ -24,6 +24,7 @@ import LandingPage from "./pages/LandingPage/LandingPage.js"
 import AddGrade from "./pages/add-grade";
 import NewAssignment from "./pages/new-assignment";
 import Grades from "./pages/grades";
+import Recordings from "./components/StudentRecording/StudentRecording"
 
 
 
@@ -64,6 +65,7 @@ function App() {
             <Route path="/add-grade" element={<AddGrade/>}/>
             <Route path="/new-assignment" element={<NewAssignment/>}/>
             <Route path="/grades" element={<Grades/>}/>
+            <Route path="/recordings" element={<Recordings/>}/>
           </Routes>
         </Router>
       </header>
