@@ -17,12 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $title = $_POST['title'];
         if ($_FILES['video']['error'] === UPLOAD_ERR_OK) {
             $uploadDir = 'uploads/';
-            $uploadFile = $uploadDir . basename($_FILES['file']['name']);
+            $uploadFile = $uploadDir . basename($_FILES['video']['name']); // Corrected 'file' to 'video'
             // move the file to the upload directory
-            if (move_uploaded_file($_FILES['file']['tmp_name'],$uploadFile)) {
+            if (move_uploaded_file($_FILES['video']['tmp_name'], $uploadFile)) {
                 // Update the database with the file path
                 // store path for html video tag instead
-                $videoTag = "$uploadFile";
+                $videoTag = $uploadFile; // No need for quotes around $uploadFile
                 $sql = "INSERT INTO video (classroom, title, video) VALUES (?, ?, ?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("sss", $classroom, $title, $videoTag);
@@ -32,22 +32,23 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     'success' => true,
                     'message' => 'File uploaded successfully'
                 ];
-                echo("upload successful");
+                // echo("upload successful");
             } else {
                 $response = [
                     'success' => false,
-                    'error' => 'Failed to upload file: '
+                    'error' => 'Failed to upload file'
                 ];
-                echo("failed to move file");
+                // echo("failed to move file");
             }
-            header('Content-Type: application/json');
-            // echo json_encode($response);
-            // echo("failed to upload video");
         } else {
-            echo("failed to upload video");
+            $response = [
+                'success' => false,
+                'error' => 'Failed to upload video: ' . $_FILES['video']['error']
+            ];
+            // echo("failed to upload video");
         }
-    } else {
-        echo("video not found in the post request");
+        header('Content-Type: application/json');
+        echo json_encode($response);
     }
 } else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if ($_GET['data'] === 'video') {
