@@ -5,6 +5,8 @@ import Tabs from "../../components/Tabs/Tabs"
 import NotTeacher from "../../components/NotTeacher"
 import { useState } from "react"
 import TeacherTabClass from "../../components/TeacherTabClass/TeacherTabClass"
+import TeacherUploadRec from "../../components/TeacherUploadRec/TeacherUploadRec";
+
 
 
 function Render () {
@@ -19,6 +21,7 @@ function Render () {
             {activeTab === "classrooms" && <TeacherTabClass />}
             {activeTab === "addclass" && <TeacherAddClass />}
             {activeTab === "enrollstudents" && <TeacherEnrollStudent />}
+            {activeTab === "recording" && <TeacherUploadRec />}
         </>
     )
 }

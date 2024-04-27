@@ -31,6 +31,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                         <button onClick={() => handleTabClick("classes")} className={activeTab === "classes" ? 'active' : ''}>Classes</button>
                         <button onClick={() => handleTabClick("allgrades")} className={activeTab === "allgrades" ? 'active' : ''}>Grades</button>
                         <button onClick={() => handleTabClick("allassignments")} className={activeTab === "allassignments" ? 'active' : ''}>Assignments</button>
+                        <button onClick={() => handleTabClick("recordings")} className={activeTab === "recordings" ? 'active' : ''}>Recordings</button>
                     </>
                 )}
                 {page === "TeacherHome" && (
@@ -38,6 +39,7 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                         <button onClick={() => handleTabClick("classrooms")} className={activeTab === "classrooms" ? 'active' : ''}>Classes</button>
                         <button onClick={() => handleTabClick("addclass")} className={activeTab === "addclass" ? 'active' : ''}>Create Classroom</button>
                         <button onClick={() => handleTabClick("enrollstudents")} className={activeTab === "enrollstudents" ? 'active' : ''}>Enroll Students</button>
+                        <button onClick={() => handleTabClick("recording")} className={activeTab === "recording" ? 'active' : ''}>Upload Recordings</button>
                     </>
                 )}
                 {page === "StudentClassPage" && (
@@ -49,7 +51,6 @@ export default function Tabs({ activeTab, setActiveTab, page }) {
                 {page === "TeacherClassPage" && (
                     <>
                         <button onClick={() => handleTabClick("syllabus")} className={activeTab === "syllabus" ? 'active' : ''}>Syllabus</button>
-                        <button onClick={() => handleTabClick("recording")} className={activeTab === "recording" ? 'active' : ''}>Upload Recordings</button>
                     </>
                 )}
             </div>

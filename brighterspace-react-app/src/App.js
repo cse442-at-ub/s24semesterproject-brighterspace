@@ -16,7 +16,7 @@ import TaskManager from "./pages/TaskManager/TaskManager";
 import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
 import SupportPage from "./pages/SupportPage/SupportPage"
-import Profile from './pages/ProfileSetting'
+import Profile from './pages/ProfileSetting/ProfileSetting'
 import Settings from './pages/settings'
 
 import AddGrade from "./pages/add-grade";

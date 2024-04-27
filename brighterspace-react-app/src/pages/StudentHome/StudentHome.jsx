@@ -3,6 +3,7 @@ import StudentTabClass from "../../components/StudentTabClass/StudentTabClass"
 import Tabs from "../../components/Tabs/Tabs"
 import NotStudent from "../../components/NotStudent"
 import { useState } from "react"
+import StudentRecording from "../../components/StudentRecording/StudentRecording"
 
 function Render () {
 
@@ -16,6 +17,7 @@ function Render () {
             {activeTab === "classes" && <StudentTabClass />}
             {activeTab === "allgrades" && <><h1>allgrades</h1></>}
             {activeTab === "allassignments" && <><h1>allassignments</h1></>}
+            {activeTab === "recordings" && <StudentRecording />}
         </>
     )
 }

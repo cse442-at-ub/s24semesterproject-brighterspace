@@ -30,30 +30,14 @@ export default function TeacherUploadRec() {
         load();
     },[]);
 
-    const fetchPostClass = (string) => {
-        fetch("https://example.php?data=class", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ stringData: string })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .catch(error => {
-            console.error("problem sending class", error);
-        });
-    }
-
-    const fetchPostVideo = (video) => {
+    const fetchPost = (video, classroom, title) => {
         const formData = new FormData();
         formData.append('video', video);
+        //your form data append with those 2 new paramenters
+        formData.append('classroom', classroom);
+        formData.append('title', title);
 
-        fetch("https://example.php?data=video", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/videoUpload.php?data=video", {
             method: 'POST',
             body: formData
         })
@@ -63,8 +47,11 @@ export default function TeacherUploadRec() {
             }
             return response.json();
         })
+        .then(data => {
+            console.log(data);
+        })
         .catch(error => {
-            console.error("problem sending video", error);
+            console.error("problem sending video post", error);
         });
     }
 
@@ -154,8 +141,7 @@ export default function TeacherUploadRec() {
         console.log("Valid inputs, proceeding...");
 
         //fetching
-        // fetchPostVideo(selectedFile);
-        // fetchPostClass(selectedClassroom);
+        fetchPost(selectedFile, selectedClassroom, selectedTitle);
 
         //clearing error messages
         setTitleError("");
@@ -168,6 +154,8 @@ export default function TeacherUploadRec() {
         if (input) {
             input.value = null;
         }
+        setSelectedClassroom("");
+        setSelectedTitle("");
     }
 
     return (
