@@ -1,12 +1,18 @@
-body {
-    background-color: #1b6646;
+.login-background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(sergei-a--heLWtuAN3c-unsplash.jpg) no-repeat center center;
+    background-size: cover;
 }
 
 .LmainContainer {
     text-align: center;
-    width: 50%;
+    width: 30%;
     height: 50%;
-    background-color: #4ced78;
+    background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
+    color: white;
 
     position: absolute;
     top: 0;
@@ -15,15 +21,13 @@ body {
     right: 0;
 
     margin: auto;
-    border-radius: 8px;
+    border-radius: 10px;
 
     align-content: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 
 }
 
@@ -55,8 +59,8 @@ body {
 
 .LinputContainer input[type='button'] {
     border: none;
-    background: #978dcc;
-    color: #1b6646;
+    background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%);
+    color: linear-gradient(to right, #868f96 0%, #596164 100%);
     padding: 1vw 2vw;
     margin: 1vw;
     font-size: 1.5vw;
@@ -73,7 +77,7 @@ body {
 }
 
 input[type='button']:hover{
-    background: #6f6896;
+    background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
 }
 
 a {

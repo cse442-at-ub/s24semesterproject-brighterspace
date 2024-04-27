@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
-import '../styles/Login.css'
+import './Login.css'
 
 const Login = (props) => {
     const [passwordError, setPasswordError] = useState('');
@@ -39,6 +39,7 @@ const Login = (props) => {
     }
 
     return (
+        <div className="login-background-container">
         <div className={'LmainContainer'}>
             <div className={'LtitleContainer'}>
                 <div>Welcome to Brighterspace</div>
@@ -62,8 +63,8 @@ const Login = (props) => {
             <div className={'LinputContainer'}>
                 <input className={'inputButton'} type="button" onClick={Loginf} value={'LOGIN'}/>
             </div>
-            <a>forgot password?</a>
 
+        </div>
         </div>
     )
 }
