@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 // Update the database with the file path
                 // store path for html video tag instead
                 $videoTag = "$uploadFile";
-                $sql = "INSERT INTO profile (classroom, title, video) VALUES (?, ?, ?)";
+                $sql = "INSERT INTO video (classroom, title, video) VALUES (?, ?, ?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("sss", $classroom, $title, $videoTag);
                 $stmt->execute();
