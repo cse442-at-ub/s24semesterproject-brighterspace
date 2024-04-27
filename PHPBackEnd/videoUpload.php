@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if ($_GET['data'] === 'video') {
         $classroom = $_POST['classroom'];
         $title = $_POST['title'];
-        if ($_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        if ($_FILES['video']['error'] === UPLOAD_ERR_OK) {
             $uploadDir = 'uploads/';
             $uploadFile = $uploadDir . basename($_FILES['file']['name']);
             // move the file to the upload directory
