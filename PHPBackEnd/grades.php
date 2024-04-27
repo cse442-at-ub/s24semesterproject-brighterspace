@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $info = array();
     $info[] = 'cse_312';
     $info[] = 'eas_360';
+    $info[] = 'cse_442';
 
     foreach ($info as $item) {
         $results = read_data_base($student_name, $item);
@@ -27,8 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
 
     }
-    echo json_encode($data);
-
+	echo json_encode($data);
 
 }
 
@@ -39,11 +39,9 @@ function read_data_base($name, $database): array
 
     $conn = database();
     $state  = $conn -> prepare("SELECT * FROM $database WHERE Student=?");
-
     $state ->bind_param('s', $name);
 
     $state ->execute();
-
     $results = $state ->get_result();
     while ($row = $results -> fetch_assoc()){
         return [true, $row];
