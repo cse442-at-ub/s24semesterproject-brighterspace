@@ -18,58 +18,44 @@ export default function TeacherEnrollStudent() {
     const [classroomIsOpen, setClassroomIsOpen] = useState(false);
     const [studentIsOpen, setStudentIsOpen] = useState(false);
 
-    const [valid, setValid] = useState(true);
-
-    function highlightText(event) {
-        event.target.select();
-    }
-
-    function handleClassroomChange(event) {
+    function handleClassroomChange(event){
         const searchValue = event.target.value;
         setClassroomSearch(searchValue);
         setSelectedClassroom("");
     }
 
     function handleClassroomInputClick(event){
-        if (!classroomIsOpen) {
+        if(!classroomIsOpen){
             setTimeout(() => {
                 setClassroomIsOpen(true);
+                event.target.select();
             }, 10);
-        } else {
-            if (document.activeElement === event.target) {
-                event.target.blur();
-                setClassroomIsOpen(false);
-            }
         }
     }
 
-    function handleClassroomClick(input) {
+    function handleClassroomClick(input){
         const classroomValue = input;
         setSelectedClassroom(classroomValue);
         document.getElementById("searchClassroomInput").value = classroomValue;
         setClassroomIsOpen(false);
     }
 
-    function handleStudentChange(event) {
+    function handleStudentChange(event){
         const searchValue = event.target.value;
         setStudentSearch(searchValue);
         setSelectedStudent("");
     }
 
     function handleStudentInputClick(event){
-        if (!studentIsOpen) {
+        if(!studentIsOpen){
             setTimeout(() => {
                 setStudentIsOpen(true);
+                event.target.select();
             }, 10);
-        } else {
-            if (document.activeElement === event.target) {
-                event.target.blur();
-                setStudentIsOpen(false);
-            }
         }
     }
 
-    function handleStudentClick(input) {
+    function handleStudentClick(input){
         const studentValue = input;
         setSelectedStudent(studentValue);
         document.getElementById("searchStudentInput").value = studentValue;
@@ -154,57 +140,53 @@ export default function TeacherEnrollStudent() {
         <>
             <div class="core-TeacherEnrollStudent">
                 <h2>Classroom:</h2>
-                <div class="classroomDropdown">
-                    <input
-                        type="text"
-                        id="searchClassroomInput"
-                        autocomplete="off"
-                        onChange={handleClassroomChange}
-                        onClick={handleClassroomInputClick}
-                        onBlur={() => setTimeout(() => setClassroomIsOpen(false), 200)}
-                        placeholder="Search classrooms"
-                    />
-                    {classroomIsOpen && (
-                        <ul class="classroomOptions">
-                        {classroomList
-                            .filter((option) =>
-                            option.toLowerCase().includes(classroomSearch.toLowerCase())
-                            )
-                            .map((option) => (
-                            <li key={option} onClick={() => handleClassroomClick(option)}>
-                                {option}
-                            </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+                <input
+                    type="text"
+                    id="searchClassroomInput"
+                    autocomplete="off"
+                    onChange={handleClassroomChange}
+                    onClick={handleClassroomInputClick}
+                    onBlur={() => setTimeout(() => setClassroomIsOpen(false), 200)}
+                    placeholder="Search classrooms"
+                />
+                {classroomIsOpen && classroomList.filter((option) => option.toLowerCase().includes(classroomSearch.toLowerCase())).length > 0 && (
+                    <ul class="classroomOptions">
+                    {classroomList
+                        .filter((option) =>
+                        option.toLowerCase().includes(classroomSearch.toLowerCase())
+                        )
+                        .map((option) => (
+                        <li key={option} onClick={() => handleClassroomClick(option)}>
+                            {option}
+                        </li>
+                        ))}
+                    </ul>
+                )}
                 <p>{classroomError}</p>
                 <br></br>
                 <h2>Student:</h2>
-                <div class="studentDropdown">
-                    <input
-                        type="text"
-                        id="searchStudentInput"
-                        autocomplete="off"
-                        onChange={handleStudentChange}
-                        onClick={handleStudentInputClick}
-                        onBlur={() => setTimeout(() => setStudentIsOpen(false), 200)}
-                        placeholder="Search students"
-                    />
-                    {studentIsOpen && (
-                        <ul class="studentOptions">
-                        {studentList
-                            .filter((option) =>
-                            option.toLowerCase().includes(studentSearch.toLowerCase())
-                            )
-                            .map((option) => (
-                            <li key={option} onClick={() => handleStudentClick(option)}>
-                                {option}
-                            </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+                <input
+                    type="text"
+                    id="searchStudentInput"
+                    autocomplete="off"
+                    onChange={handleStudentChange}
+                    onClick={handleStudentInputClick}
+                    onBlur={() => setTimeout(() => setStudentIsOpen(false), 200)}
+                    placeholder="Search students"
+                />
+                {studentIsOpen && studentList.filter((option) => option.toLowerCase().includes(studentSearch.toLowerCase())).length > 0 && (
+                    <ul class="studentOptions">
+                    {studentList
+                        .filter((option) =>
+                        option.toLowerCase().includes(studentSearch.toLowerCase())
+                        )
+                        .map((option) => (
+                        <li key={option} onClick={() => handleStudentClick(option)}>
+                            {option}
+                        </li>
+                        ))}
+                    </ul>
+                )}
                 <p>{studentError}</p>
                 <br></br>
                 <button onClick={handleSubmission}>Submit</button>

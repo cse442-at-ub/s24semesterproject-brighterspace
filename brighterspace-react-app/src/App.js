@@ -12,13 +12,19 @@ import Sidebar from "./components/Sidebar";
 import Overview from './pages/Overview'
 import {Classes, ClassOne, ClassTwo, ClassThree} from './pages/Classes'
 import Calendar from './pages/Calendar'
-import TaskManager from "./pages/TaskManager";
+import TaskManager from "./pages/TaskManager/TaskManager";
 import Register from "./pages/register";
 import ChangeSidebar from "./components/ChangeSidebar";
-import SupportPage from "./pages/SupportPage"
+import SupportPage from "./pages/SupportPage/SupportPage"
 import Profile from './pages/ProfileSetting/ProfileSetting'
 import Settings from './pages/settings'
+
+import AddGrade from "./pages/add-grade";
+import NewAssignment from "./pages/new-assignment";
+
 import DiscussionBoard from "./pages/DiscussionBoard";
+import LandingPage from "./pages/LandingPage/LandingPage.js"
+
 
 function App() {
 
@@ -50,7 +56,11 @@ function App() {
             <Route path="/register" element={<Register/>}/>
             <Route path="/support" element={<SupportPage/>}/>
             <Route path="/settings" element={<Settings/>}/>
+            <Route path="/add-grade" element={<AddGrade/>}/>
+            <Route path="/new-assignment" element={<NewAssignment/>}/>
+
             <Route path="/discussions" element={<DiscussionBoard/>}/>
+            <Route path="/landing" element={<LandingPage/>}/>
           </Routes>
         </Router>
       </header>

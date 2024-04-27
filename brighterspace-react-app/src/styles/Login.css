@@ -1,0 +1,83 @@
+body {
+    background-color: #1b6646;
+}
+
+.LmainContainer {
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    background-color: #4ced78;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    border-radius: 8px;
+
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+
+
+.LtitleContainer {
+    font-weight: bold;
+    font-size: 1.5vw;
+    margin: 1vw;
+    cursor: default;
+}
+
+.LinputContainer input[type='text'] {
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+
+.LinputContainer input[type='password'] {
+    border: none;
+    color: black;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1vw;
+    border-radius: 8px;
+}
+
+.LinputContainer input[type='button'] {
+    border: none;
+    background: #978dcc;
+    color: #1b6646;
+    padding: 1vw 2vw;
+    margin: 1vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
+.LerrorLabel {
+    color: darkred;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+input[type='button']:hover{
+    background: #6f6896;
+}
+
+a {
+    color: #6f6896;
+    text-decoration: underline;
+    cursor: pointer;
+}

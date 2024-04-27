@@ -1,0 +1,119 @@
+.manager{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 70%;
+}
+h1{
+    font-size: 4rem;
+}
+
+.addbutton{
+    background-color: #F1F3FD;
+    color: #111;
+    border: 1px solid #111;
+    font-weight: 600;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 90px;
+    font-size: large;
+    height: 40px;
+
+}
+.addbutton:hover{
+    background-color: lightgreen;
+}
+.deletebutton{
+    background: linear-gradient(108.4deg, rgb(253, 44, 56) 3.3%, rgb(176, 2, 12) 98.4%);
+    color: white;
+    border: 1px solid #111;
+    font-weight: 600;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 150px;
+    font-size: medium;
+    height: 50px;
+}
+.deletebutton:hover{
+    background: red;
+}
+.movebutton{
+    background: linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%);
+    color: #111;
+    border: 1px solid #111;
+    font-weight: 600;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 150px;
+    font-size: medium;
+    height: 50px;
+}
+.movebutton:hover{
+    background: lightblue;
+}
+input[type="text"]{
+    font-size: 1.6rem;
+    padding: 10px;
+    border: 2px solid black;
+    color: black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+ol{
+    padding: 0;
+
+}
+li{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 15px;
+    background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%);
+    border: 1px solid grey;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 5px;
+}
+.text{
+    flex: 1;
+}
+.deletebutton, .movebutton{
+    padding: 8px 12px;
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+body{
+    background-color: forestgreen;
+}
+.enter_a_task{
+}
+.background-taskmanager_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pexels-eberhardgross-443446.jpg) no-repeat center center;
+    /*Attribution: https://www.freepik.com/free-photo/beautiful-scenery-river-surrounded-by-greenery-forest_16026988*/
+    background-size: cover;
+}
+.manager_header{
+    color: white;
+}
+.tasks_container{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+}

@@ -1,18 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 .core-TeacherAddClass{
     position: fixed;
     display: flex;
     flex-direction: column;
-    padding: 0;
+    padding: 8px;
+    padding-top: 5%;
     margin: 0;
-    top: 9%;
     left: 20%;
     height: 100vh;
     width: 60%;
+    background-color: rgb(168, 227, 199);
 }
 
 .core-TeacherAddClass .form{

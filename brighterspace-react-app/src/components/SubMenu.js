@@ -27,7 +27,7 @@ const SidebarLabel = styled.span`
 `;
 
 const DropDownLink = styled(Link)`
-    background: #414757;
+    background: radial-gradient(circle at 10% 20%, rgb(85, 149, 27) 0.1%, rgb(183, 219, 87) 90%);
     height: 60px;
     padding-left: 3rem;
     display: flex;
