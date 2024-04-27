@@ -38,7 +38,7 @@ function App() {
           <Sidebar/>
           </ChangeSidebar>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            <Route path="/" element={<LandingPage/>} />
             <Route path="/login" element={<Login  />} />
             <Route path="/student-login" element={<StudentLogin  />} />
             <Route path="/admin-login" element={<AdminLogin  />} />
@@ -59,7 +59,6 @@ function App() {
             <Route path="/settings" element={<Settings/>}/>
             <Route path="/add-grade" element={<AddGrade/>}/>
             <Route path="/new-assignment" element={<NewAssignment/>}/>
-
             <Route path="/discussions" element={<DiscussionBoard/>}/>
             <Route path="/landing" element={<LandingPage/>}/>
             <Route path="/add-grade" element={<AddGrade/>}/>
