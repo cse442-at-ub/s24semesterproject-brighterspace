@@ -41,33 +41,43 @@ function App() {
           <Routes>
             <Route path="/" element={<LandingPage/>} />
             <Route path="/login" element={<Login  />} />
-            <Route path="/student-login" element={<StudentLogin  />} />
-            <Route path="/admin-login" element={<AdminLogin  />} />
-            <Route path="/student-home" element={<StudentHome  />} />
-            <Route path="/teacher-home" element={<TeacherHome  />} />
-            <Route path="/class/:classId" element={<StudentClassPage  />} />
-            <Route path="/classroom/:classId" element={<TeacherClassPage  />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/overview" element={<Overview/>} />
-            <Route path="/classes" element={<Classes/>} />
-            <Route path="/classes/class1" element={<ClassOne/>} />
-            <Route path="/classes/class2" element={<ClassTwo/>} />
-            <Route path="/classes/class3" element={<ClassThree/>} />
-            <Route path="/calendar" element={<Calendar/>} />
-            <Route path="/task-manager" element={<TaskManager/>} />
-            <Route path="/register" element={<Register/>}/>
-            <Route path="/support" element={<SupportPage/>}/>
-            <Route path="/settings" element={<Settings/>}/>
-            <Route path="/add-grade" element={<AddGrade/>}/>
-            <Route path="/new-assignment" element={<NewAssignment/>}/>
-            <Route path="/discussions" element={<DiscussionBoard/>}/>
-            <Route path="/landing" element={<LandingPage/>}/>
-            <Route path="/add-grade" element={<AddGrade/>}/>
-            <Route path="/new-assignment" element={<NewAssignment/>}/>
-            <Route path="/grades" element={<Grades/>}/>
-            <Route path="/classes/recordings" element={<Recordings/>}/>
-            <Route path="/classes/grades" element={<Grades/>}/>
-            <Route path="/addgrade" element={<AddGrade/>}/>
+            <Route path="/access-denied" element={<AccessDenied />} />
+
+            <Route element={<ProtectedRoute />}>
+              <Route path="/student-login" element={<StudentLogin  />} />
+              <Route path="/admin-login" element={<AdminLogin  />} />
+              <Route path="/class/:classId" element={<StudentClassPage  />} />
+              <Route path="/classroom/:classId" element={<TeacherClassPage  />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/overview" element={<Overview/>} />
+              <Route path="/classes" element={<Classes/>} />
+              <Route path="/classes/class1" element={<ClassOne/>} />
+              <Route path="/classes/class2" element={<ClassTwo/>} />
+              <Route path="/classes/class3" element={<ClassThree/>} />
+              <Route path="/calendar" element={<Calendar/>} />
+              <Route path="/task-manager" element={<TaskManager/>} />
+              <Route path="/register" element={<Register/>}/>
+              <Route path="/support" element={<SupportPage/>}/>
+              <Route path="/settings" element={<Settings/>}/>
+              <Route path="/add-grade" element={<AddGrade/>}/>
+              <Route path="/new-assignment" element={<NewAssignment/>}/>
+              <Route path="/discussions" element={<DiscussionBoard/>}/>
+              <Route path="/landing" element={<LandingPage/>}/>
+              <Route path="/add-grade" element={<AddGrade/>}/>
+              <Route path="/new-assignment" element={<NewAssignment/>}/>
+              <Route path="/grades" element={<Grades/>}/>
+              <Route path="/classes/recordings" element={<Recordings/>}/>
+              <Route path="/classes/grades" element={<Grades/>}/>
+              <Route path="/addgrade" element={<AddGrade/>}/>
+            </Route>
+
+            <Route element={<TeacherRoute/>}>
+              <Route path="/teacher-home" element={<TeacherHome />} />
+            </Route>
+  
+            <Route element={<StudentRoute/>}>
+              <Route path="/student-home" element={<StudentHome />} />
+            </Route>
           </Routes>
         </Router>
       </header>
