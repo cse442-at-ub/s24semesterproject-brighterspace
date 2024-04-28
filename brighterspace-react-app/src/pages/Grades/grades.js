@@ -44,7 +44,7 @@ const Grades = (props) => {
         }
         const gradeJSON = {"name": username};
         //TODO update path for php
-        request.open("POST", "http://localhost/PHPBackEnd/grades.php");
+        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/grades.php");
         request.send(JSON.stringify(gradeJSON));
 
     }

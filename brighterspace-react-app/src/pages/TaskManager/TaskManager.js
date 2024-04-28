@@ -16,7 +16,7 @@ function TaskManager(){
     const update_task = () => {
         const request = new XMLHttpRequest();
         // todo when change link on server
-        request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
+        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
         const credentialsJSON = {"Update": 'Update'};
         update_messages(request, credentialsJSON)
     }
@@ -66,7 +66,7 @@ function TaskManager(){
 
             const credentialsJSON = {"Ticket": newTask.valueOf()};
 
-            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
             update_messages(request, credentialsJSON)
             setTasks(t => [...t, newTask])
             setNewTask("")
@@ -81,7 +81,7 @@ function TaskManager(){
         const updatedTasks = tasks.filter((_,i)=> i !== index)
         setTasks(updatedTasks);
 
-        request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
+        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
         update_messages(request, credentialsJSON)
 
 
@@ -90,7 +90,7 @@ function TaskManager(){
         if(index>0){
             const request = new XMLHttpRequest();
             const credentialsJSON = {"addPriority": index};
-            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
 
             const updatedTasks = [...tasks];
 
@@ -104,7 +104,7 @@ function TaskManager(){
         if(index<tasks.length-1){
             const request = new XMLHttpRequest();
             const credentialsJSON = {"subPriority": index};
-            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/taskManger.php");
             const updatedTasks = [...tasks];
             update_messages(request,credentialsJSON);
             [updatedTasks[index],updatedTasks[index+1]] = [updatedTasks[index+1],updatedTasks[index]]
