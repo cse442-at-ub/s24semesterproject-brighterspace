@@ -25,9 +25,9 @@ const Login = (props) => {
                     if(backendresponse === "False"){
                         setPasswordError('Incorrect username or password')
                     } else if(backendresponse === "True, Admin: 0") {
-                        navigate('/student-home')
+                        navigate('/classes')
                     } else if(backendresponse === "True, Admin: 1"){
-                        navigate('/teacher-home')
+                        navigate('/classes')
                     }
                 }
             }
