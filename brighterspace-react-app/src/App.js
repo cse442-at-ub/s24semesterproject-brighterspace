@@ -25,6 +25,10 @@ import AddGrade from "./pages/add-grade";
 import NewAssignment from "./pages/new-assignment";
 import Grades from "./pages/Grades/grades";
 import Recordings from "./components/StudentRecording/StudentRecording"
+import TeacherRoute from './TeacherRoute';
+import StudentRoute from './StudentRoute';
+import AccessDenied from './pages/AccessDenied/AccessDenied';
+import ProtectedRoute from './ProtectedRoute';
 
 
 
