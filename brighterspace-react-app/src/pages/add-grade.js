@@ -37,7 +37,7 @@ const AddGrade = (props) => {
                 "score": score_input.value,
                 "max" : max_score_input.value};
             //TODO update path for server
-            request.open("POST", "http://localhost/PHPBackEnd/addGrade.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/addGrade.php");
             request.send(JSON.stringify(gradeJSON));
         }
 

@@ -33,7 +33,7 @@ const Login = (props) => {
             }
             const credentialsJSON = {"name": username, "pass": pass};
             //TODO update path for server
-            request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php");
+            request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/adminLoginIn.php");
             request.send(JSON.stringify(credentialsJSON));
         }
     }

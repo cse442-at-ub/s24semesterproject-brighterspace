@@ -10,7 +10,7 @@ const SupportPage = () => {
     const update_task = () => {
         const request = new XMLHttpRequest();
         // todo when change link on server
-        request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/supportPage.php");
+        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/supportPage.php");
         const credentialsJSON = {"Update": "Update"};
         request.send(JSON.stringify(credentialsJSON)) ;
 
@@ -39,7 +39,7 @@ const SupportPage = () => {
     const onClickHandler = () => {
         const request = new XMLHttpRequest();
         // todo when change link on server
-        request.open("POST", "http://localhost/s24semesterproject-brighterspace/PHPBackEnd/supportPage.php");
+        request.open("POST", "https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/supportPage.php");
         const credentialsJSON = {"Ticket": support};
         request.send(JSON.stringify(credentialsJSON));
         setTickets((tickets) => [[...tickets,support]])
