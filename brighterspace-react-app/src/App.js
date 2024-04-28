@@ -25,6 +25,12 @@ import AddGrade from "./pages/add-grade";
 import NewAssignment from "./pages/new-assignment";
 import Grades from "./pages/Grades/grades";
 import Recordings from "./components/StudentRecording/StudentRecording"
+import StudentClass from "./components/StudentTabClass/StudentTabClass"
+import TeacherAddClass from "./components/TeacherAddClass/TeacherAddClass"
+import TeacherTabClass from "./components/TeacherTabClass/TeacherTabClass";
+import TeacherEnrollStudent from "./components/TeacherEnrollStudent/TeacherEnrollStudent";
+import TeacherUploadRec from "./components/TeacherUploadRec/TeacherUploadRec";
+
 
 
 
@@ -49,7 +55,7 @@ function App() {
             <Route path="/classroom/:classId" element={<TeacherClassPage  />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/overview" element={<Overview/>} />
-            <Route path="/classes" element={<Classes/>} />
+            <Route path="/classes" element={<StudentClass/>} />
             <Route path="/classes/class1" element={<ClassOne/>} />
             <Route path="/classes/class2" element={<ClassTwo/>} />
             <Route path="/classes/class3" element={<ClassThree/>} />
@@ -68,6 +74,10 @@ function App() {
             <Route path="/classes/recordings" element={<Recordings/>}/>
             <Route path="/classes/grades" element={<Grades/>}/>
             <Route path="/addgrade" element={<AddGrade/>}/>
+            <Route path="/teacher" element={<TeacherTabClass/>}/>
+            <Route path="/teacher/add" element={<TeacherAddClass/>}/>
+            <Route path="/teacher/enroll" element={<TeacherEnrollStudent/>}/>
+            <Route path="/teacher/record" element={<TeacherUploadRec/>}/>
           </Routes>
         </Router>
       </header>
