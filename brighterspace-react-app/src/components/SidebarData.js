@@ -10,29 +10,18 @@ import * as GrIcons from 'react-icons/gr'
 import { GiTeacher } from "react-icons/gi";
 import { IoMdPersonAdd } from "react-icons/io";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import {tunnelbear} from "../components/StudentTabClass/TunnelBear_35181.png"
+import { RiBearSmileLine } from "react-icons/ri";
+import { FaVideo } from "react-icons/fa";
+import { FaChalkboard } from "react-icons/fa";
 export const SidebarData = [
     {
         title: 'Overview',
         path: '/overview',
-        icon: <GrIcons.GrOverview />,
+        icon: <RiBearSmileLine/>,
         iconClosed: <RiIcons.RiArrowDownSFill/>,
         iconOpened: <RiIcons.RiArrowUpSFill/>,
         subNav: [
-            {
-                title: 'Users',
-                path: '/overview/users',
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: 'Assessment',
-                path: '/overview/assessment',
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: 'Overview',
-                path: '/overview/profile',
-                icon: <IoIcons.IoIosPaper />,
-            },
 
         ]
 
@@ -47,12 +36,12 @@ export const SidebarData = [
             {
                 title: 'Recordings',
                 path: '/classes/recordings',
-                icon: <IoIcons.IoIosPaper />,
+                icon: <FaVideo />,
             },
             {
                 title: 'Grades',
                 path: '/classes/grades',
-                icon: <IoIcons.IoIosPaper />,
+                icon: <FaChalkboard />,
             },
 
 
@@ -108,7 +97,7 @@ export const SidebarData = [
             {
                 title: 'Upload Video',
                 path: '/teacher/record',
-                icon: <IoIcons.IoIosPaper />,
+                icon: <FaVideo />,
             },
 
 
