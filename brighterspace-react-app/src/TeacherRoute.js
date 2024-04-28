@@ -7,7 +7,7 @@ const TeacherRoute = () => {
     const location = useLocation();
 
     useEffect(() => {
-        fetch("http://localhost:8000/AuthTest.php", {
+        fetch("https://www-student.cse.buffalo.edu/CSE442-542/2024-Spring/cse-442e/sprint3testing/s24semesterproject-brighterspace/PHPBackEnd/AuthTest.php", {
             method: "GET"
         })
         .then(response => response.json())
