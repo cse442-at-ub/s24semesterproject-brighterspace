@@ -7,7 +7,9 @@ import * as BiIcons from 'react-icons/bi'
 import * as CiIcons from 'react-icons/ci'
 import * as CgIcons from 'react-icons/cg'
 import * as GrIcons from 'react-icons/gr'
-
+import { GiTeacher } from "react-icons/gi";
+import { IoMdPersonAdd } from "react-icons/io";
+import { IoIosAddCircleOutline } from "react-icons/io";
 export const SidebarData = [
     {
         title: 'Overview',
@@ -58,11 +60,6 @@ export const SidebarData = [
 
     },
     {
-        title: 'Calendar',
-        path: '/calendar',
-        icon: <FaIcons.FaCalendarAlt />,
-    },
-    {
         title: 'Task Manager',
         path: '/task-manager',
         icon: <FaIcons.FaTasks />,
@@ -89,6 +86,33 @@ export const SidebarData = [
         title: 'Support',
         path: '/support',
         icon: <BiIcons.BiSupport/>
+
+    },
+    {
+        title: 'Teacher Suite',
+        path: '/teacher',
+        icon: <GiTeacher />,
+        iconClosed: <RiIcons.RiArrowDownSFill/>,
+        iconOpened: <RiIcons.RiArrowUpSFill/>,
+        subNav: [
+            {
+                title: 'Add Class',
+                path: '/teacher/add',
+                icon: <IoIosAddCircleOutline />,
+            },
+            {
+                title: 'Enroll Student',
+                path: '/teacher/enroll',
+                icon: <IoMdPersonAdd />,
+            },
+            {
+                title: 'Upload Video',
+                path: '/teacher/record',
+                icon: <IoIcons.IoIosPaper />,
+            },
+
+
+        ]
 
     },
 

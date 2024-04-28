@@ -10,7 +10,7 @@
     margin: 0;
     height: 100vh;
     width: 60%;
-    background-color: rgb(168, 227, 199);
+    background: linear-gradient(110.1deg, rgb(34, 126, 34) 2.9%, rgb(168, 251, 60) 90.3%);
 }
 
 .core-StudentTabClass .classes{
@@ -52,9 +52,21 @@
     padding: 4px;
     word-wrap: break-word;
 }
+.core-StudentTabClass{
+    margin-top: 100px;
+    border-radius: 10px;
+}
 
 .core-StudentTabClass .classes li:hover{
     background-color: rgb(84, 163, 87);
     color: rgb(60, 60, 60);
     font-size: 1.7rem;
+}
+.classesbackground{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pexels-invisiblepower-310823.jpg) no-repeat center center;
+    background-size: cover;
 }
