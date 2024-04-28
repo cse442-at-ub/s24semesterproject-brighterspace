@@ -36,12 +36,14 @@ export default function StudentTabClass () {
 
     return(
         <>
+            <div className="classesbackground">
             <div class="core-StudentTabClass">
                 <div class="classes">
                     <ul>
                         {generateClassList()}
                     </ul>
                 </div>
+            </div>
             </div>
         </>
     )
