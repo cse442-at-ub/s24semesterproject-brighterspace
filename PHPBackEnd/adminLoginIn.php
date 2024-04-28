@@ -1,7 +1,7 @@
 <?php
 require "dbConnection.php";
 session_start();
-
+$_SESSION['status'] = "guest";
 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Credentials: true');
@@ -46,6 +46,11 @@ function verify()
             setcookie($cookieName, $cookieHash, time() + (3600), '/', '', true, true);
             setcookie('Admin', $dataBaseRows[3], time() + (3600), '/', '', true, true);
             echo "True, Admin: $dataBaseRows[3]";
+            if($dataBaseRows[3] == "1"){
+                $_SESSION['status'] = "teacher";
+            }else{
+                $_SESSION['status'] = "student";
+            }
 
         }
     } else {
